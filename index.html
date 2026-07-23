@@ -25,7 +25,8 @@
   "sameAs": [
     "https://blog.naver.com/patriot_daelim",
     "https://www.linkedin.com/in/hanyeol-jeong",
-    "https://dept.daelim.ac.kr/lba/cms/FrProfessorCon/ProfessorView.do?MENU_ID=190&SITE_NO=36&CONTENTS_NO=&PROF_GBN_CD=P1002&PROF_SEQ=1279"
+    "https://dept.daelim.ac.kr/lba/cms/FrProfessorCon/ProfessorView.do?MENU_ID=190&SITE_NO=36&CONTENTS_NO=&PROF_GBN_CD=P1002&PROF_SEQ=1279",
+    "https://youtube.com/@aiinsightlabkr"
   ]
 }
 </script>
@@ -253,7 +254,7 @@
   /* ── COURSES ── */
   .course-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
   .course-card {
@@ -276,6 +277,7 @@
   }
   .course-card.blue::before { background: var(--blue-accent); }
   .course-card.teal::before { background: var(--teal); }
+  .course-card.amber::before { background: #F0A030; }
   .course-no {
     font-size: 11px;
     font-weight: 600;
@@ -390,7 +392,7 @@
   /* ── CONTACT ── */
   .contact-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
   }
   .contact-card {
@@ -424,6 +426,7 @@
   .contact-icon.linkedin { background: #0A66C2; }
   .contact-icon.naver { background: #03C75A; }
   .contact-icon.blog { background: #FF6B35; }
+  .contact-icon.youtube { background: #FF0000; }
   .contact-label {
     font-size: 11px;
     color: var(--gray-500);
@@ -488,6 +491,10 @@
   footer a { color: var(--teal); text-decoration: none; }
 
   /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .course-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 680px) {
     .hero-inner { flex-direction: column; text-align: center; gap: 24px; }
     .hero-tags { justify-content: center; }
@@ -575,6 +582,13 @@
       <div class="info-item-value">前 IT기업 임원 출신 실무형 교수</div>
       <div class="info-item-sub">Former IT Executive → Practitioner Professor</div>
     </div>
+    <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22fromUi%22%3A%22kb%22%7D&pkid=1&os=41442497&qvt=0&query=%EC%A0%95%ED%95%9C%EC%97%B4" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+      <div class="info-item" style="cursor:pointer; transition: box-shadow 0.2s, transform 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+        <div class="info-item-label">상세정보 · Detail</div>
+        <div class="info-item-value" style="color:var(--blue-accent);">네이버 인물정보 보기 →</div>
+        <div class="info-item-sub">NAVER People Search</div>
+      </div>
+    </a>
   </div>
 
   <a href="https://blog.naver.com/patriot_daelim/224300779757" target="_blank" rel="noopener" style="text-decoration:none;">
@@ -636,6 +650,25 @@
         <span class="course-tag">AI 리터러시</span>
         <span class="course-tag">디지털 윤리</span>
         <span class="course-tag">AI 실무 활용</span>
+      </div>
+    </div>
+
+    <div class="course-card amber">
+      <div class="course-no">Course 03</div>
+      <div class="course-title-ko">AI와 글쓰기</div>
+      <div class="course-title-en">AI and Writing</div>
+      <div class="course-desc">
+        생성형 AI를 활용해 자료를 탐색·분석하고, 자신의 생각을 논리적인 글과 시각자료로 표현하는 프로젝트 중심 교과목입니다.
+        AI와 협업하여 전공 연계 문제를 해결하고, 탐구·검증·수정의 과정을 거쳐 PPT·인포그래픽·영상·개인 홈페이지 등
+        산업현장에서 활용 가능한 디지털 포트폴리오를 완성합니다.
+      </div>
+      <div class="course-tags">
+        <span class="course-tag">자료 탐색·분석</span>
+        <span class="course-tag">AI 협업 글쓰기</span>
+        <span class="course-tag">시각화·발표자료</span>
+        <span class="course-tag">전공연계 프로젝트</span>
+        <span class="course-tag">바이브코딩 홈페이지</span>
+        <span class="course-tag">디지털 포트폴리오</span>
       </div>
     </div>
   </div>
@@ -707,6 +740,13 @@
         <div class="contact-value" style="font-size:13px;">대림대학교 교양직업교육센터</div>
       </div>
     </a>
+    <a class="contact-card" href="https://youtube.com/@aiinsightlabkr?si=OEZIxVfiJPIrYDaL" target="_blank" rel="noopener">
+      <div class="contact-icon youtube">▶</div>
+      <div>
+        <div class="contact-label">YouTube</div>
+        <div class="contact-value" style="font-size:13px;">AI Insight Lab</div>
+      </div>
+    </a>
   </div>
 
   <div style="margin-top: 20px; padding: 20px 24px; background: var(--gray-100); border-radius: 10px; font-size: 14px; color: var(--gray-700); line-height: 1.7;">
@@ -720,7 +760,8 @@
   <p style="margin-top:6px;">대림대학교 교양직업교육센터 · Daelim University College</p>
   <p style="margin-top:10px;">
     <a href="https://www.linkedin.com/in/hanyeol-jeong" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
-    <a href="https://blog.naver.com/patriot_daelim" target="_blank">네이버 블로그</a>
+    <a href="https://blog.naver.com/patriot_daelim" target="_blank">네이버 블로그</a> &nbsp;·&nbsp;
+    <a href="https://youtube.com/@aiinsightlabkr?si=OEZIxVfiJPIrYDaL" target="_blank">YouTube</a>
   </p>
 </footer>
 
