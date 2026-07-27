@@ -355,9 +355,9 @@
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    background: var(--gray-100);
-    color: var(--navy);
-    border: 1px solid var(--gray-200);
+    background: var(--navy);
+    color: var(--white);
+    border: 1px solid var(--navy);
     border-radius: 8px;
     padding: 10px 18px;
     font-size: 13px;
@@ -365,9 +365,9 @@
     transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   }
   .pub-link-btn:hover {
-    background: var(--white);
+    background: var(--navy-mid);
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
   }
   .pub-link-dot {
     width: 8px; height: 8px;
@@ -782,16 +782,10 @@
   </ul>
 
   <div class="pub-more-wrap">
-    <button class="pub-toggle-btn" id="pubToggleBtn" onclick="togglePublications()">더 보기 (학위논문 · 주요 논문 · 주요 저서) ▾</button>
+    <button class="pub-toggle-btn" id="pubToggleBtn" onclick="togglePublications()">더 보기 (주요 논문 · 주요 저서) ▾</button>
   </div>
 
   <div id="pub-more">
-
-    <div class="pub-group-title">학위논문 · Degree Theses</div>
-    <ul class="pub-list">
-      <li class="pub-item"><strong>인터넷쇼핑몰의 품질요인 및 고객만족에 관한 연구</strong> <span class="pub-meta">· 박사학위논문 · 2002.06</span></li>
-      <li class="pub-item"><strong>국내편의점의 POS시스템 운용효과에 관한 연구</strong> <span class="pub-meta">· 석사학위논문 · 1993.12</span></li>
-    </ul>
 
     <div class="pub-group-title">학술논문 – 단독 연구 · Journal Articles (Single Author)</div>
     <ul class="pub-list">
@@ -948,7 +942,7 @@
     var more = document.getElementById('pub-more');
     var btn = document.getElementById('pubToggleBtn');
     var isOpen = more.classList.toggle('open');
-    btn.textContent = isOpen ? '접기 ▲' : '더 보기 (학위논문 · 주요 논문 · 주요 저서) ▾';
+    btn.textContent = isOpen ? '접기 ▲' : '더 보기 (주요 논문 · 주요 저서) ▾';
     if (isOpen) {
       more.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
