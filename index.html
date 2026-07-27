@@ -2,7 +2,6 @@
 <html lang="ko">
 <head>
 <meta name="google-site-verification" content="4c6vog5UHRMC4YSmN-B3IHnLxH9sN-Bn5MdiW5Zf8hs" />
-<meta name="google-site-verification" content="Xk6j1zxEUV5rKZ01Rb3_Nw8xIbvqDTb43Y-tvI6Us84" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="정한열 교수 | 대림대학교 교양직업교육센터 | AI와 코딩, AI와 사회변화 강의 | Hanyeol Jeong, Professor at Daelim University College">
@@ -22,10 +21,10 @@
     "alternateName": "Daelim University College"
   },
   "description": "대림대학교 교양직업교육센터 교수. AI와 코딩, AI와 사회변화 강의. 생성형 AI 교육, 프롬프트 엔지니어링 전문가.",
-  "url": "https://token-web.github.io/aiinsightlab/",
+  "url": "https://token-web.github.io/hanyeol-jeong/",
   "sameAs": [
     "https://blog.naver.com/patriot_daelim",
-    "https://www.linkedin.com/in/aiinsightlab",
+    "https://www.linkedin.com/in/hanyeol-jeong",
     "https://dept.daelim.ac.kr/lba/cms/FrProfessorCon/ProfessorView.do?MENU_ID=190&SITE_NO=36&CONTENTS_NO=&PROF_GBN_CD=P1002&PROF_SEQ=1279",
     "https://youtube.com/@aiinsightlabkr"
   ]
@@ -223,9 +222,9 @@
 
   /* ── PROFILE INFO ── */
   .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
   .info-item {
     background: var(--gray-100);
@@ -343,6 +342,98 @@
     color: var(--gray-500);
     line-height: 1.5;
   }
+
+  /* ── PUBLICATIONS ── */
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .pub-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background: var(--gray-100);
+    color: var(--navy);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .pub-link-btn:hover {
+    background: var(--white);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  }
+  .pub-link-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .pub-subtitle {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue-accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 24px 0 12px;
+  }
+  .pub-subtitle:first-of-type { margin-top: 0; }
+  .pub-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pub-item {
+    background: var(--gray-100);
+    border-left: 3px solid var(--teal);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    color: var(--gray-700);
+    line-height: 1.55;
+  }
+  .pub-item strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .pub-item .pub-meta {
+    color: var(--gray-500);
+    font-size: 12px;
+  }
+  .pub-more-wrap { margin-top: 20px; }
+  #pub-more {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--gray-200);
+  }
+  #pub-more.open { display: block; }
+  .pub-toggle-btn {
+    cursor: pointer;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .pub-toggle-btn:hover { background: var(--navy-mid); transform: translateY(-1px); }
+  .pub-group-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 20px 0 10px;
+  }
+  .pub-group-title:first-child { margin-top: 0; }
 
   /* ── CAREER ── */
   .timeline {
@@ -499,7 +590,6 @@
   @media (max-width: 680px) {
     .hero-inner { flex-direction: column; text-align: center; gap: 24px; }
     .hero-tags { justify-content: center; }
-    .info-grid { grid-template-columns: 1fr; }
     .course-grid { grid-template-columns: 1fr; }
     .interest-list { grid-template-columns: 1fr 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
@@ -517,6 +607,7 @@
     <ul>
       <li><a href="#about">소개</a></li>
       <li><a href="#courses">강의</a></li>
+      <li><a href="#publications">논문/저서</a></li>
       <li><a href="#research">관심분야</a></li>
       <li><a href="#contact">연락처</a></li>
     </ul>
@@ -554,43 +645,29 @@
 
   <div class="info-grid">
     <div class="info-item">
-      <div class="info-item-label">소속 · Affiliation</div>
-      <div class="info-item-value">대림대학교</div>
-      <div class="info-item-sub">Daelim University College</div>
+      <div class="info-item-label">소속 · 직위 · Affiliation &amp; Position</div>
+      <div class="info-item-value">대림대학교 교수</div>
+      <div class="info-item-sub">Professor, Daelim University College</div>
     </div>
     <div class="info-item">
-      <div class="info-item-label">학과 · Department</div>
-      <div class="info-item-value">교양직업교육센터</div>
-      <div class="info-item-sub">Vocational Education Center</div>
+      <div class="info-item-label">학과 · 전문분야 · Department &amp; Expertise</div>
+      <div class="info-item-value">교양직업교육센터 · AI 교육 · 생성형 AI · 프롬프트 엔지니어링</div>
+      <div class="info-item-sub">Vocational Education Center · Generative AI Education &amp; Digital Transformation</div>
     </div>
     <div class="info-item">
-      <div class="info-item-label">직위 · Position</div>
-      <div class="info-item-value">교수</div>
-      <div class="info-item-sub">Professor</div>
+      <div class="info-item-label">학력 · 경력 · Education &amp; Background</div>
+      <div class="info-item-value">경기대학교 경영학박사(MIS전공) · 前 IT기업 임원 출신 실무형 교수</div>
+      <div class="info-item-sub">Ph.D. in Business Administration (MIS), Kyonggi University · Former IT Executive → Practitioner Professor</div>
     </div>
-    <div class="info-item">
-      <div class="info-item-label">전문분야 · Expertise</div>
-      <div class="info-item-value">AI 교육 · 생성형 AI · 프롬프트 엔지니어링</div>
-      <div class="info-item-sub">Generative AI Education &amp; Digital Transformation</div>
-    </div>
-    <div class="info-item">
-      <div class="info-item-label">학력 · Education</div>
-      <div class="info-item-value">경기대학교 경영학박사 (MIS전공)</div>
-      <div class="info-item-sub">Ph.D. in Business Administration (MIS), Kyonggi University</div>
-    </div>
-    <div class="info-item">
-      <div class="info-item-label">경력 · Background</div>
-      <div class="info-item-value">前 IT기업 임원 출신 실무형 교수</div>
-      <div class="info-item-sub">Former IT Executive → Practitioner Professor</div>
-    </div>
-    <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22fromUi%22%3A%22kb%22%7D&pkid=1&os=41442497&qvt=0&query=%EC%A0%95%ED%95%9C%EC%97%B4" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
-      <div class="info-item" style="cursor:pointer; transition: box-shadow 0.2s, transform 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-        <div class="info-item-label">상세정보 · Detail</div>
-        <div class="info-item-value" style="color:var(--blue-accent);">네이버 인물정보 보기 →</div>
-        <div class="info-item-sub">NAVER People Search</div>
-      </div>
-    </a>
   </div>
+
+  <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22fromUi%22%3A%22kb%22%7D&pkid=1&os=41442497&qvt=0&query=%EC%A0%95%ED%95%9C%EC%97%B4" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+    <div class="info-item" style="margin-top:16px; cursor:pointer; transition: box-shadow 0.2s, transform 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+      <div class="info-item-label">상세정보 · Detail</div>
+      <div class="info-item-value" style="color:var(--blue-accent);">네이버 인물정보 보기 →</div>
+      <div class="info-item-sub">NAVER People Search</div>
+    </div>
+  </a>
 
   <a href="https://blog.naver.com/patriot_daelim/224300779757" target="_blank" rel="noopener" style="text-decoration:none;">
     <div class="badge-bar" style="cursor:pointer; transition: opacity 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(10,191,174,0.18);" onmouseover="this.style.opacity='0.88'; this.style.boxShadow='0 8px 32px rgba(10,191,174,0.35)'" onmouseout="this.style.opacity='1'; this.style.boxShadow='0 4px 20px rgba(10,191,174,0.18)'">
@@ -618,27 +695,9 @@
 
   <div class="course-grid">
     <div class="course-card blue">
-      <div class="course-no">Course 01</div>
-      <div class="course-title-ko">AI와 코딩</div>
-      <div class="course-title-en">AI and Coding</div>
-      <div class="course-desc">
-        PC 실습 중심의 교과목으로, 생성형 AI를 활용한 콘텐츠 생성(텍스트·이미지·영상·음악 등 UI 중심)과 실무 활용 능력을 기릅니다.
-        블록코딩과 바이브 코딩(Vibe Coding)을 연계하여 논리적 문제해결 능력을 단계적으로 향상시키는 데 중점을 둡니다.
-      </div>
-      <div class="course-tags">
-        <span class="course-tag">PC 실습</span>
-        <span class="course-tag">생성형 AI 콘텐츠</span>
-        <span class="course-tag">이미지·영상·음악 생성</span>
-        <span class="course-tag">블록코딩</span>
-        <span class="course-tag">Vibe Coding</span>
-        <span class="course-tag">논리적 문제해결</span>
-      </div>
-    </div>
-
-    <div class="course-card teal">
-      <div class="course-no">Course 02</div>
+      <div class="course-no">Course 01 · 이론</div>
       <div class="course-title-ko">AI와 사회변화</div>
-      <div class="course-title-en">AI and Social Change</div>
+      <div class="course-title-en">AI and Social Change (Theory)</div>
       <div class="course-desc">
         스마트폰을 활용해 AI를 실무에 적용하는 인력을 양성하는 교과목입니다.
         생성형 AI가 사회·직업·윤리에 미치는 영향을 비판적으로 탐구하고,
@@ -654,10 +713,28 @@
       </div>
     </div>
 
+    <div class="course-card teal">
+      <div class="course-no">Course 02 · 실습</div>
+      <div class="course-title-ko">AI와 코딩</div>
+      <div class="course-title-en">AI and Coding (Practice)</div>
+      <div class="course-desc">
+        PC 실습 중심의 교과목으로, 생성형 AI를 활용한 콘텐츠 생성(텍스트·이미지·영상·음악 등 UI 중심)과 실무 활용 능력을 기릅니다.
+        블록코딩과 바이브 코딩(Vibe Coding)을 연계하여 논리적 문제해결 능력을 단계적으로 향상시키는 데 중점을 둡니다.
+      </div>
+      <div class="course-tags">
+        <span class="course-tag">PC 실습</span>
+        <span class="course-tag">생성형 AI 콘텐츠</span>
+        <span class="course-tag">이미지·영상·음악 생성</span>
+        <span class="course-tag">블록코딩</span>
+        <span class="course-tag">Vibe Coding</span>
+        <span class="course-tag">논리적 문제해결</span>
+      </div>
+    </div>
+
     <div class="course-card amber">
-      <div class="course-no">Course 03</div>
+      <div class="course-no">Course 03 · 실습</div>
       <div class="course-title-ko">AI와 글쓰기</div>
-      <div class="course-title-en">AI and Writing</div>
+      <div class="course-title-en">AI and Writing (Practice)</div>
       <div class="course-desc">
         생성형 AI를 활용해 자료를 탐색·분석하고, 자신의 생각을 논리적인 글과 시각자료로 표현하는 프로젝트 중심 교과목입니다.
         AI와 협업하여 전공 연계 문제를 해결하고, 탐구·검증·수정의 과정을 거쳐 PPT·인포그래픽·영상·개인 홈페이지 등
@@ -666,12 +743,112 @@
       <div class="course-tags">
         <span class="course-tag">자료 탐색·분석</span>
         <span class="course-tag">AI 협업 글쓰기</span>
-        <span class="course-tag">시각화·발표자료</span>
+        <span class="course-tag">이미지 시각화</span>
+        <span class="course-tag">발표자료(PPTX, MP4)</span>
         <span class="course-tag">전공연계 프로젝트</span>
-        <span class="course-tag">바이브코딩 홈페이지</span>
-        <span class="course-tag">디지털 포트폴리오</span>
+        <span class="course-tag">개인홈페이지 및 포트폴리오 제작</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-eyebrow">Publications · 학술활동</div>
+  <div class="section-title">논문 및 저서 / Publications</div>
+
+  <div class="pub-links">
+    <a class="pub-link-btn" href="https://search.kyobobook.co.kr/search?keyword=%EC%A0%95%ED%95%9C%EC%97%B4&chrc=%EC%A0%95%ED%95%9C%EC%97%B4" target="_blank" rel="noopener">
+      <span class="pub-link-dot" style="background:#008ECC;"></span> 교보문고에서 저서 보기 ↗
+    </a>
+    <a class="pub-link-btn" href="https://www.aladin.co.kr/author/wauthor_overview.aspx?AuthorSearch=@40300&srsltid=AfmBOopT1g6qzi2fDoqw3ooMIB4dYdqnMMICxgz4rLtdayCjhQeHT8LY" target="_blank" rel="noopener">
+      <span class="pub-link-dot" style="background:#FF6E1E;"></span> 알라딘에서 저서 보기 ↗
+    </a>
+  </div>
+
+  <div class="pub-subtitle">대표 저서 · Selected Books</div>
+  <ul class="pub-list">
+    <li class="pub-item"><strong>제4차 산업혁명 이렇게 달성한다</strong> · 한올출판사 <span class="pub-meta">· 2017 · 공동저서</span></li>
+    <li class="pub-item"><strong>제4차 산업혁명 충격과 도전</strong> · 배문사 <span class="pub-meta">· 2017 · 공동저서</span></li>
+    <li class="pub-item"><strong>PASW에 의한 통계분석 입문</strong> · 한올출판사 <span class="pub-meta">· 2010 · 공동저서</span></li>
+    <li class="pub-item"><strong>엑셀 2007을 활용한 경영통계</strong> · 한올출판사 <span class="pub-meta">· 2008 · 단독저서</span></li>
+  </ul>
+
+  <div class="pub-subtitle">대표 논문 · Selected Papers</div>
+  <ul class="pub-list">
+    <li class="pub-item"><strong>정보시스템 아웃소싱 서비스만족도에 관한 연구</strong>(정보기술 품질을 중심으로) <span class="pub-meta">· 산업경제연구소 22집 2호 · 2008.12 · 단독</span></li>
+    <li class="pub-item"><strong>정보품질이 ERP시스템활용에 미치는 영향에 관한 연구</strong> <span class="pub-meta">· 컴퓨터정보학회 12권 6호 · 2007.12 · 공동</span></li>
+    <li class="pub-item"><strong>온라인 고령친화용품점 품질요인 및 고객만족에 관한 연구</strong> <span class="pub-meta">· 컴퓨터정보학회 12권 5호 · 2007.11 · 단독</span></li>
+  </ul>
+
+  <div class="pub-more-wrap">
+    <button class="pub-toggle-btn" id="pubToggleBtn" onclick="togglePublications()">더 보기 (학위논문 · 주요 논문 · 주요 저서) ▾</button>
+  </div>
+
+  <div id="pub-more">
+
+    <div class="pub-group-title">학위논문 · Degree Theses</div>
+    <ul class="pub-list">
+      <li class="pub-item"><strong>인터넷쇼핑몰의 품질요인 및 고객만족에 관한 연구</strong> <span class="pub-meta">· 박사학위논문 · 2002.06</span></li>
+      <li class="pub-item"><strong>국내편의점의 POS시스템 운용효과에 관한 연구</strong> <span class="pub-meta">· 석사학위논문 · 1993.12</span></li>
+    </ul>
+
+    <div class="pub-group-title">학술논문 – 단독 연구 · Journal Articles (Single Author)</div>
+    <ul class="pub-list">
+      <li class="pub-item"><strong>정보시스템 아웃소싱 서비스만족도에 관한 연구</strong>(정보기술 품질을 중심으로) <span class="pub-meta">· 산업경제연구소 22집 2호 · 2008.12</span></li>
+      <li class="pub-item"><strong>온라인 고령친화용품점 품질요인 및 고객만족에 관한 연구</strong> <span class="pub-meta">· 컴퓨터정보학회 12권 5호 · 2007.11</span></li>
+      <li class="pub-item"><strong>근로자의 인식된 조직적 지원, 몰입, 이직의도에 관한 연구</strong> <span class="pub-meta">· 산업경제연구소 14권 · 2001.12</span></li>
+      <li class="pub-item"><strong>인터넷 쇼핑몰의 활성화 방안에 관한 연구</strong> <span class="pub-meta">· 산업경제연구소 12권 · 2000.11</span></li>
+      <li class="pub-item"><strong>효율적인 네트웍보안시스템구축에 관한 연구</strong> <span class="pub-meta">· 컴퓨터정보학회 3권 4호 · 1998.12</span></li>
+    </ul>
+
+    <div class="pub-group-title">학술논문 – 공동 연구 · Journal Articles (Co-authored)</div>
+    <ul class="pub-list">
+      <li class="pub-item"><strong>정보품질이 ERP시스템활용에 미치는 영향에 관한 연구</strong> <span class="pub-meta">· 컴퓨터정보학회 12권 6호 · 2007.12</span></li>
+      <li class="pub-item"><strong>Research about internet business model by Personal shop community</strong> <span class="pub-meta">· 한국품질경영학회 아시아 8개국 품질경영 컨퍼런스 · 2001.11</span></li>
+      <li class="pub-item"><strong>B2C 모델 확장에 관한 연구</strong> <span class="pub-meta">· 한국품질경영학회 · 2001.11</span></li>
+    </ul>
+
+    <div class="pub-group-title">단독저서 · Books (Single Author)</div>
+    <ul class="pub-list">
+      <li class="pub-item"><strong>엑셀 2007을 활용한 경영통계</strong> <span class="pub-meta">· 한올출판사 · 2008.02</span></li>
+      <li class="pub-item"><strong>SPSS에 의한 통계분석 입문</strong> <span class="pub-meta">· 한올출판사 · 2007.11</span></li>
+      <li class="pub-item"><strong>쉽게 배우는 PC통신과 인터넷</strong> <span class="pub-meta">· 정보문화사 · 1999.10</span></li>
+      <li class="pub-item"><strong>개정판 쉽게 배우는 인터넷</strong> <span class="pub-meta">· 정보문화사 · 1999.10</span></li>
+      <li class="pub-item"><strong>알기쉬운 윈도우즈 98</strong> <span class="pub-meta">· 정보문화사 · 1998.07</span></li>
+      <li class="pub-item"><strong>쉽게 배우는 인터넷 익스플로러 4.01</strong> <span class="pub-meta">· 정보문화사 · 1998.07</span></li>
+      <li class="pub-item"><strong>넷스케이프 길라잡이</strong> <span class="pub-meta">· 정보문화사 · 1998.06</span></li>
+      <li class="pub-item"><strong>쉽게 배우는 넷 스케이프 3.0/4.01</strong> <span class="pub-meta">· 정보문화사 · 1997.09</span></li>
+      <li class="pub-item"><strong>알기쉬운 한글 윈도우즈 NT 4.0</strong> <span class="pub-meta">· 정보문화사 · 1997.01</span></li>
+      <li class="pub-item"><strong>PC통신에서 인터넷까지</strong> <span class="pub-meta">· 정보문화사 · 1996.09</span></li>
+      <li class="pub-item"><strong>저는 PC를 하나도 모르는데요</strong> <span class="pub-meta">· 키출판사 · 1996.03</span></li>
+      <li class="pub-item"><strong>올라오세요 한글 3.0</strong> <span class="pub-meta">· 한글과컴퓨터 · 1995.07</span></li>
+      <li class="pub-item"><strong>대화로 풀어가는 컴퓨터입문</strong> <span class="pub-meta">· 정보문화사 · 1995.04</span></li>
+      <li class="pub-item"><strong>예제로 배우는 데이터베이스</strong> <span class="pub-meta">· 한국컴퓨터매거진 · 1995.01</span></li>
+      <li class="pub-item"><strong>PC 왕기초부터 일상업무 활용까지 혼자서 끝내기</strong> <span class="pub-meta">· 키출판사 · 1994.11</span></li>
+      <li class="pub-item"><strong>한글 1.53</strong> <span class="pub-meta">· 한국컴퓨터매거진 · 1994.03</span></li>
+    </ul>
+
+    <div class="pub-group-title">공동저서 · Books (Co-authored)</div>
+    <ul class="pub-list">
+      <li class="pub-item"><strong>제4차 산업혁명 이렇게 달성한다</strong> <span class="pub-meta">· 한올출판사 · 2017.08</span></li>
+      <li class="pub-item"><strong>제4차 산업혁명 충격과 도전</strong> <span class="pub-meta">· 배문사 · 2017.06</span></li>
+      <li class="pub-item"><strong>SPSS에 의한 통계분석 입문</strong> <span class="pub-meta">· 한올출판사 · 2007.11</span></li>
+      <li class="pub-item"><strong>개정판 한글 SPSS 기초에서 응용까지</strong> <span class="pub-meta">· 형설출판사 · 2006.02</span></li>
+      <li class="pub-item"><strong>e-business이론과 실제</strong> <span class="pub-meta">· 형설출판사 · 2002.08</span></li>
+      <li class="pub-item"><strong>STATISTICA에 의한 알기쉬운 통계분석</strong> <span class="pub-meta">· 형설출판사 · 2002.04</span></li>
+      <li class="pub-item"><strong>한글엑셀 2000</strong> <span class="pub-meta">· 무역경영사 · 2001.02</span></li>
+      <li class="pub-item"><strong>한글 SPSS 10.0 기초에서 응용까지</strong> <span class="pub-meta">· 형설출판사 · 2001.02</span></li>
+      <li class="pub-item"><strong>Excel을 이용한 경영자료분석</strong> <span class="pub-meta">· 청암미디어 · 2000.06</span></li>
+      <li class="pub-item"><strong>Microsoft Excel 2000 기초에서 응용까지</strong> <span class="pub-meta">· 형설출판사 · 2000.06</span></li>
+      <li class="pub-item"><strong>데이터 처리 기법을 위한 엑셀 2000</strong> <span class="pub-meta">· 청목출판사 · 2000.03</span></li>
+      <li class="pub-item"><strong>더욱 간편해진 한글 Windows 98</strong> <span class="pub-meta">· 높이깊이 · 1999.02</span></li>
+      <li class="pub-item"><strong>완전정복 한글 액세스 97</strong> <span class="pub-meta">· 태성출판사 · 1998.07</span></li>
+      <li class="pub-item"><strong>더욱 간편해진 한글 엑셀 97</strong> <span class="pub-meta">· 정익사 · 1998.04</span></li>
+      <li class="pub-item"><strong>더욱 간편해진 한글엑셀 97</strong> <span class="pub-meta">· 높이깊이 · 1998.01</span></li>
+      <li class="pub-item"><strong>알기쉬운 파워포인트</strong> <span class="pub-meta">· 연학사 · 1998.01</span></li>
+    </ul>
+
   </div>
 </section>
 
@@ -720,14 +897,14 @@
   <div class="section-title">연락처 및 채널 / Contact &amp; Links</div>
 
   <div class="contact-grid">
-    <a class="contact-card" href="https://www.linkedin.com/in/aiinsightlab" target="_blank" rel="noopener">
+    <a class="contact-card" href="https://www.linkedin.com/in/hanyeol-jeong" target="_blank" rel="noopener">
       <div class="contact-icon linkedin">💼</div>
       <div>
         <div class="contact-label">LinkedIn</div>
         <div class="contact-value">링크드인</div>
       </div>
     </a>
-    <a class="contact-card" href="https://blog.naver.com/patriot_daelim" target="_blank" rel="noopener">
+    <a class="contact-card" href="https://blog.naver.com/patriot_daelim/224300779757" target="_blank" rel="noopener">
       <div class="contact-icon naver">N</div>
       <div>
         <div class="contact-label">네이버 블로그 · NAVER BLOG</div>
@@ -760,11 +937,23 @@
   <p>정한열 교수 · Hanyeol Jeong, Professor</p>
   <p style="margin-top:6px;">대림대학교 교양직업교육센터 · Daelim University College</p>
   <p style="margin-top:10px;">
-    <a href="https://www.linkedin.com/in/aiinsightlab" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/hanyeol-jeong" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
     <a href="https://blog.naver.com/patriot_daelim" target="_blank">네이버 블로그</a> &nbsp;·&nbsp;
     <a href="https://youtube.com/@aiinsightlabkr?si=OEZIxVfiJPIrYDaL" target="_blank">YouTube</a>
   </p>
 </footer>
+
+<script>
+  function togglePublications() {
+    var more = document.getElementById('pub-more');
+    var btn = document.getElementById('pubToggleBtn');
+    var isOpen = more.classList.toggle('open');
+    btn.textContent = isOpen ? '접기 ▲' : '더 보기 (학위논문 · 주요 논문 · 주요 저서) ▾';
+    if (isOpen) {
+      more.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+</script>
 
 </body>
 </html>
