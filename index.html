@@ -190,7 +190,35 @@
     font-size: 12px;
     font-weight: 500;
   }
-
+.hero-blog-link {
+    margin-top: 16px;
+  }
+  .hero-blog-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray-200);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .hero-blog-link a:hover {
+    color: var(--teal);
+  }
+  .hero-blog-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: #03C75A;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
   /* ── SECTIONS ── */
   .container {
     max-width: 960px;
@@ -594,6 +622,7 @@
     .interest-list { grid-template-columns: 1fr 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
     .hero-name-ko { font-size: 28px; }
+    .hero-blog-link { display: flex; justify-content: center; }
     nav ul { gap: 16px; }
   }
 </style>
@@ -633,8 +662,11 @@
         <span class="tag">Digital Literacy</span>
         <span class="tag">블록코딩</span>
         <span class="tag">AI 리터러시</span>
-        ,br>
-        <span class="tag"><a href=네이버 블로그 : https://blog.naver.com/patriot_daelim/></a></span>
+      </div>
+      <div class="hero-blog-link">
+        <a href="https://blog.naver.com/patriot_daelim" target="_blank" rel="noopener">
+          <span class="hero-blog-icon">N</span> blog.naver.com/patriot_daelim
+        </a>
       </div>
     </div>
   </div>
