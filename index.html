@@ -725,7 +725,7 @@
     gap: 16px;
   }
   .bento-card {
-    background: var(--navy);
+    background: linear-gradient(135deg, #1E3A5A 0%, #2A4A70 100%);
     border-radius: 14px;
     padding: 18px 20px;
     flex: 1;
@@ -741,9 +741,10 @@
     line-height: 1;
   }
   .bento-card .bento-num-label {
-    font-size: 11px;
-    color: var(--gray-500);
+    font-size: 11.5px;
+    color: var(--gray-200);
     margin-top: 6px;
+    line-height: 1.5;
   }
   .bento-links {
     background: var(--gray-100);
@@ -1102,7 +1103,8 @@ section.tab-panel:before{
 .bento-main .bento-role{color:var(--blue)!important;font-size:10px!important}
 .bento-main .bento-headline{font-size:24px!important;letter-spacing:-.045em}
 .bento-main .bento-sub{color:#68748a!important}
-.bento-card{border-radius:20px!important;background:linear-gradient(145deg,#111a32,#1a2750)!important;padding:24px!important;box-shadow:var(--shadow)!important}
+.bento-card{border-radius:20px!important;background:linear-gradient(145deg,#1E3A5A,#2A4A70)!important;padding:24px!important;box-shadow:var(--shadow)!important}
+.bento-card .bento-num-label{color:#E8ECF2!important}
 .bento-links{border-radius:20px!important;padding:18px!important}
 .bento-links a{color:var(--blue)!important}
 
@@ -1443,7 +1445,6 @@ body { overflow-x: hidden; }
 /* If the page uses a horizontal tab strip, make it a clean 2-column grid on phones */
 @media (max-width: 768px) {
   .tabs,
-  .tab-nav,
   .tab-menu,
   .section-tabs {
     display: grid !important;
@@ -1453,12 +1454,62 @@ body { overflow-x: hidden; }
   }
 
   .tabs > *,
-  .tab-nav > *,
   .tab-menu > *,
   .section-tabs > * {
     width: auto !important;
     min-width: 0 !important;
     text-align: center !important;
+  }
+}
+
+/* ── FIX: top tab menu was cut off / required side-scroll on phones.
+   The .nav-scroll wrapper was overflow-x:auto with a nowrap tab list wider
+   than the screen, hiding "AI Insights" and "연락처" off-canvas. Replace it
+   with a full-width wrapping grid so every tab is visible without scrolling. ── */
+@media (max-width: 680px) {
+  .modern-nav {
+    flex-wrap: wrap !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 12px 14px !important;
+    gap: 10px !important;
+  }
+  .nav-scroll {
+    order: 3;
+    flex-basis: 100%;
+    width: 100% !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+  }
+  nav ul.tab-nav {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: stretch !important;
+    gap: 6px !important;
+  }
+  nav ul.tab-nav li {
+    width: 100%;
+    min-width: 0;
+  }
+  nav ul.tab-nav li a {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    padding: 9px 4px !important;
+    font-size: 10.5px !important;
+    letter-spacing: -0.02em !important;
+  }
+}
+@media (max-width: 360px) {
+  nav ul.tab-nav li a {
+    font-size: 9.5px !important;
+    padding: 8px 2px !important;
   }
 }
 </style>
@@ -1543,7 +1594,7 @@ body { overflow-x: hidden; }
     <div class="bento-side">
       <a class="bento-card" href="https://blog.naver.com/patriot_daelim/224300779757" target="_blank" rel="noopener" style="text-decoration:none;">
         <div class="bento-num">🏅</div>
-        <div class="bento-num-label">Intel AI4FW Facilitator &amp; Trainer<br><span style="color:var(--teal);">인증서 다운받기 →</span></div>
+        <div class="bento-num-label">Intel AI4FW Facilitator &amp; Trainer<br><span style="color:var(--teal); font-weight:700; font-size:12.5px;">인증서 다운받기 →</span></div>
       </a>
       <div class="bento-links">
         <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22fromUi%22%3A%22kb%22%7D&pkid=1&os=41442497&qvt=0&query=%EC%A0%95%ED%95%9C%EC%97%B4" target="_blank" rel="noopener">네이버 인물정보 보기 →</a>
