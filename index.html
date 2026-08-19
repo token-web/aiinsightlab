@@ -4,7 +4,7 @@
 <meta name="google-site-verification" content="4c6vog5UHRMC4YSmN-B3IHnLxH9sN-Bn5MdiW5Zf8hs" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="정한열 교수 | 대림대학교 교양직업교육센터 | AI와 코딩, AI와 사회변화 강의 | Hanyeol Jeong, Professor at Daelim University College">
+<meta name="description" content="정한열 교수 | 대림대학교 교양직업교육센터 | AI와 코딩, AI와 사회변화 강의 | Hanyeol Jeong, Professor at Daelim University">
 <meta name="keywords" content="정한열, 정한열 교수, 대림대학교, 대림대, AI와 코딩, AI와 사회변화, AI 교육, 프롬프트 엔지니어링, Hanyeol Jeong, Daelim University">
 <title>정한열 교수 | 대림대학교 — Hanyeol Jeong, Ph.D., Professor</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   "affiliation": {
     "@type": "CollegeOrUniversity",
     "name": "대림대학교 교양직업교육센터",
-    "alternateName": "Daelim University College"
+    "alternateName": "Daelim University"
   },
   "description": "대림대학교 교양직업교육센터 교수. AI와 코딩, AI와 사회변화 강의. 생성형 AI 교육, 프롬프트 엔지니어링 전문가.",
   "url": "https://token-web.github.io/hanyeol-jeong/",
@@ -32,6 +32,7 @@
 }
 </script>
 <style>
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -627,20 +628,288 @@
     .hero-blog-link { display: flex; justify-content: center; }
     nav ul { gap: 16px; }
   }
+
+  /* ── D2: TAB NAV ── */
+  nav ul.tab-nav {
+    gap: 4px;
+  }
+  nav ul.tab-nav li a {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: var(--gray-200);
+  }
+  nav ul.tab-nav li a.active {
+    background: rgba(10,191,174,0.15);
+    color: var(--teal);
+    font-weight: 600;
+  }
+  nav ul.tab-nav li a:hover { color: var(--teal); }
+
+  .tab-panel { display: none; }
+  .tab-panel.active {
+    display: block;
+    animation: panelIn 0.35s ease;
+  }
+  @keyframes panelIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  section.tab-panel { border-top: none; }
+
+  /* mobile tab nav wraps into scrollable row */
+  @media (max-width: 680px) {
+    nav { height: auto; flex-direction: column; gap: 10px; padding: 12px 16px; }
+    nav ul.tab-nav { width: 100%; overflow-x: auto; justify-content: flex-start; padding-bottom: 2px; }
+    nav ul.tab-nav li a { white-space: nowrap; font-size: 12.5px; padding: 7px 12px; }
+  }
+  /* ── D1: SUMMARY BENTO ── */
+  .bento {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 16px;
+  }
+  .bento-main {
+    background: var(--gray-100);
+    border-radius: 14px;
+    padding: 26px 28px;
+    border-left: 3px solid var(--teal);
+  }
+  .bento-main .bento-role {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blue-accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .bento-main .bento-headline {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  .bento-main .bento-sub {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+  .bento-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bento-card {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 18px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .bento-card .bento-num {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--teal);
+    font-family: 'Inter', sans-serif;
+    line-height: 1;
+  }
+  .bento-card .bento-num-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    margin-top: 6px;
+  }
+  .bento-links {
+    background: var(--gray-100);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bento-links a {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--blue-accent);
+    text-decoration: none;
+  }
+  .bento-links a:hover { text-decoration: underline; }
+  @media (max-width: 680px) {
+    .bento { grid-template-columns: 1fr; }
+  }
+
+
+  /* ── CAREER TAB ── */
+  .career-block { margin-bottom: 30px; }
+  .career-block:last-child { margin-bottom: 0; }
+  .career-block-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue-accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .career-current {
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: 12px;
+    padding: 22px 26px;
+    color: var(--white);
+    margin-bottom: 30px;
+  }
+  .career-current .cc-label {
+    font-size: 11px;
+    color: var(--teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .career-current .cc-role {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .career-current .cc-sub {
+    font-size: 13px;
+    color: var(--gray-200);
+    margin-top: 4px;
+    line-height: 1.6;
+  }
+  .career-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .career-item {
+    background: var(--gray-100);
+    border-radius: 10px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--teal);
+  }
+  .career-item-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .career-item-value {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .career-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .career-list li {
+    background: var(--gray-100);
+    border-radius: 8px;
+    padding: 11px 16px;
+    font-size: 13.5px;
+    color: var(--gray-700);
+    line-height: 1.55;
+  }
+  .career-list li strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .career-more-wrap { margin-top: 16px; }
+  #career-more {
+    display: none;
+    margin-top: 14px;
+  }
+  #career-more.open { display: block; }
+  @media (max-width: 680px) {
+    .career-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── COLUMN TAB (NAVER BLOG PHONE FRAME) ── */
+  .column-intro {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .phone-frame-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .phone-frame {
+    width: 375px;
+    max-width: 100%;
+    height: 720px;
+    background: var(--navy);
+    border-radius: 36px;
+    padding: 14px;
+    box-shadow: 0 20px 50px rgba(13,27,42,0.25);
+    position: relative;
+  }
+  .phone-frame::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 20px;
+    background: var(--navy);
+    border-radius: 0 0 14px 14px;
+    z-index: 2;
+  }
+  .phone-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 22px;
+    background: var(--white);
+    display: block;
+  }
+  .phone-fallback {
+    margin-top: 18px;
+    text-align: center;
+  }
+  .phone-fallback a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 11px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .phone-fallback a:hover { background: var(--navy-mid); transform: translateY(-1px); }
+  .phone-fallback p {
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-top: 10px;
+  }
+
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAV / TABS -->
 <header>
   <nav>
     <div class="nav-name">대림대학교 정한열 <span>교수</span></div>
-    <ul>
-      <li><a href="#about">소개</a></li>
-      <li><a href="#courses">강의</a></li>
-      <li><a href="#publications">논문/저서</a></li>
-      <li><a href="#research">관심분야</a></li>
-      <li><a href="#contact">연락처</a></li>
+    <ul class="tab-nav">
+      <li><a href="#" data-tab="about" class="active">소개</a></li>
+      <li><a href="#" data-tab="career">경력</a></li>
+      <li><a href="#" data-tab="courses">강의</a></li>
+      <li><a href="#" data-tab="publications">연구실적</a></li>
+      <li><a href="#" data-tab="research">관심분야</a></li>
+      <li><a href="#" data-tab="column">칼럼</a></li>
+      <li><a href="#" data-tab="contact">연락처</a></li>
     </ul>
   </nav>
 </header>
@@ -650,7 +919,7 @@
   <div class="hero-inner">
     <img class="hero-photo" src="data:image/png;base64,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" alt="정한열 교수">
     <div class="hero-text">
-      <div class="hero-label">Professor · Daelim University College</div>
+      <div class="hero-label">Professor · Daelim University</div>
       <div class="hero-name-ko">정한열</div>
       <div class="hero-name-en">Hanyeol Jeong</div>
       <div class="hero-title">
@@ -665,75 +934,121 @@
         <span class="tag">블록코딩</span>
         <span class="tag">AI 리터러시</span>
       </div>
-      <div class="hero-blog-link">
-        <a href="https://m.blog.naver.com/patriot_daelim" target="_blank" rel="noopener">
-          <span class="hero-blog-icon">N</span> blog.naver.com/patriot_daelim
-        </a>
-      </div>
     </div>
   </div>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- ABOUT: BENTO SUMMARY (from Direction 1) -->
+<section id="about" class="tab-panel active">
   <div class="section-eyebrow">Profile · 인물정보</div>
   <div class="section-title">교수 소개 / About</div>
 
-  <div class="info-grid">
-    <div class="info-item">
-      <div class="info-item-label">소속 · 직위 · Affiliation &amp; Position</div>
-      <div class="info-item-value">대림대학교 교수</div>
-      <div class="info-item-sub">Professor, Daelim University College</div>
+  <div class="bento">
+    <div class="bento-main">
+      <div class="bento-role">대림대학교 교수 · Professor</div>
+      <div class="bento-headline">교양직업교육센터 · AI 교육 · 생성형 AI · 프롬프트 엔지니어링</div>
+      <div class="bento-sub">
+        경기대학교 경영학박사(MIS전공) · 前 IT기업 임원 출신 실무형 교수<br>
+        Ph.D. in Business Administration (MIS), Kyonggi University · Former IT Executive → Practitioner Professor
+      </div>
     </div>
-    <div class="info-item">
-      <div class="info-item-label">학과 · 전문분야 · Department &amp; Expertise</div>
-      <div class="info-item-value">교양직업교육센터 · AI 교육 · 생성형 AI · 프롬프트 엔지니어링</div>
-      <div class="info-item-sub">Vocational Education Center · Generative AI Education &amp; Digital Transformation</div>
+    <div class="bento-side">
+      <a class="bento-card" href="https://blog.naver.com/patriot_daelim/224300779757" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div class="bento-num">🏅</div>
+        <div class="bento-num-label">Intel AI4FW Facilitator &amp; Trainer<br><span style="color:var(--teal);">인증서 다운받기 →</span></div>
+      </a>
+      <div class="bento-links">
+        <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22fromUi%22%3A%22kb%22%7D&pkid=1&os=41442497&qvt=0&query=%EC%A0%95%ED%95%9C%EC%97%B4" target="_blank" rel="noopener">네이버 인물정보 보기 →</a>
+        <a href="https://www.scholar.go.kr/search/scholarDetail.do?scholarNum=2091100900038736&scholarType=P" target="_blank" rel="noopener">K-Scholar 프로필 보기 →</a>
+      </div>
     </div>
-    <div class="info-item">
-      <div class="info-item-label">학력 · 경력 · Education &amp; Background</div>
-      <div class="info-item-value">경기대학교 경영학박사(MIS전공) · 前 IT기업 임원 출신 실무형 교수</div>
-      <div class="info-item-sub">Ph.D. in Business Administration (MIS), Kyonggi University · Former IT Executive → Practitioner Professor</div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career" class="tab-panel">
+  <div class="section-eyebrow">Career · 주요 경력 및 활동</div>
+  <div class="section-title">경력 / Career</div>
+
+  <div class="career-current">
+    <div class="cc-label">현직 · Current Position</div>
+    <div class="cc-role">대림대학교 교양직업교육센터 / 전기공학과 교수</div>
+    <div class="cc-sub">담당 교과 · AI와 코딩 · AI와 사회변화 · 트렌드인사이트</div>
+  </div>
+
+  <div class="career-block">
+    <div class="career-block-title">주요 전직 경력 · Previous Positions</div>
+    <ul class="career-list">
+      <li><strong>㈜시스게이트 대표임원</strong> (기술연구소장 → 전략기획팀장 → 경영기획실장 → CAQ)</li>
+      <li><strong>한중전략경영연구소</strong> 감사</li>
+      <li><strong>한국 OA학회(현 컴퓨터정보학회)</strong> 컴퓨터 기술분과 편집이사</li>
+      <li><strong>국가기술은행(NTB)</strong> 전문위원</li>
+      <li><strong>경기대학교 경영학부</strong> 겸임교수</li>
+    </ul>
+
+    <div class="career-more-wrap">
+      <button class="pub-toggle-btn" id="careerToggleBtn" onclick="toggleCareer()">전체 경력 더 보기 ▾</button>
+    </div>
+
+    <div id="career-more">
+      <ul class="career-list" style="margin-top:14px;">
+        <li>IBK 지식재산(IP) 기술평가 자문위원</li>
+        <li>경원전문대 사무자동화과 산업체 겸임교수</li>
+        <li>서울보건대 유통과학과 산업체 겸임교수</li>
+        <li>오산대·국제대·동남보건대·신구대·장안대·섬유패션대 강사</li>
+        <li>홍대·중대·숭실대 하계 OA 특강 강사</li>
+        <li>대한상의·삼성협력사 대상 6시그마 교육 강사</li>
+        <li>키출판사 출판 자문위원</li>
+        <li>한국비지니스컨설팅그룹 OA 강사</li>
+        <li>한국정보문화센터 공무원 정보이용 능력 테스트 출제위원</li>
+        <li>워드프로세서·컴퓨터활용능력 출제위원</li>
+      </ul>
     </div>
   </div>
 
-  <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22fromUi%22%3A%22kb%22%7D&pkid=1&os=41442497&qvt=0&query=%EC%A0%95%ED%95%9C%EC%97%B4" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
-    <div class="info-item" style="margin-top:16px; cursor:pointer; transition: box-shadow 0.2s, transform 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-      <div class="info-item-label">상세정보 · Detail</div>
-      <div class="info-item-value" style="color:var(--blue-accent);">네이버 인물정보 보기 →</div>
-      <div class="info-item-sub">NAVER People Search</div>
-    </div>
-  </a>
-
-  <a href="https://www.scholar.go.kr/search/scholarDetail.do?scholarNum=2091100900038736&scholarType=P" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
-    <div class="info-item" style="cursor:pointer; transition: box-shadow 0.2s, transform 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-      <div class="info-item-label">연구자정보 · Researcher ID</div>
-      <div class="info-item-value" style="color:var(--blue-accent);">K-Scholar 프로필 보기 →</div>
-      <div class="info-item-sub">국회도서관 학술연구자정보 공유사업 · National Assembly Library, Korea</div>
-    </div>
-  </a>
-
-  <a href="https://blog.naver.com/patriot_daelim/224300779757" target="_blank" rel="noopener" style="text-decoration:none;">
-    <div class="badge-bar" style="cursor:pointer; transition: opacity 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(10,191,174,0.18);" onmouseover="this.style.opacity='0.88'; this.style.boxShadow='0 8px 32px rgba(10,191,174,0.35)'" onmouseout="this.style.opacity='1'; this.style.boxShadow='0 4px 20px rgba(10,191,174,0.18)'">
-      <div class="badge-icon">🏅</div>
-      <div style="flex:1;">
-        <div class="badge-text-main">Intel AI For Workforce (AI4FW) Facilitator &amp; Trainer</div>
-        <div class="badge-text-sub" style="margin-top:6px; font-size:14px; color:var(--teal); font-weight:600; letter-spacing:0.01em;">
-          대림대 Intel AI4FW 인증서 받으러 가기 →
-        </div>
-        <div style="margin-top:4px; font-size:12px; color:var(--gray-500); word-break:break-all;">
-          https://blog.naver.com/patriot_daelim/224300779757
-        </div>
+  <div class="career-block">
+    <div class="career-block-title">표창 · Awards</div>
+    <div class="career-grid">
+      <div class="career-item">
+        <div class="career-item-label">2026</div>
+        <div class="career-item-value">경기도 성실 납세자</div>
       </div>
-      <div style="flex-shrink:0; background:var(--teal); color:var(--navy); font-size:12px; font-weight:700; padding:8px 16px; border-radius:20px; white-space:nowrap; margin-left:16px;">
-        인증서 보기 ↗
+      <div class="career-item">
+        <div class="career-item-label">2014</div>
+        <div class="career-item-value">국세청장 표창 · IBK기업은행장 표창</div>
+      </div>
+      <div class="career-item">
+        <div class="career-item-label">2010 / 2023</div>
+        <div class="career-item-value">대림대 총장 표창 · 안양시 인재육성재단 인증패</div>
       </div>
     </div>
-  </a>
+  </div>
+
+  <div class="career-block">
+    <div class="career-block-title">자격 · Certifications</div>
+    <div class="career-grid">
+      <div class="career-item">
+        <div class="career-item-label">국가 자격</div>
+        <div class="career-item-value">직업상담사 2급 · 워드프로세서 2급 · SW 특급 기술자</div>
+      </div>
+      <div class="career-item">
+        <div class="career-item-label">국내외 민간</div>
+        <div class="career-item-value">Intel AI4FW Facilitator · 한국준법진흥원 실무형 AI전문가 · 전문대학 평생직업교육협회 로컬크리에이터 전문강사</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="career-block">
+    <div class="career-block-title">주요 수료 과정 · Programs Completed</div>
+    <ul class="career-list">
+      <li>전자통신산업 AI 융합전략 최고경영자 과정 수료</li>
+      <li>경기중장년 행복캠퍼스 생애설계 전문 컨설턴트 양성과정 수료</li>
+    </ul>
+  </div>
 </section>
 
 <!-- COURSES -->
-<section id="courses">
+<section id="courses" class="tab-panel">
   <div class="section-eyebrow">Courses · 담당 강의</div>
   <div class="section-title">강의 소개 / Courses</div>
 
@@ -796,10 +1111,10 @@
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
-<section id="publications">
-  <div class="section-eyebrow">Publications · 학술활동</div>
-  <div class="section-title">논문 및 저서 / Publications</div>
+<!-- PUBLICATIONS -> 연구실적 -->
+<section id="publications" class="tab-panel">
+  <div class="section-eyebrow">Research · 학술활동</div>
+  <div class="section-title">연구실적 / Research Achievements</div>
 
   <div class="pub-links">
     <a class="pub-link-btn" href="https://search.kyobobook.co.kr/search?keyword=%EC%A0%95%ED%95%9C%EC%97%B4&chrc=%EC%A0%95%ED%95%9C%EC%97%B4" target="_blank" rel="noopener">
@@ -810,7 +1125,7 @@
     </a>
   </div>
 
-  <div class="pub-subtitle">대표 저서 · Selected Books</div>
+  <div class="pub-subtitle">대표 저서 · Selected Books (총 80여 권 이상)</div>
   <ul class="pub-list">
     <li class="pub-item"><strong>제4차 산업혁명 이렇게 달성한다</strong> · 한올출판사 <span class="pub-meta">· 2017 · 공동저서</span></li>
     <li class="pub-item"><strong>제4차 산업혁명 충격과 도전</strong> · 배문사 <span class="pub-meta">· 2017 · 공동저서</span></li>
@@ -891,7 +1206,7 @@
 </section>
 
 <!-- RESEARCH -->
-<section id="research">
+<section id="research" class="tab-panel">
   <div class="section-eyebrow">Research Interests · 연구 및 관심분야</div>
   <div class="section-title">관심분야 / Research Interests</div>
 
@@ -929,8 +1244,29 @@
   </div>
 </section>
 
+<!-- COLUMN (NAVER BLOG PHONE FRAME) -->
+<section id="column" class="tab-panel">
+  <div class="section-eyebrow">Column · 칼럼</div>
+  <div class="section-title">칼럼 / Naver Blog</div>
+
+  <div class="column-intro">
+    네이버 블로그에 게재한 칼럼과 소식을 모바일 화면 그대로 확인할 수 있습니다.<br>
+    <span style="color:var(--gray-500); font-size:12.5px;">※ 네이버 정책상 화면이 표시되지 않을 경우, 아래 버튼으로 새 창에서 열어주세요.</span>
+  </div>
+
+  <div class="phone-frame-wrap">
+    <div class="phone-frame">
+      <iframe src="https://m.blog.naver.com/patriot_daelim" title="정한열 교수 네이버 블로그" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="phone-fallback">
+      <a href="https://m.blog.naver.com/patriot_daelim" target="_blank" rel="noopener">네이버 블로그 새 창에서 보기 ↗</a>
+      <p>blog.naver.com/patriot_daelim</p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="tab-panel">
   <div class="section-eyebrow">Contact · 연락처</div>
   <div class="section-title">연락처 및 채널 / Contact &amp; Links</div>
 
@@ -942,7 +1278,7 @@
         <div class="contact-value">링크드인</div>
       </div>
     </a>
-    <a class="contact-card" href="https://m.blog.naver.com/patriot_daelim/224300779757" target="_blank" rel="noopener">
+    <a class="contact-card" href="https://m.blog.naver.com/patriot_daelim" target="_blank" rel="noopener">
       <div class="contact-icon naver">N</div>
       <div>
         <div class="contact-label">네이버 블로그 · NAVER BLOG</div>
@@ -973,8 +1309,7 @@
   </div>
 
   <div style="margin-top: 20px; padding: 20px 24px; background: var(--gray-100); border-radius: 10px; font-size: 14px; color: var(--gray-700); line-height: 1.7;">
-    📍 <strong>대림대학교 교양직업교육센터</strong><br>
-    경기도 안양시 동안구 임곡로 29 · Daelim University College, Anyang, Gyeonggi-do, Korea
+    📍 경기도 안양시 동안구 임곡로 29 수암관 3층 366호 연구실· Daelim University, Room 366, Research Lab, 3rd Floor, Suam Hall, 29 Imgok-ro, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea
   </div>
 
   <div style="margin-top: 12px; padding: 16px 24px; background: var(--gray-100); border-radius: 10px; font-size: 12px; color: var(--gray-500); line-height: 1.6;">
@@ -984,7 +1319,7 @@
 
 <footer>
   <p>정한열 교수 · Hanyeol Jeong, Professor</p>
-  <p style="margin-top:6px;">대림대학교 교양직업교육센터 · Daelim University College</p>
+  <p style="margin-top:6px;">대림대학교 교양직업교육센터 · Daelim University</p>
   <p style="margin-top:10px;">
     <a href="https://www.linkedin.com/in/hanyeol-jeong" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
     <a href="https://blog.naver.com/patriot_daelim" target="_blank">네이버 블로그</a> &nbsp;·&nbsp;
@@ -999,10 +1334,28 @@
     var btn = document.getElementById('pubToggleBtn');
     var isOpen = more.classList.toggle('open');
     btn.textContent = isOpen ? '접기 ▲' : '더 보기 (주요 논문 · 주요 저서) ▾';
-    if (isOpen) {
-      more.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
   }
+
+  function toggleCareer() {
+    var more = document.getElementById('career-more');
+    var btn = document.getElementById('careerToggleBtn');
+    var isOpen = more.classList.toggle('open');
+    btn.textContent = isOpen ? '접기 ▲' : '전체 경력 더 보기 ▾';
+  }
+
+  // tab switching
+  const tabLinks = document.querySelectorAll('nav ul.tab-nav a');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = link.getAttribute('data-tab');
+      tabLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      panels.forEach(p => p.classList.toggle('active', p.id === target));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
 </script>
 
 </body>
