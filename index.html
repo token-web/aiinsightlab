@@ -26,7 +26,8 @@
     "https://blog.naver.com/patriot_daelim",
     "https://www.linkedin.com/in/hanyeol-jeong",
     "https://dept.daelim.ac.kr/lba/cms/FrProfessorCon/ProfessorView.do?MENU_ID=190&SITE_NO=36&CONTENTS_NO=&PROF_GBN_CD=P1002&PROF_SEQ=1279",
-    "https://youtube.com/@aiinsightlabkr"
+    "https://youtube.com/@aiinsightlabkr",
+    "https://www.scholar.go.kr/search/scholarDetail.do?scholarNum=2091100900038736&scholarType=P"
   ]
 }
 </script>
@@ -512,7 +513,7 @@
   /* ── CONTACT ── */
   .contact-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 16px;
   }
   .contact-card {
@@ -547,6 +548,7 @@
   .contact-icon.naver { background: #03C75A; }
   .contact-icon.blog { background: #FF6B35; }
   .contact-icon.youtube { background: #FF0000; }
+  .contact-icon.scholar { background: #6A3FE0; }
   .contact-label {
     font-size: 11px;
     color: var(--gray-500);
@@ -700,6 +702,14 @@
       <div class="info-item-label">상세정보 · Detail</div>
       <div class="info-item-value" style="color:var(--blue-accent);">네이버 인물정보 보기 →</div>
       <div class="info-item-sub">NAVER People Search</div>
+    </div>
+  </a>
+
+  <a href="https://www.scholar.go.kr/search/scholarDetail.do?scholarNum=2091100900038736&scholarType=P" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+    <div class="info-item" style="cursor:pointer; transition: box-shadow 0.2s, transform 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+      <div class="info-item-label">연구자정보 · Researcher ID</div>
+      <div class="info-item-value" style="color:var(--blue-accent);">K-Scholar 프로필 보기 →</div>
+      <div class="info-item-sub">국회도서관 학술연구자정보 공유사업 · National Assembly Library, Korea</div>
     </div>
   </a>
 
@@ -953,11 +963,22 @@
         <div class="contact-value" style="font-size:13px;">AI Insight Lab</div>
       </div>
     </a>
+    <a class="contact-card" href="https://www.scholar.go.kr/search/scholarDetail.do?scholarNum=2091100900038736&scholarType=P" target="_blank" rel="noopener">
+      <div class="contact-icon scholar">📚</div>
+      <div>
+        <div class="contact-label">K-Scholar</div>
+        <div class="contact-value" style="font-size:13px;">학술연구자정보</div>
+      </div>
+    </a>
   </div>
 
   <div style="margin-top: 20px; padding: 20px 24px; background: var(--gray-100); border-radius: 10px; font-size: 14px; color: var(--gray-700); line-height: 1.7;">
     📍 <strong>대림대학교 교양직업교육센터</strong><br>
     경기도 안양시 동안구 임곡로 29 · Daelim University College, Anyang, Gyeonggi-do, Korea
+  </div>
+
+  <div style="margin-top: 12px; padding: 16px 24px; background: var(--gray-100); border-radius: 10px; font-size: 12px; color: var(--gray-500); line-height: 1.6;">
+    K-Scholar(국회도서관 학술연구자 정보 공유사업)는 국회도서관·대학교·연구기관의 연구자정보를 공유하여 학술정보융합 기반을 조성하는 국가협력 프로젝트입니다.
   </div>
 </section>
 
@@ -967,7 +988,8 @@
   <p style="margin-top:10px;">
     <a href="https://www.linkedin.com/in/hanyeol-jeong" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
     <a href="https://blog.naver.com/patriot_daelim" target="_blank">네이버 블로그</a> &nbsp;·&nbsp;
-    <a href="https://youtube.com/@aiinsightlabkr?si=OEZIxVfiJPIrYDaL" target="_blank">YouTube</a>
+    <a href="https://youtube.com/@aiinsightlabkr?si=OEZIxVfiJPIrYDaL" target="_blank">YouTube</a> &nbsp;·&nbsp;
+    <a href="https://www.scholar.go.kr/search/scholarDetail.do?scholarNum=2091100900038736&scholarType=P" target="_blank">K-Scholar</a>
   </p>
 </footer>
 
