@@ -975,18 +975,24 @@ body:before{
 .brand-copy strong{font-size:15px;color:var(--ink);font-weight:800;letter-spacing:-.03em}
 .brand-copy small{font:600 8px/1.5 Inter,sans-serif;color:var(--muted);letter-spacing:.12em;margin-top:3px}
 .nav-scroll{flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.nav-controls{display:flex;align-items:center;gap:10px;flex:1;min-width:0;order:2}
+.nav-controls .nav-scroll{flex:1;min-width:0}
 .nav-scroll::-webkit-scrollbar{display:none}
+.brand{order:1}
+.search-toggle{order:3}
+.nav-status{order:4}
+.menu-toggle{order:0}
 nav ul.tab-nav{display:flex!important;justify-content:center;gap:3px!important;list-style:none;min-width:max-content}
 nav ul.tab-nav li a{
   color:#69738a!important;padding:9px 12px!important;border-radius:10px!important;
   font-size:12px!important;font-weight:600!important;letter-spacing:-.01em;
-  transition:.25s ease!important;background:transparent!important;border:1px solid transparent;
+  transition:.25s ease!important;background:transparent!important;border:1px solid #dfe3ec!important;
 }
 nav ul.tab-nav li a.active{
   color:var(--ink)!important;background:#fff!important;border-color:#e2e6ef!important;
   box-shadow:0 5px 18px rgba(20,30,50,.07);
 }
-nav ul.tab-nav li a:hover{color:var(--blue)!important;background:#f5f7fb!important}
+nav ul.tab-nav li a:hover{color:var(--blue)!important;background:#eef1fa!important;border-color:#aab8e0!important}
 .nav-status{
   flex-shrink:0;font:700 9px Inter,sans-serif;letter-spacing:.1em;color:#667085;
   display:flex;align-items:center;gap:7px;
@@ -1109,7 +1115,7 @@ section.tab-panel:before{
 .bento-links a{color:var(--blue)!important}
 
 /* Cards */
-.course-grid{grid-template-columns:repeat(3,1fr)!important;gap:18px!important}
+.course-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important;gap:18px!important}
 .course-card{
   border:1px solid var(--line)!important;border-radius:20px!important;padding:26px!important;background:rgba(255,255,255,.82);
   box-shadow:0 10px 35px rgba(20,30,50,.04);transition:.28s ease!important;
@@ -1170,7 +1176,7 @@ footer a{color:#7cece4!important}
 }
 @media(max-width:680px){
   .modern-nav{height:auto!important;min-height:68px!important;padding:10px 14px!important;flex-wrap:wrap!important}
-  .brand-copy small{display:none}.nav-scroll{order:3;flex-basis:100%}
+  .brand-copy small{display:none}.nav-controls{order:3;flex-basis:100%;margin-top:8px}
   nav ul.tab-nav{width:max-content!important;justify-content:flex-start!important}
   nav ul.tab-nav li a{padding:8px 11px!important}
   .hero.hero-visible{min-height:auto;padding:70px 20px 60px!important}
@@ -1474,10 +1480,12 @@ body { overflow-x: hidden; }
     padding: 12px 14px !important;
     gap: 10px !important;
   }
-  .nav-scroll {
+  .nav-controls {
     order: 3;
     flex-basis: 100%;
     width: 100% !important;
+  }
+  .nav-scroll {
     overflow-x: visible !important;
     overflow-y: visible !important;
   }
@@ -1512,6 +1520,151 @@ body { overflow-x: hidden; }
     padding: 8px 2px !important;
   }
 }
+
+/* =========================================================
+   PIN-BOARD ACCENT — corkboard feel layered onto existing cards
+   Additive only: no layout/grid/breakpoint changes below.
+   ========================================================= */
+.bento-card, .course-card, .interest-item, .contact-card, .career-item {
+  position: relative;
+}
+.bento-card::after, .course-card::after, .interest-item::after,
+.contact-card::after, .career-item::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 2px 4px rgba(25,211,197,0.45);
+  pointer-events: none;
+}
+.course-card.violet::before { background: var(--violet); }
+.course-card.violet::after { background: var(--violet); box-shadow: 0 2px 4px rgba(139,92,246,0.45); }
+
+.course-card:nth-of-type(4n+1), .interest-item:nth-of-type(4n+1),
+.contact-card:nth-of-type(4n+1), .career-item:nth-of-type(4n+1) { transform: rotate(-0.6deg); }
+.course-card:nth-of-type(4n+2), .interest-item:nth-of-type(4n+2),
+.contact-card:nth-of-type(4n+2), .career-item:nth-of-type(4n+2) { transform: rotate(0.5deg); }
+.course-card:nth-of-type(4n+3), .interest-item:nth-of-type(4n+3),
+.contact-card:nth-of-type(4n+3), .career-item:nth-of-type(4n+3) { transform: rotate(-0.3deg); }
+.course-card:nth-of-type(4n), .interest-item:nth-of-type(4n),
+.contact-card:nth-of-type(4n), .career-item:nth-of-type(4n) { transform: rotate(0.4deg); }
+
+.bento-card:hover, .course-card:hover, .interest-item:hover,
+.contact-card:hover, .career-item:hover {
+  transform: rotate(0deg) translateY(-4px) !important;
+  box-shadow: 0 16px 32px rgba(13,27,42,0.14) !important;
+}
+.bento-card, .course-card, .interest-item, .contact-card, .career-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+@media (max-width: 680px) {
+  .course-card, .interest-item, .contact-card, .career-item {
+    transform: none !important;
+  }
+  .course-card:hover, .interest-item:hover, .contact-card:hover, .career-item:hover {
+    transform: translateY(-2px) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bento-card, .course-card, .interest-item, .contact-card, .career-item {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   MENU TOGGLE + SEARCH — added controls
+   ========================================================= */
+.menu-toggle, .search-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--ink), #27345d);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(11,16,32,.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.menu-toggle svg, .search-toggle svg { width: 16px; height: 16px; }
+.menu-toggle:hover, .search-toggle:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(11,16,32,.24); }
+.menu-toggle { display: none; margin-right: 10px; }
+.search-toggle { margin-left: 10px; }
+
+.search-panel {
+  border-top: 1px solid rgba(226,230,239,.85);
+  background: rgba(255,255,255,.96);
+  padding: 12px 26px;
+}
+.search-panel[hidden] { display: none; }
+.search-panel-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#searchInput {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  font-size: 14px;
+  font-family: 'Noto Sans KR', 'Inter', sans-serif;
+  color: var(--ink);
+  background: #fff;
+}
+#searchInput:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(77,124,255,.15); }
+#searchCloseBtn {
+  border: none;
+  background: none;
+  font-size: 15px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+}
+#searchCloseBtn:hover { color: var(--ink); }
+.search-status {
+  max-width: 1180px;
+  margin: 8px auto 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+mark.search-hit {
+  background: #fff2a8;
+  color: var(--ink);
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .modern-nav { flex-wrap: wrap !important; flex-direction: row !important; }
+  .menu-toggle { display: flex; order: 2; margin-left: auto; margin-right: 0; }
+  .search-toggle { order: 3; margin-left: 8px; }
+  .nav-controls { order: 4; flex-basis: 100%; width: 100% !important; margin-top: 10px; }
+  ul.tab-nav { display: flex !important; width: auto !important; }
+  ul.tab-nav li:not(:first-child) { display: none; }
+  ul.tab-nav li:first-child a { white-space: nowrap; }
+  ul.tab-nav.menu-open {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    gap: 6px !important;
+    margin-top: 10px;
+  }
+  ul.tab-nav.menu-open li:not(:first-child) { display: block; width: 100%; }
+  ul.tab-nav.menu-open li a { width: 100% !important; }
+}
 </style>
 
 </head>
@@ -1523,24 +1676,40 @@ body { overflow-x: hidden; }
     <a class="brand" href="#" data-tab="home" aria-label="홈">
       <span class="brand-mark">HY</span>
       <span class="brand-copy">
-        <strong>정한열</strong>
+        <strong>정한열(AI Insight Lab)</strong>
         <small>AI EDUCATION · PROFESSOR</small>
       </span>
     </a>
-    <div class="nav-scroll">
-      <ul class="tab-nav">
-        <li><a href="#" data-tab="home" class="active">Home</a></li>
-        <li><a href="#" data-tab="about">소개</a></li>
-        <li><a href="#" data-tab="career">경력</a></li>
-        <li><a href="#" data-tab="courses">담당과목</a></li>
-        <li><a href="#" data-tab="publications">연구실적</a></li>
-        <li><a href="#" data-tab="research">관심분야</a></li>
-        <li><a href="#" data-tab="column">AI Insights</a></li>
-        <li><a href="#" data-tab="contact">연락처</a></li>
-      </ul>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <div class="nav-controls" id="navControls">
+      <div class="nav-scroll">
+        <ul class="tab-nav" id="tabNav">
+          <li><a href="#" data-tab="home" class="active">Home</a></li>
+          <li><a href="#" data-tab="about">소개</a></li>
+          <li><a href="#" data-tab="career">경력</a></li>
+          <li><a href="#" data-tab="courses">담당과목</a></li>
+          <li><a href="#" data-tab="publications">연구실적</a></li>
+          <li><a href="#" data-tab="research">관심분야</a></li>
+          <li><a href="#" data-tab="column">AI Insights</a></li>
+          <li><a href="#" data-tab="contact">연락처</a></li>
+        </ul>
+      </div>
     </div>
+    <button type="button" class="search-toggle" id="searchToggle" aria-label="검색 열기" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
     <div class="nav-status"><i></i> AI · ON</div>
   </nav>
+  <div class="search-panel" id="searchPanel" hidden>
+    <div class="search-panel-inner">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:var(--muted);flex-shrink:0;"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="사이트에서 검색 (예: 저서, RTNF, 트렌드인사이트)">
+      <button type="button" id="searchCloseBtn" aria-label="검색 닫기">✕</button>
+    </div>
+    <div class="search-status" id="searchStatus"></div>
+  </div>
 </header>
 
 <!-- MODERN HERO -->
@@ -1745,6 +1914,23 @@ body { overflow-x: hidden; }
         <span class="course-tag">발표자료(PPTX, MP4)</span>
         <span class="course-tag">전공연계 프로젝트</span>
         <span class="course-tag">개인홈페이지 및 포트폴리오 제작</span>
+      </div>
+    </div>
+
+    <div class="course-card violet">
+      <div class="course-no">Course 04 · 전공심화 · 비대면</div>
+      <div class="course-title-ko">트렌드인사이트</div>
+      <div class="course-title-en">Trend Insight (Non-face-to-face)</div>
+      <div class="course-desc">
+        전공심화과정 학생을 대상으로 한 비대면 원격 수업입니다. 빠르게 변화하는 사회와 기업 환경 속에서 최신 트렌드와 주요 용어를 이해하고, 이를 일상적인 언어로 설명할 수 있는 역량을 기릅니다.
+        창업·취업 등 다양한 상황에서 배운 트렌드와 개념을 바탕으로 자신의 생각을 정리하고 타인과 효과적으로 소통하며, 변화에 유연하게 대응할 수 있는 기초 역량을 기르는 것을 목표로 합니다.
+      </div>
+      <div class="course-tags">
+        <span class="course-tag">전공심화과정</span>
+        <span class="course-tag">비대면 원격수업</span>
+        <span class="course-tag">트렌드·용어 이해</span>
+        <span class="course-tag">창업·취업 대비</span>
+        <span class="course-tag">소통 역량</span>
       </div>
     </div>
   </div>
@@ -1995,7 +2181,117 @@ body { overflow-x: hidden; }
     link.addEventListener('click', (e) => {
       e.preventDefault();
       activateTab(link.getAttribute('data-tab'));
+      tabNav.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // menu toggle (mobile)
+  const menuToggle = document.getElementById('menuToggle');
+  const tabNav = document.getElementById('tabNav');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = tabNav.classList.toggle('menu-open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // search
+  const searchToggle = document.getElementById('searchToggle');
+  const searchPanel = document.getElementById('searchPanel');
+  const searchInput = document.getElementById('searchInput');
+  const searchCloseBtn = document.getElementById('searchCloseBtn');
+  const searchStatus = document.getElementById('searchStatus');
+
+  function clearHighlights() {
+    document.querySelectorAll('mark.search-hit').forEach(m => {
+      const parent = m.parentNode;
+      parent.replaceChild(document.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+  }
+
+  function openSearch() {
+    searchPanel.hidden = false;
+    searchToggle.setAttribute('aria-expanded', 'true');
+    setTimeout(() => searchInput.focus(), 50);
+  }
+  function closeSearch() {
+    searchPanel.hidden = true;
+    searchToggle.setAttribute('aria-expanded', 'false');
+    searchInput.value = '';
+    searchStatus.textContent = '';
+    clearHighlights();
+  }
+  searchToggle.addEventListener('click', () => {
+    if (searchPanel.hidden) openSearch(); else closeSearch();
+  });
+  searchCloseBtn.addEventListener('click', closeSearch);
+
+  function expandIfCollapsed(el) {
+    const moreBlock = el.closest ? el.closest('#career-more, #pub-more') : null;
+    if (moreBlock && !moreBlock.classList.contains('open')) {
+      moreBlock.classList.add('open');
+      const btn = moreBlock.id === 'career-more'
+        ? document.getElementById('careerToggleBtn')
+        : document.getElementById('pubToggleBtn');
+      if (btn) btn.textContent = '접기 ▲';
+    }
+  }
+
+  function performSearch(query) {
+    clearHighlights();
+    const q = query.trim();
+    if (!q) { searchStatus.textContent = ''; return; }
+    const qLower = q.toLowerCase();
+    let matchedPanel = null;
+    let matchedNode = null;
+
+    for (const panel of panels) {
+      if (panel.textContent.toLowerCase().includes(qLower)) {
+        const walker = document.createTreeWalker(panel, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          if (node.nodeValue.toLowerCase().includes(qLower)) {
+            matchedPanel = panel;
+            matchedNode = node;
+            break;
+          }
+        }
+      }
+      if (matchedNode) break;
+    }
+
+    if (!matchedNode) {
+      searchStatus.textContent = `"${q}"에 대한 검색 결과가 없습니다.`;
+      return;
+    }
+
+    expandIfCollapsed(matchedNode.parentElement);
+    activateTab(matchedPanel.id);
+
+    const idx = matchedNode.nodeValue.toLowerCase().indexOf(qLower);
+    const before = matchedNode.nodeValue.slice(0, idx);
+    const match = matchedNode.nodeValue.slice(idx, idx + q.length);
+    const after = matchedNode.nodeValue.slice(idx + q.length);
+    const mark = document.createElement('mark');
+    mark.className = 'search-hit';
+    mark.textContent = match;
+    const afterText = document.createTextNode(after);
+    matchedNode.parentNode.insertBefore(document.createTextNode(before), matchedNode);
+    matchedNode.parentNode.insertBefore(mark, matchedNode);
+    matchedNode.parentNode.insertBefore(afterText, matchedNode);
+    matchedNode.parentNode.removeChild(matchedNode);
+
+    searchStatus.textContent = `"${q}" 검색 결과로 이동했습니다.`;
+    setTimeout(() => {
+      mark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 80);
+  }
+
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      performSearch(searchInput.value);
+    }
   });
 </script>
 
