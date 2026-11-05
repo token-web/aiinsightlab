@@ -1033,7 +1033,7 @@ nav ul.tab-nav li a:hover{color:var(--blue)!important;background:#f5f7fb!importa
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,#fff 0%,#8feee8 55%,#a78bfa 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero-lead{font:500 16px/1.6 Inter,'Noto Sans KR',sans-serif;color:#dce4f4;margin-bottom:5px}
 .hero-desc{font-size:14px;line-height:1.8;color:#9ba8c2;max-width:570px}
-.hero-actions{display:flex;gap:10px;margin:28px 0 22px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 22px}
 .hero-btn{
   display:inline-flex;align-items:center;gap:10px;padding:12px 17px;border-radius:12px;text-decoration:none;
   font-size:12px;font-weight:700;transition:.25s ease;
@@ -1042,6 +1042,18 @@ nav ul.tab-nav li a:hover{color:var(--blue)!important;background:#f5f7fb!importa
 .hero-btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(25,211,197,.28)}
 .hero-btn.ghost{color:#e8edf7;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05)}
 .hero-btn.ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.hero-cert{margin:-8px 0 22px}
+.hero-btn.cert{
+  color:#ffe9b8;border:1px solid rgba(255,200,87,.38);
+  background:linear-gradient(135deg,rgba(255,200,87,.16),rgba(255,200,87,.06));
+  box-shadow:0 8px 24px rgba(255,200,87,.08);
+}
+.hero-btn.cert:hover{background:linear-gradient(135deg,rgba(255,200,87,.26),rgba(255,200,87,.10));transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,200,87,.18)}
+.hero-btn.cert b{font-weight:700}
+@media(max-width:680px){
+  .hero-cert{margin:-2px 0 20px}
+  .hero-cert .hero-btn.cert{display:flex;width:100%;box-sizing:border-box;justify-content:center;text-align:center;line-height:1.4}
+}
 .hero-tags{display:flex;flex-wrap:wrap;gap:7px}
 .hero .tag{
   background:rgba(255,255,255,.055)!important;border:1px solid rgba(255,255,255,.11)!important;color:#b9c7df!important;
@@ -1563,6 +1575,9 @@ body { overflow-x: hidden; }
         <a href="#" data-tab="column" class="hero-btn ghost">AI Insights <span>→</span></a>
         <a href="https://token-web.github.io/profile/" class="hero-btn ghost">프로필 <span>↗</span></a>
       </div>
+      <div class="hero-cert">
+        <a href="https://blog.naver.com/patriot_daelim/224300779757" target="_blank" rel="noopener" class="hero-btn cert">🏅 <b>대림대 정한열교수 인텔 AI4FW 인증서 다운로드</b> <span>↗</span></a>
+      </div>
       <div class="hero-tags">
         <span class="tag">Generative AI</span><span class="tag">Prompt Engineering</span>
         <span class="tag">AI Literacy</span><span class="tag">Digital Transformation</span>
@@ -1576,7 +1591,7 @@ body { overflow-x: hidden; }
         <div class="photo-bottom"><strong>Hanyeol Jeong</strong><span>Ph.D. · MIS</span></div>
       </div>
       <div class="floating-chip chip-1"><b>AI</b><span>Education</span></div>
-      <div class="floating-chip chip-2"><b>RTNF</b><span>Framework</span></div>
+      <div class="floating-chip chip-2"><b>AI Insight</b><span>LAB</span></div>
     </div>
   </div>
   <div class="hero-scroll">SCROLL TO EXPLORE <span>↓</span></div>
