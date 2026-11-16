@@ -32,6 +32,57 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "AI 프롬프트 모음",
+      "alternateName": "AI Prompt Collection",
+      "url": "https://token-web.github.io/ai_prompt/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "ko",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "정한열",
+        "alternateName": "Hanyeol Jeong",
+        "url": "https://token-web.github.io/aiinsightlab/"
+      },
+      "description": "바로 복사해 쓰는 한글·영문 AI 프롬프트 모음 무료 웹 앱. 일부 프롬프트는 비포/애프터로 결과를 미리 볼 수 있습니다."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "나의 추억 앨범 만들기",
+      "alternateName": "My Memory Album Maker",
+      "url": "https://token-web.github.io/album/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "ko",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "정한열",
+        "alternateName": "Hanyeol Jeong",
+        "url": "https://token-web.github.io/aiinsightlab/"
+      },
+      "description": "사진을 올리면 PDF·PNG 앨범이 완성되는 무료 웹 앱. 사진은 사용자의 컴퓨터 밖으로 나가지 않습니다."
+    }
+  ]
+}
+</script>
 <style>
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1527,6 +1578,45 @@ body { overflow-x: hidden; }
     padding: 8px 2px !important;
   }
 }
+
+  /* ── FREE APPS (무료 앱) ── */
+  .home-apps { display:none; max-width:1180px; margin:0 auto; padding:64px 28px 28px; }
+  .home-apps.on { display:block; animation:panelIn .35s ease; }
+  .apps-head { display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:26px; }
+  .apps-head .section-title { margin-bottom:0!important; }
+  .apps-more { font:700 12px/1 'Noto Sans KR','Inter',sans-serif; color:var(--blue); text-decoration:none; padding:11px 15px; border:1px solid var(--line); border-radius:999px; background:#fff; transition:.2s ease; }
+  .apps-more:hover { border-color:var(--blue); transform:translateY(-1px); }
+  .apps-intro { margin:-14px 0 30px; color:var(--muted); font-size:14px; line-height:1.7; }
+  .app-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+  .app-card { display:flex; flex-direction:column; border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.9); box-shadow:0 10px 35px rgba(20,30,50,.05); overflow:hidden; transition:.28s ease; }
+  .app-card:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
+  .app-thumb { display:block; aspect-ratio:16/10; background:var(--surface-2); overflow:hidden; border-bottom:1px solid var(--line); }
+  .app-thumb img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+  .app-card:hover .app-thumb img { transform:scale(1.03); }
+  .app-body { display:flex; flex-direction:column; gap:10px; padding:22px 24px 24px; flex:1; }
+  .app-badges { display:flex; flex-wrap:wrap; gap:6px; }
+  .app-badge { font:700 10px/1 'Noto Sans KR','Inter',sans-serif; padding:6px 10px; border-radius:999px; color:#3a4a66; background:var(--surface-2); border:1px solid var(--line); }
+  .app-badge.free { color:#7a4d00; background:#ffefc7; border-color:#ffd983; }
+  .app-title { margin:2px 0 0; font-size:21px; line-height:1.3; letter-spacing:-.03em; color:var(--ink); }
+  .app-en { margin-top:-6px; font:500 12px 'Inter',sans-serif; color:var(--muted); }
+  .app-desc { margin:0; font-size:14px; line-height:1.75; color:#3d4a63; }
+  .app-steps-title { margin-top:4px; font:700 11px 'Noto Sans KR','Inter',sans-serif; letter-spacing:.06em; color:var(--blue); }
+  .app-steps { margin:0; padding-left:20px; font-size:13px; line-height:1.8; color:#3d4a63; }
+  .app-note { font-size:12px; line-height:1.6; color:#7a4d00; background:#fff7e0; border:1px solid #ffe3a0; border-radius:10px; padding:9px 12px; }
+  .app-actions { margin-top:auto; padding-top:6px; display:flex; flex-wrap:wrap; gap:10px; }
+  .app-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:12px; text-decoration:none; font:700 13px 'Noto Sans KR','Inter',sans-serif; transition:.25s ease; }
+  .app-btn.primary { color:#fff; background:linear-gradient(135deg,#0b1020,#1f2d57); box-shadow:0 10px 26px rgba(11,16,32,.18); }
+  .app-btn.primary:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(11,16,32,.26); }
+  .app-credit { font-size:11px; color:var(--muted); }
+  .course-app-link { display:inline-flex; align-items:center; gap:6px; margin-top:16px; padding:9px 14px; border-radius:999px; background:#eef3ff; border:1px solid #d5e0ff; color:#2f55c9; text-decoration:none; font:700 12px 'Noto Sans KR','Inter',sans-serif; transition:.2s ease; }
+  .course-app-link:hover { background:#e1eaff; transform:translateY(-1px); }
+  @media (max-width: 900px) { .home-apps { padding:48px 20px 20px; } }
+  @media (max-width: 680px) {
+    .app-grid { grid-template-columns:1fr; }
+    .app-body { padding:18px 18px 20px; }
+    .app-title { font-size:19px; }
+    .apps-head { align-items:flex-start; }
+  }
 </style>
 
 </head>
@@ -1550,6 +1640,7 @@ body { overflow-x: hidden; }
         <li><a href="#" data-tab="courses">담당과목</a></li>
         <li><a href="#" data-tab="publications">연구실적</a></li>
         <li><a href="#" data-tab="research">관심분야</a></li>
+        <li><a href="#" data-tab="apps">무료 앱</a></li>
         <li><a href="#" data-tab="column">AI Insights</a></li>
         <li><a href="#" data-tab="contact">연락처</a></li>
         <li><a href="https://token-web.github.io/profile/" class="nav-ext">프로필 ↗</a></li>
@@ -1595,6 +1686,41 @@ body { overflow-x: hidden; }
     </div>
   </div>
   <div class="hero-scroll">SCROLL TO EXPLORE <span>↓</span></div>
+</div>
+
+<!-- HOME: FREE APPS BAND (Home 탭에서만 표시) -->
+<div class="home-apps on" id="home-apps">
+  <div class="apps-head">
+    <div>
+      <div class="section-eyebrow">Free Apps · 무료 앱</div>
+      <div class="section-title">누구나 무료로 쓰는 AI 도구</div>
+    </div>
+    <a href="#" data-tab="apps" class="apps-more">무료 앱 자세히 보기 →</a>
+  </div>
+  <div class="app-grid">
+    <article class="app-card">
+      <a class="app-thumb" href="https://token-web.github.io/ai_prompt/" target="_blank" rel="noopener" aria-label="AI 프롬프트 모음 앱 열기">
+        <img src="assets/apps/prompt-app.webp" width="800" height="500" loading="lazy" alt="AI 프롬프트 모음 앱 화면: 인물·사진 보정·상품 광고 등 카테고리 목록">
+      </a>
+      <div class="app-body">
+        <div class="app-badges"><span class="app-badge free">무료 앱</span><span class="app-badge">한글 · English</span></div>
+        <h3 class="app-title">AI 프롬프트 모음</h3>
+        <p class="app-desc">바로 복사해 쓰는 한글·영문 프롬프트 모음. 일부는 비포/애프터로 결과를 미리 볼 수 있어요.</p>
+        <div class="app-actions"><a class="app-btn primary" href="https://token-web.github.io/ai_prompt/" target="_blank" rel="noopener">앱 열기 <span>↗</span></a></div>
+      </div>
+    </article>
+    <article class="app-card">
+      <a class="app-thumb" href="https://token-web.github.io/album/" target="_blank" rel="noopener" aria-label="나의 추억 앨범 만들기 앱 열기">
+        <img src="assets/apps/album-app.webp" width="800" height="500" loading="lazy" alt="나의 추억 앨범 만들기 앱 화면: 사진 올리기, 표지와 마무리, 미리보기와 저장">
+      </a>
+      <div class="app-body">
+        <div class="app-badges"><span class="app-badge free">무료 앱</span><span class="app-badge">PDF · PNG 저장</span></div>
+        <h3 class="app-title">나의 추억 앨범 만들기</h3>
+        <p class="app-desc">사진을 올리면 PDF·PNG 앨범이 완성돼요. 사진은 내 컴퓨터 밖으로 나가지 않습니다.</p>
+        <div class="app-actions"><a class="app-btn primary" href="https://token-web.github.io/album/" target="_blank" rel="noopener">앱 열기 <span>↗</span></a></div>
+      </div>
+    </article>
+  </div>
 </div>
 
 <!-- ABOUT: BENTO SUMMARY (from Direction 1) -->
@@ -1729,6 +1855,7 @@ body { overflow-x: hidden; }
         <span class="course-tag">디지털 윤리</span>
         <span class="course-tag">AI 실무 활용</span>
       </div>
+      <a class="course-app-link" href="https://token-web.github.io/ai_prompt/" target="_blank" rel="noopener">실습 앱 · AI 프롬프트 모음 <span>↗</span></a>
     </div>
 
     <div class="course-card teal">
@@ -1903,6 +2030,56 @@ body { overflow-x: hidden; }
   </div>
 </section>
 
+<!-- FREE APPS -->
+<section id="apps" class="tab-panel">
+  <div class="section-eyebrow">Free Apps · 무료 앱</div>
+  <div class="section-title">무료 앱 / Free Apps</div>
+  <p class="apps-intro">수업과 연구 과정에서 만든 도구를 누구나 무료로 쓸 수 있도록 공개합니다. 앱은 새 창에서 열립니다.</p>
+
+  <div class="app-grid">
+    <article class="app-card">
+      <a class="app-thumb" href="https://token-web.github.io/ai_prompt/" target="_blank" rel="noopener" aria-label="AI 프롬프트 모음 앱 열기">
+        <img src="assets/apps/prompt-app.webp" width="800" height="500" loading="lazy" alt="AI 프롬프트 모음 앱 화면: 인물·사진 보정·상품 광고 등 카테고리 목록">
+      </a>
+      <div class="app-body">
+        <div class="app-badges"><span class="app-badge free">무료 앱</span><span class="app-badge">한글 · English</span><span class="app-badge">복사 · 저장</span></div>
+        <h3 class="app-title">AI 프롬프트 모음</h3>
+        <div class="app-en">AI Prompt Collection</div>
+        <p class="app-desc">인물 프로필, 사진 보정, 상품 광고, 아트·일러스트, 업무 글쓰기까지 바로 복사해 쓸 수 있는 프롬프트 모음입니다. 한글과 영문 프롬프트를 고를 수 있고, 일부 프롬프트는 비포/애프터 슬라이더로 결과를 미리 볼 수 있습니다.</p>
+        <div class="app-steps-title">이렇게 쓰세요</div>
+        <ol class="app-steps">
+            <li>카테고리를 고르거나 검색합니다.</li>
+            <li>프롬프트를 열어 한글 또는 English를 고릅니다.</li>
+            <li>복사 버튼을 눌러 AI 도구에 붙여넣습니다.</li>
+        </ol>
+        <div class="app-actions"><a class="app-btn primary" href="https://token-web.github.io/ai_prompt/" target="_blank" rel="noopener">앱 열기 <span>↗</span></a></div>
+        <div class="app-credit">제작 · 정한열 (AI Insight Lab)</div>
+      </div>
+    </article>
+
+    <article class="app-card">
+      <a class="app-thumb" href="https://token-web.github.io/album/" target="_blank" rel="noopener" aria-label="나의 추억 앨범 만들기 앱 열기">
+        <img src="assets/apps/album-app.webp" width="800" height="500" loading="lazy" alt="나의 추억 앨범 만들기 앱 화면: 사진 올리기, 표지와 마무리, 미리보기와 저장">
+      </a>
+      <div class="app-body">
+        <div class="app-badges"><span class="app-badge free">무료 앱</span><span class="app-badge">PDF · PNG 저장</span><span class="app-badge">사진 비공개</span></div>
+        <h3 class="app-title">나의 추억 앨범 만들기</h3>
+        <div class="app-en">My Memory Album Maker</div>
+        <p class="app-desc">사진을 올리고 제목과 이름을 정하면 PDF·PNG 앨범이 완성되는 앱입니다. 사진은 내 컴퓨터 밖으로 나가지 않으며, 사진 1장만으로도 앨범을 만들 수 있습니다.</p>
+        <div class="app-steps-title">이렇게 쓰세요</div>
+        <ol class="app-steps">
+            <li>사진을 올립니다. (여러 장 가능)</li>
+            <li>표지 제목·이름·날짜를 정합니다.</li>
+            <li>미리보기를 보고 PDF 또는 PNG로 저장합니다.</li>
+        </ol>
+        <div class="app-note">새로고침하면 작업이 사라지니, 끝나면 꼭 PDF로 저장하세요.</div>
+        <div class="app-actions"><a class="app-btn primary" href="https://token-web.github.io/album/" target="_blank" rel="noopener">앱 열기 <span>↗</span></a></div>
+        <div class="app-credit">제작 · 정한열 (AI Insight Lab)</div>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- COLUMN (NAVER BLOG PHONE FRAME) -->
 <section id="column" class="tab-panel">
   <div class="section-eyebrow">Column · 칼럼</div>
@@ -2011,11 +2188,13 @@ body { overflow-x: hidden; }
   const actionLinks = document.querySelectorAll('[data-tab]:not(nav ul.tab-nav a)');
   const panels = document.querySelectorAll('.tab-panel');
   const hero = document.querySelector('.hero');
+  const homeApps = document.getElementById('home-apps');
 
   function activateTab(target){
     tabLinks.forEach(l => l.classList.toggle('active', l.getAttribute('data-tab') === target));
     panels.forEach(p => p.classList.toggle('active', p.id === target));
     hero.classList.toggle('hero-visible', target === 'home');
+    if (homeApps) homeApps.classList.toggle('on', target === 'home');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
