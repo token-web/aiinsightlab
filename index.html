@@ -1,480 +1,2213 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>나의 추억 앨범 만들기 | AI Insight Lab 정한열</title>
-<meta name="description" content="사진을 올리면 PDF·PNG 앨범이 완성되는 무료 앱. 대림대학교 정한열 교수(AI Insight Lab) 제작.">
+<meta name="google-site-verification" content="4c6vog5UHRMC4YSmN-B3IHnLxH9sN-Bn5MdiW5Zf8hs" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="정한열 교수 | 대림대학교 교육혁신센터 | AI와 코딩, AI와 사회변화 강의 | Hanyeol Jeong, Professor at Daelim University">
+<meta name="keywords" content="정한열, 정한열 교수, 대림대학교, 대림대, AI와 코딩, AI와 사회변화, AI 교육, 프롬프트 엔지니어링, Hanyeol Jeong, Daelim University">
+<title>정한열 교수 | 대림대학교 — Hanyeol Jeong, Ph.D., Professor</title>
 <link rel="preload" href="fonts/noto-sans-kr-400-core.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/noto-sans-kr-700-core.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "정한열",
+  "alternateName": "Hanyeol Jeong",
+  "jobTitle": "교수 (Professor)",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "대림대학교 교육혁신센터",
+    "alternateName": "Daelim University"
+  },
+  "description": "대림대학교 교육혁신센터 교수. AI와 코딩, AI와 사회변화 강의. 생성형 AI 교육, 프롬프트 엔지니어링 전문가.",
+  "url": "https://token-web.github.io/aiinsightlab/",
+  "sameAs": [
+    "https://token-web.github.io/profile/",
+    "https://blog.naver.com/patriot_daelim",
+    "https://www.linkedin.com/in/hanyeol-jeong",
+    "https://dept.daelim.ac.kr/lba/cms/FrProfessorCon/ProfessorView.do?MENU_ID=190&SITE_NO=36&CONTENTS_NO=&PROF_GBN_CD=P1002&PROF_SEQ=1279",
+    "https://youtube.com/@aiinsightlabkr",
+    "https://www.scholar.go.kr/search/scholarDetail.do?scholarNum=2091100900038736&scholarType=P"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "AI 프롬프트 모음",
+      "alternateName": "AI Prompt Collection",
+      "url": "https://token-web.github.io/ai_prompt/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "ko",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "정한열",
+        "alternateName": "Hanyeol Jeong",
+        "url": "https://token-web.github.io/aiinsightlab/"
+      },
+      "description": "바로 복사해 쓰는 한글·영문 AI 프롬프트 모음 무료 웹 앱. 일부 프롬프트는 비포/애프터로 결과를 미리 볼 수 있습니다."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "나의 추억 앨범 만들기",
+      "alternateName": "My Memory Album Maker",
+      "url": "https://token-web.github.io/album/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "ko",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "정한열",
+        "alternateName": "Hanyeol Jeong",
+        "url": "https://token-web.github.io/aiinsightlab/"
+      },
+      "description": "사진을 올리면 PDF·PNG 앨범이 완성되는 무료 웹 앱. 사진은 사용자의 컴퓨터 밖으로 나가지 않습니다."
+    }
+  ]
+}
+</script>
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#F2FBF9;color:#1A2332;font:18px/1.5 "Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
-header{padding:20px 24px 10px;border-top:6px solid;border-image:linear-gradient(90deg,#078F82,#FF9F1C) 1;background:#fff}
-.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
-.top svg{flex-shrink:0}
-h1{margin:0;font-size:28px}
-.free{display:inline-block;background:#FF9F1C;color:#0D1B2A;font-size:14px;font-weight:700;padding:3px 12px;border-radius:20px}
-.applink{margin-left:auto;display:inline-block;background:#fff;color:#067A70;border:2px solid #067A70;font-size:16px;font-weight:700;padding:6px 16px;border-radius:24px;text-decoration:none}.applink:hover,.applink:focus{background:#067A70;color:#fff}
-.note{margin:0;color:#4A6572;font-size:16px}
-.by{margin:4px 0 0;font-size:15px;color:#4A6572}
-.by a{color:#067A70;text-decoration:none;font-weight:700}
-.wrap{display:grid;gap:20px;padding:16px 24px 40px;max-width:1400px;margin:0 auto}
-@media(min-width:1000px){.wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.pv{position:sticky;top:12px;align-self:start}}
-section{background:#fff;border-radius:14px;padding:18px 20px;margin-bottom:16px;border:1px solid #D3EEE9;box-shadow:0 2px 10px rgba(7,143,130,.10)}
-h2{margin:0 0 10px;font-size:22px}
-h2 b{display:inline-block;width:34px;height:34px;line-height:34px;text-align:center;border-radius:50%;background:linear-gradient(135deg,#067A70,#078F82);color:#fff;margin-right:8px;font-size:19px}
-label.pick,button{font:inherit;font-size:19px;padding:12px 18px;border-radius:10px;border:0;cursor:pointer;background:#067A70;color:#fff;font-weight:700}
-button.sub{background:#DDF3EF;color:#0D1B2A}
-button:disabled{opacity:.5;cursor:not-allowed}
-label.pick{display:inline-block}
-input[type=file]{display:none}
-input[type=text],textarea,select{width:100%;font:inherit;padding:10px 12px;border:1.5px solid #B4D9D3;border-radius:8px;background:#fff;margin:4px 0}
-.card{border:1.5px solid #CBEAE5;border-radius:12px;padding:12px;margin-top:12px}
-.card .no{font-weight:700;color:#B45309}
-.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0}
-.row select{flex:1;min-width:140px;width:auto}
-.row button{padding:8px 12px;font-size:16px}
-.fld{display:grid;gap:2px;margin:8px 0}.fld span{font-size:16px;color:#4A6572}
-canvas#cv{margin:0 auto;width:100%;height:auto;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.2);background:#fff;display:block}
-.nav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:12px 0}
-#save{width:100%;background:#FF9F1C;color:#0D1B2A}.saves{display:grid;gap:8px;grid-template-columns:1fr 1fr}.saves #save{grid-column:1/-1}
-#msg{min-height:28px;font-weight:700;margin-top:10px}
-#msg.err{color:#b3261e}#msg.ok{color:#067A70}
-footer{background:#0d1b2a;color:#c9d3df;padding:28px 24px;font-size:15px;line-height:1.7}
-.fin{max-width:1400px;margin:0 auto;display:grid;gap:20px;grid-template-columns:auto 1fr;align-items:center}
-.fin strong{color:#fff;font-size:17px}
-.fin a{color:#0abfae;text-decoration:none;font-weight:700}
-.fin .lic{display:inline-block;margin-top:8px;border:1px solid #FF9F1C;color:#FF9F1C;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700}
-.fin small{display:block;margin-top:8px;color:#8c9bb0;font-size:13px}
-@media(max-width:600px){.fin{grid-template-columns:1fr;justify-items:center;text-align:center}}
 
-[hidden]{display:none!important}
-.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px;margin:6px 0}
-button.swb{display:grid;gap:4px;padding:6px;border:3px solid transparent;border-radius:12px;background:#fff;color:#1A2332;font-size:14px;font-weight:700;text-align:center;box-shadow:0 0 0 1.5px #CBEAE5}
-button.swb.on{border-color:#067A70;box-shadow:0 0 0 1.5px #067A70,0 2px 8px rgba(7,143,130,.25)}
-button.swb .swp{position:relative;display:block;border-radius:8px;padding:10px 4px 16px;font-size:20px;font-weight:700;line-height:1.1;border:1px solid rgba(0,0,0,.12)}
-button.swb .swp i{font-style:normal;font-size:24px}
-button.swb .swp em{position:absolute;left:50%;bottom:6px;width:34px;height:4px;margin-left:-17px;border-radius:2px}
-button.swb .swl{display:block;font-size:14px;line-height:1.25}
-.tocbox{border:1.5px dashed #B4D9D3;border-radius:12px;padding:10px 14px;margin:10px 0}
-.chk{display:flex;gap:10px;align-items:center;font-size:18px;font-weight:700;cursor:pointer}
-.chk input{width:22px;height:22px;accent-color:#067A70}
-.aiwrap{max-width:1400px;margin:0 auto;padding:0 24px 40px}
-#aihelp summary{cursor:pointer;font-size:22px;font-weight:700;list-style:none}
-#aihelp summary::-webkit-details-marker{display:none}
-#aihelp summary small{display:block;font-size:15px;font-weight:400;color:#4A6572;margin-top:4px}
-.warn{background:#FFF7E0;border:1px solid #FFE3A0;border-radius:10px;padding:10px 14px;font-size:15px;color:#7a4d00;margin:12px 0}
-.aigrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.aic textarea{font-size:15px;line-height:1.55;background:#F7FBFA;resize:vertical}
-.aih{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.chip{font-size:13px;font-weight:700;color:#067A70;background:#DDF3EF;border-radius:20px;padding:2px 10px}.chip.g{color:#4A6572;background:#EEF1F3}
-#ai_list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px}
-#ai_sites label{display:flex;align-items:center;gap:6px;font-weight:700;margin-right:12px;cursor:pointer}
-#ai_sites input{width:20px;height:20px;accent-color:#067A70}
-#aimsg{min-height:28px;font-weight:700;margin-top:10px}#aimsg.err{color:#b3261e}#aimsg.ok{color:#067A70}
-button.op{background:#FF9F1C;color:#0D1B2A}
-.row button.op,.row button.cp{padding:10px 14px;font-size:16px}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D1B2A;
+    --navy-mid: #1A2E45;
+    --blue-accent: #1E6FD9;
+    --blue-light: #3B8BF5;
+    --teal: #0ABFAE;
+    --white: #FFFFFF;
+    --gray-100: #F5F7FA;
+    --gray-200: #E8ECF2;
+    --gray-500: #7A8A9E;
+    --gray-700: #3D4E63;
+    --text: #1A2332;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans KR', 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--teal);
+  }
+  nav {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: 56px;
+  }
+  .nav-name {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .nav-name span { color: var(--teal); }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+  nav ul a {
+    color: var(--gray-200);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  nav ul a:hover { color: var(--teal); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1A3A5C 100%);
+    padding: 72px 24px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(10,191,174,0.12) 0%, transparent 70%);
+  }
+  .hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+  .hero-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--teal);
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--navy-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--teal);
+    overflow: hidden;
+  }
+  .hero-photo-placeholder {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--teal);
+    background: var(--navy-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+    flex-shrink: 0;
+  }
+  .hero-text {}
+  .hero-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--teal);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .hero-name-ko {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .hero-name-en {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--gray-500);
+    margin-top: 4px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.04em;
+  }
+  .hero-title {
+    margin-top: 16px;
+    font-size: 15px;
+    color: var(--gray-200);
+    line-height: 1.6;
+  }
+  .hero-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    background: rgba(10,191,174,0.15);
+    color: var(--teal);
+    border: 1px solid rgba(10,191,174,0.3);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+.hero-blog-link {
+    margin-top: 16px;
+  }
+  .hero-blog-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray-200);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .hero-blog-link a:hover {
+    color: var(--teal);
+  }
+  .hero-blog-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: #03C75A;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  /* ── SECTIONS ── */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  section {
+    padding: 56px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  section + section {
+    border-top: 1px solid var(--gray-200);
+  }
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue-accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 28px;
+  }
+
+  /* ── PROFILE INFO ── */
+  .info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .info-item {
+    background: var(--gray-100);
+    border-radius: 10px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--teal);
+  }
+  .info-item-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .info-item-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .info-item-sub {
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+
+  /* ── COURSES ── */
+  .course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .course-card {
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .course-card:hover {
+    box-shadow: 0 8px 32px rgba(13,27,42,0.1);
+    transform: translateY(-2px);
+  }
+  .course-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+  .course-card.blue::before { background: var(--blue-accent); }
+  .course-card.teal::before { background: var(--teal); }
+  .course-card.amber::before { background: #F0A030; }
+  .course-no {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 8px;
+  }
+  .course-title-ko {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .course-title-en {
+    font-size: 12px;
+    color: var(--gray-500);
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 16px;
+  }
+  .course-desc {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .course-tag {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  /* ── INTERESTS ── */
+  .interest-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .interest-item {
+    background: var(--gray-100);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  .interest-icon { font-size: 28px; margin-bottom: 10px; }
+  .interest-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .interest-desc {
+    font-size: 12px;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+
+  /* ── PUBLICATIONS ── */
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .pub-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background: var(--navy);
+    color: var(--white);
+    border: 1px solid var(--navy);
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .pub-link-btn:hover {
+    background: var(--navy-mid);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  }
+  .pub-link-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .pub-subtitle {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue-accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 24px 0 12px;
+  }
+  .pub-subtitle:first-of-type { margin-top: 0; }
+  .pub-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pub-item {
+    background: var(--gray-100);
+    border-left: 3px solid var(--teal);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    color: var(--gray-700);
+    line-height: 1.55;
+  }
+  .pub-item strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .pub-item .pub-meta {
+    color: var(--gray-500);
+    font-size: 12px;
+  }
+  .pub-more-wrap { margin-top: 20px; }
+  #pub-more {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--gray-200);
+  }
+  #pub-more.open { display: block; }
+  .pub-toggle-btn {
+    cursor: pointer;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .pub-toggle-btn:hover { background: var(--navy-mid); transform: translateY(-1px); }
+  .pub-group-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 20px 0 10px;
+  }
+  .pub-group-title:first-child { margin-top: 0; }
+
+  /* ── CAREER ── */
+  .timeline {
+    position: relative;
+    padding-left: 24px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 8px;
+    width: 2px;
+    background: var(--gray-200);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 2px var(--teal);
+  }
+  .timeline-period {
+    font-size: 12px;
+    color: var(--blue-accent);
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 4px;
+  }
+  .timeline-role {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .timeline-org {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
+  }
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--gray-100);
+    border-radius: 10px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.2s, transform 0.2s;
+    border: 1px solid transparent;
+  }
+  .contact-card:hover {
+    background: var(--white);
+    border-color: var(--gray-200);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  }
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .contact-icon.linkedin { background: #0A66C2; }
+  .contact-icon.naver { background: #03C75A; }
+  .contact-icon.blog { background: #FF6B35; }
+  .contact-icon.youtube { background: #FF0000; }
+  .contact-icon.scholar { background: #6A3FE0; }
+  .contact-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .contact-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-top: 1px;
+  }
+
+  /* ── INTEL BADGE ── */
+  .badge-bar {
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: 12px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .badge-icon { font-size: 32px; }
+  .badge-text-main {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .badge-text-sub {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+  .badge-num {
+    margin-left: auto;
+    text-align: right;
+  }
+  .badge-num-val {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--teal);
+    font-family: 'Inter', sans-serif;
+    line-height: 1;
+  }
+  .badge-num-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    color: var(--gray-500);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 13px;
+    margin-top: 40px;
+  }
+  footer a { color: var(--teal); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .course-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 680px) {
+    .hero-inner { flex-direction: column; text-align: center; gap: 24px; }
+    .hero-tags { justify-content: center; }
+    .course-grid { grid-template-columns: 1fr; }
+    .interest-list { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .hero-name-ko { font-size: 28px; }
+    .hero-blog-link { display: flex; justify-content: center; }
+    nav ul { gap: 16px; }
+  }
+
+  /* ── D2: TAB NAV ── */
+  nav ul.tab-nav {
+    gap: 4px;
+  }
+  nav ul.tab-nav li a {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: var(--gray-200);
+  }
+  nav ul.tab-nav li a.active {
+    background: rgba(10,191,174,0.15);
+    color: var(--teal);
+    font-weight: 600;
+  }
+  nav ul.tab-nav li a:hover { color: var(--teal); }
+
+  .tab-panel { display: none; }
+  .tab-panel.active {
+    display: block;
+    animation: panelIn 0.35s ease;
+  }
+  @keyframes panelIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  section.tab-panel { border-top: none; }
+
+  /* hero (photo/intro) shows only on the about tab so switching tabs doesn't
+     look like the same screen reappeared */
+  .hero { display: none; }
+  .hero.hero-visible { display: block; }
+
+  /* mobile tab nav: 2-column button grid (Home + 소개 in the first row) */
+  @media (max-width: 680px) {
+    nav { height: auto; flex-direction: column; gap: 8px; padding: 12px 16px; }
+    nav ul.tab-nav {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    nav ul.tab-nav li { width: 100%; }
+    nav ul.tab-nav li a {
+      display: block;
+      text-align: center;
+      white-space: nowrap;
+      font-size: 12px;
+      padding: 8px 6px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+    }
+    nav ul.tab-nav li a.active {
+      background: rgba(10,191,174,0.18);
+      border-color: var(--teal);
+    }
+  }
+  /* ── D1: SUMMARY BENTO ── */
+  .bento {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 16px;
+  }
+  .bento-main {
+    background: var(--gray-100);
+    border-radius: 14px;
+    padding: 26px 28px;
+    border-left: 3px solid var(--teal);
+  }
+  .bento-main .bento-role {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blue-accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .bento-main .bento-headline {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  .bento-main .bento-sub {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+  .bento-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bento-card {
+    background: linear-gradient(135deg, #1E3A5A 0%, #2A4A70 100%);
+    border-radius: 14px;
+    padding: 18px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .bento-card .bento-num {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--teal);
+    font-family: 'Inter', sans-serif;
+    line-height: 1;
+  }
+  .bento-card .bento-num-label {
+    font-size: 11.5px;
+    color: var(--gray-200);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  .bento-links {
+    background: var(--gray-100);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bento-links a {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--blue-accent);
+    text-decoration: none;
+  }
+  .bento-links a:hover { text-decoration: underline; }
+  @media (max-width: 680px) {
+    .bento { grid-template-columns: 1fr; }
+  }
+
+
+  /* ── CAREER TAB ── */
+  .career-block { margin-bottom: 30px; }
+  .career-block:last-child { margin-bottom: 0; }
+  .career-block-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue-accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .career-current {
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: 12px;
+    padding: 22px 26px;
+    color: var(--white);
+    margin-bottom: 30px;
+  }
+  .career-current .cc-label {
+    font-size: 11px;
+    color: var(--teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .career-current .cc-role {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .career-current .cc-sub {
+    font-size: 13px;
+    color: var(--gray-200);
+    margin-top: 4px;
+    line-height: 1.6;
+  }
+  .career-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .career-item {
+    background: var(--gray-100);
+    border-radius: 10px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--teal);
+  }
+  .career-item-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .career-item-value {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .career-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .career-list li {
+    background: var(--gray-100);
+    border-radius: 8px;
+    padding: 11px 16px;
+    font-size: 13.5px;
+    color: var(--gray-700);
+    line-height: 1.55;
+  }
+  .career-list li strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .career-more-wrap { margin-top: 16px; }
+  #career-more {
+    display: none;
+    margin-top: 14px;
+  }
+  #career-more.open { display: block; }
+  @media (max-width: 680px) {
+    .career-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── COLUMN TAB (NAVER BLOG PHONE FRAME) ── */
+  .column-intro {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .phone-frame-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .phone-frame {
+    width: 375px;
+    max-width: 100%;
+    height: 720px;
+    background: var(--navy);
+    border-radius: 36px;
+    padding: 14px;
+    box-shadow: 0 20px 50px rgba(13,27,42,0.25);
+    position: relative;
+  }
+  .phone-frame::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 20px;
+    background: var(--navy);
+    border-radius: 0 0 14px 14px;
+    z-index: 2;
+  }
+  .phone-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 22px;
+    background: var(--white);
+    display: block;
+  }
+  .phone-fallback {
+    margin-top: 18px;
+    text-align: center;
+  }
+  .phone-fallback a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 11px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .phone-fallback a:hover { background: var(--navy-mid); transform: translateY(-1px); }
+  .phone-fallback p {
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-top: 10px;
+  }
+
+
+/* =========================================================
+   MODERN AI REDESIGN — 2026
+   Visual direction: AI editorial / glassmorphism / clean tech
+   ========================================================= */
+:root{
+  --ink:#0b1020;
+  --ink-2:#121a2e;
+  --muted:#6d7890;
+  --line:#e7eaf1;
+  --surface:#ffffff;
+  --surface-2:#f6f8fc;
+  --cyan:#19d3c5;
+  --blue:#4d7cff;
+  --violet:#8b5cf6;
+  --glow:rgba(77,124,255,.18);
+  --shadow:0 18px 60px rgba(19,31,55,.10);
+}
+html{background:#f8faff}
+body{
+  font-family:'Noto Sans KR','Inter',sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 10%,rgba(77,124,255,.055),transparent 24%),
+    radial-gradient(circle at 90% 30%,rgba(25,211,197,.045),transparent 22%),
+    #f8faff;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background-image:linear-gradient(rgba(11,16,32,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(11,16,32,.025) 1px,transparent 1px);
+  background-size:42px 42px;
+}
+
+/* Header */
+.site-header{
+  background:rgba(255,255,255,.82)!important;
+  border-bottom:1px solid rgba(226,230,239,.85)!important;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  box-shadow:0 4px 24px rgba(20,30,50,.05);
+  position:sticky;top:0;z-index:1000;
+}
+.modern-nav{
+  max-width:1180px!important;height:74px!important;padding:0 26px!important;
+  display:flex;align-items:center;gap:26px;
+}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
+.brand-mark{
+  width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+  color:#fff;font:700 12px/1 Inter,sans-serif;letter-spacing:.08em;
+  background:linear-gradient(135deg,var(--ink),#27345d);
+  box-shadow:0 8px 20px rgba(11,16,32,.18);
+}
+.brand-copy{display:flex;flex-direction:column;line-height:1.1}
+.brand-copy strong{font-size:15px;color:var(--ink);font-weight:800;letter-spacing:-.03em}
+.brand-copy small{font:600 8px/1.5 Inter,sans-serif;color:var(--muted);letter-spacing:.12em;margin-top:3px}
+.nav-scroll{flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.nav-scroll::-webkit-scrollbar{display:none}
+nav ul.tab-nav{display:flex!important;justify-content:center;gap:3px!important;list-style:none;min-width:max-content}
+nav ul.tab-nav li a{
+  color:#69738a!important;padding:9px 12px!important;border-radius:10px!important;
+  font-size:12px!important;font-weight:600!important;letter-spacing:-.01em;
+  transition:.25s ease!important;background:transparent!important;border:1px solid transparent;
+}
+nav ul.tab-nav li a.active{
+  color:var(--ink)!important;background:#fff!important;border-color:#e2e6ef!important;
+  box-shadow:0 5px 18px rgba(20,30,50,.07);
+}
+nav ul.tab-nav li a:hover{color:var(--blue)!important;background:#f5f7fb!important}
+.nav-status{
+  flex-shrink:0;font:700 9px Inter,sans-serif;letter-spacing:.1em;color:#667085;
+  display:flex;align-items:center;gap:7px;
+}
+.nav-status i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(25,211,197,.12);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(25,211,197,0)}}
+
+/* Hero */
+.hero.hero-visible{
+  display:block!important;position:relative;overflow:hidden;
+  min-height:610px;padding:92px 24px 82px!important;
+  background:linear-gradient(135deg,#080d1b 0%,#101a35 52%,#111d3c 100%)!important;
+  color:#fff;
+}
+.hero:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 73% 42%,rgba(77,124,255,.20),transparent 26%),
+             radial-gradient(circle at 88% 10%,rgba(25,211,197,.14),transparent 20%);
+}
+.hero-grid{
+  position:absolute;inset:0;opacity:.18;
+  background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:55px 55px;
+  mask-image:linear-gradient(90deg,#000,transparent 90%);
+}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(1px);pointer-events:none}
+.orb-a{width:340px;height:340px;right:-90px;top:-110px;border:1px solid rgba(25,211,197,.2);box-shadow:inset 0 0 80px rgba(25,211,197,.08)}
+.orb-b{width:180px;height:180px;left:40%;bottom:-120px;border:1px solid rgba(139,92,246,.22)}
+.hero-inner{
+  max-width:1180px!important;position:relative;z-index:2;
+  display:grid!important;grid-template-columns:1.08fr .92fr;align-items:center;gap:70px!important;
+}
+.hero-copy{max-width:650px}
+.hero-kicker{
+  display:flex;align-items:center;gap:9px;color:#7cece4;font:700 10px Inter,sans-serif;letter-spacing:.16em;
+  margin-bottom:22px;
+}
+.hero-kicker span{width:28px;height:1px;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.hero h1{
+  font-size:clamp(43px,5.2vw,72px)!important;line-height:1.08!important;letter-spacing:-.065em!important;
+  font-weight:800!important;color:#fff!important;margin:0 0 20px!important;
+}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#fff 0%,#8feee8 55%,#a78bfa 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-lead{font:500 16px/1.6 Inter,'Noto Sans KR',sans-serif;color:#dce4f4;margin-bottom:5px}
+.hero-desc{font-size:14px;line-height:1.8;color:#9ba8c2;max-width:570px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 22px}
+.hero-btn{
+  display:inline-flex;align-items:center;gap:10px;padding:12px 17px;border-radius:12px;text-decoration:none;
+  font-size:12px;font-weight:700;transition:.25s ease;
+}
+.hero-btn.primary{color:#07111f;background:linear-gradient(135deg,#8ff3eb,#6bd9ff);box-shadow:0 12px 30px rgba(25,211,197,.18)}
+.hero-btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(25,211,197,.28)}
+.hero-btn.ghost{color:#e8edf7;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05)}
+.hero-btn.ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.hero-cert{margin:-8px 0 22px}
+.hero-btn.cert{
+  color:#ffe9b8;border:1px solid rgba(255,200,87,.38);
+  background:linear-gradient(135deg,rgba(255,200,87,.16),rgba(255,200,87,.06));
+  box-shadow:0 8px 24px rgba(255,200,87,.08);
+}
+.hero-btn.cert:hover{background:linear-gradient(135deg,rgba(255,200,87,.26),rgba(255,200,87,.10));transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,200,87,.18)}
+.hero-btn.cert b{font-weight:700}
+@media(max-width:680px){
+  .hero-cert{margin:-2px 0 20px}
+  .hero-cert .hero-btn.cert{display:flex;width:100%;box-sizing:border-box;justify-content:center;text-align:center;line-height:1.4}
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:7px}
+.hero .tag{
+  background:rgba(255,255,255,.055)!important;border:1px solid rgba(255,255,255,.11)!important;color:#b9c7df!important;
+  border-radius:999px!important;padding:5px 10px!important;font-size:10px!important;
+}
+.hero-visual{position:relative;min-height:400px;display:grid;place-items:center}
+.photo-card{
+  position:relative;width:300px;padding:12px;border-radius:28px;
+  background:linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.18);box-shadow:0 35px 80px rgba(0,0,0,.35);
+  backdrop-filter:blur(18px);transform:rotate(2deg);z-index:3;
+}
+.photo-card:before{content:"";position:absolute;inset:0;border-radius:28px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);pointer-events:none}
+.photo-top,.photo-bottom{display:flex;justify-content:space-between;align-items:center;padding:5px 5px 10px;color:#8795b0;font:600 8px Inter,sans-serif;letter-spacing:.12em}
+.photo-top b{color:var(--cyan);font-size:10px}
+.photo-card .hero-photo{
+  display:block;width:100%;height:300px!important;object-fit:cover;border-radius:20px!important;border:0!important;
+  background:#1c2743;filter:saturate(.96);
+}
+.photo-bottom{padding:11px 6px 3px;letter-spacing:0}
+.photo-bottom strong{font:700 13px Inter,sans-serif;color:#f6f8ff}
+.photo-bottom span{font:500 9px Inter,sans-serif;color:#8795b0}
+.ai-ring{position:absolute;border:1px solid rgba(109,226,255,.2);border-radius:50%;z-index:1}
+.ring-1{width:430px;height:430px;animation:spin 24s linear infinite}
+.ring-2{width:350px;height:350px;border-color:rgba(139,92,246,.25);animation:spin 18s linear infinite reverse}
+.ring-1:before,.ring-2:before{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#7cece4;box-shadow:0 0 16px #7cece4;top:16%;left:5%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.floating-chip{
+  position:absolute;z-index:4;padding:10px 12px;border:1px solid rgba(255,255,255,.14);
+  background:rgba(12,19,38,.72);backdrop-filter:blur(12px);border-radius:13px;
+  box-shadow:0 14px 35px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:2px
+}
+.floating-chip b{font:800 11px Inter,sans-serif;color:#fff}.floating-chip span{font-size:8px;color:#8f9cb6}
+.chip-1{left:3%;top:17%}.chip-2{right:0;bottom:15%}.hero-scroll{
+  position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:3;
+  font:600 8px Inter,sans-serif;letter-spacing:.18em;color:#64718b
+}
+.hero-scroll span{color:#8deee8;margin-left:7px}
+
+/* Content shell */
+section.tab-panel{
+  max-width:1180px!important;padding:88px 28px!important;border-top:0!important;
+  position:relative;
+}
+section.tab-panel:before{
+  content:"";display:block;width:44px;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));
+  border-radius:3px;margin-bottom:18px;
+}
+.section-eyebrow{font:700 9px Inter,sans-serif!important;color:var(--blue)!important;letter-spacing:.17em!important;margin-bottom:8px!important}
+.section-title{font-size:32px!important;line-height:1.2!important;letter-spacing:-.045em!important;color:var(--ink)!important;margin-bottom:36px!important}
+.section-title:after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--cyan);margin-left:8px;vertical-align:middle}
+
+/* About */
+.bento{grid-template-columns:1.35fr .8fr!important;gap:18px!important}
+.bento-main,.bento-links,.interest-item,.career-item,.career-list li,.pub-item,.contact-card{
+  background:rgba(255,255,255,.82)!important;border:1px solid var(--line)!important;box-shadow:0 8px 30px rgba(20,30,50,.035);
+}
+.bento-main{border-left:0!important;border-radius:20px!important;padding:34px!important;position:relative;overflow:hidden}
+.bento-main:after{content:"AI";position:absolute;right:24px;bottom:-25px;font:900 110px Inter;color:#eef1f8;letter-spacing:-.08em}
+.bento-main .bento-role{color:var(--blue)!important;font-size:10px!important}
+.bento-main .bento-headline{font-size:24px!important;letter-spacing:-.045em}
+.bento-main .bento-sub{color:#68748a!important}
+.bento-card{border-radius:20px!important;background:linear-gradient(145deg,#1E3A5A,#2A4A70)!important;padding:24px!important;box-shadow:var(--shadow)!important}
+.bento-card .bento-num-label{color:#E8ECF2!important}
+.bento-links{border-radius:20px!important;padding:18px!important}
+.bento-links a{color:var(--blue)!important}
+
+/* Cards */
+.course-grid{grid-template-columns:repeat(3,1fr)!important;gap:18px!important}
+.course-card{
+  border:1px solid var(--line)!important;border-radius:20px!important;padding:26px!important;background:rgba(255,255,255,.82);
+  box-shadow:0 10px 35px rgba(20,30,50,.04);transition:.28s ease!important;
+}
+.course-card:hover{transform:translateY(-6px)!important;box-shadow:0 20px 50px rgba(20,30,50,.10)!important}
+.course-card:before{height:3px!important}
+.course-title-ko{font-size:21px!important;letter-spacing:-.04em}
+.course-desc{color:#6c778c!important;font-size:13px!important}
+.course-tag{background:#f3f6fa!important;color:#59657a!important;border-radius:999px!important}
+
+/* Career */
+.career-current{border-radius:20px!important;padding:28px 30px!important;background:linear-gradient(135deg,#0b1020,#1b2850)!important;box-shadow:var(--shadow)}
+.career-current .cc-role{font-size:21px!important;letter-spacing:-.035em}
+.career-grid{gap:16px!important}
+.career-item{border-left:0!important;border-radius:16px!important}
+.career-list li{border-radius:13px!important;padding:14px 18px!important}
+
+/* Research */
+.interest-list{grid-template-columns:repeat(3,1fr)!important;gap:16px!important}
+.interest-item{border-radius:18px!important;padding:24px 20px!important;text-align:left!important;transition:.25s ease}
+.interest-item:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#d8def0!important}
+.interest-icon{font-size:25px!important}.interest-title{font-size:15px!important}.interest-desc{color:#7b8598!important}
+
+/* Publications */
+.pub-link-btn{border-radius:12px!important;background:#10182d!important;border:0!important;padding:11px 15px!important}
+.pub-item{border-left:0!important;border-radius:13px!important}
+.pub-item strong{color:var(--ink)!important}
+
+/* Column */
+.phone-frame{border-radius:34px!important;background:#0a1020!important;box-shadow:0 30px 70px rgba(10,18,40,.22)!important}
+.phone-fallback a{border-radius:999px!important;background:#10182d!important}
+
+/* Contact */
+.contact-grid{grid-template-columns:repeat(2,1fr)!important;gap:14px!important}
+.contact-card{border-radius:16px!important;padding:19px!important}
+.contact-card:hover{border-color:#d9e0ef!important;background:#fff!important;box-shadow:var(--shadow)!important}
+.contact-icon{border-radius:12px!important}
+
+/* Footer */
+footer{
+  background:#080d1b!important;color:#75819a!important;border-top:1px solid rgba(255,255,255,.06);
+  padding:42px 24px!important;margin-top:0!important
+}
+footer p:first-child{color:#fff;font-weight:700}
+footer a{color:#7cece4!important}
+
+/* Publication / career controls */
+.pub-toggle-btn{
+  border-radius:999px!important;background:#11182d!important;padding:10px 18px!important
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .modern-nav{gap:12px!important}.nav-status{display:none}
+  .hero-inner{grid-template-columns:1fr!important;gap:40px!important}
+  .hero-copy{max-width:720px}.hero-visual{min-height:360px}
+  .course-grid{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:680px){
+  .modern-nav{height:auto!important;min-height:68px!important;padding:10px 14px!important;flex-wrap:wrap!important}
+  .brand-copy small{display:none}.nav-scroll{order:3;flex-basis:100%}
+  nav ul.tab-nav{width:max-content!important;justify-content:flex-start!important}
+  nav ul.tab-nav li a{padding:8px 11px!important}
+  .hero.hero-visible{min-height:auto;padding:70px 20px 60px!important}
+  .hero h1{font-size:42px!important}
+  .hero-visual{min-height:310px}.photo-card{width:240px}.photo-card .hero-photo{height:245px!important}
+  .ring-1{width:330px;height:330px}.ring-2{width:270px;height:270px}
+  .chip-1{left:0;top:12%}.chip-2{right:0;bottom:10%}
+  section.tab-panel{padding:64px 20px!important}
+  .section-title{font-size:27px!important}
+  .bento,.course-grid,.interest-list,.contact-grid{grid-template-columns:1fr!important}
+  .bento-main{padding:25px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+.tab-nav li a.nav-ext{color:#0a9d90!important;border:1px solid rgba(10,191,174,.45)!important}
+.tab-nav li a.nav-ext:hover{background:rgba(10,191,174,.12)!important}
 </style>
+
+<style id="mobile-optimization">
+/* =========================================================
+   MOBILE / SMARTPHONE OPTIMIZATION
+   - phone: 2-column menu/cards where appropriate
+   - compact typography and touch-friendly controls
+   ========================================================= */
+
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+
+@media (max-width: 768px) {
+  .container,
+  .section-inner,
+  main,
+  .main-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    box-sizing: border-box;
+  }
+
+  /* Header */
+  header, .site-header, .navbar, nav {
+    max-width: 100%;
+  }
+
+  .nav,
+  .nav-links,
+  .menu,
+  .menu-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+    width: 100%;
+  }
+
+  .nav a,
+  .nav button,
+  .nav-links a,
+  .menu a,
+  .menu button {
+    min-height: 42px;
+    padding: 10px 7px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px !important;
+    border-radius: 10px;
+  }
+
+  /* Hero */
+  .hero,
+  .hero-section {
+    min-height: auto !important;
+    padding: 48px 0 34px !important;
+  }
+
+  .hero-inner,
+  .hero-content,
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .hero h1,
+  .hero-title {
+    font-size: clamp(32px, 10vw, 48px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -1.8px !important;
+  }
+
+  .hero p,
+  .hero-subtitle {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+  .hero-actions,
+  .hero-buttons {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px !important;
+  }
+
+  .hero-actions a,
+  .hero-buttons a,
+  .hero-actions button,
+  .hero-buttons button {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  /* Generic card grids -> 2 columns on phone */
+  .bento,
+  .bento-grid,
+  .career-grid,
+  .interest-list,
+  .course-grid,
+  .contact-grid,
+  .stats-grid,
+  .card-grid,
+  .pub-links,
+  .links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .bento-main {
+    grid-column: 1 / -1;
+  }
+
+  .bento-side {
+    grid-column: 1 / -1;
+  }
+
+  .bento-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px !important;
+  }
+
+  .bento-links a {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .course-card,
+  .interest-item,
+  .contact-card,
+  .career-block,
+  .pub-link-btn {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .course-card {
+    padding: 17px !important;
+  }
+
+  .course-title-ko,
+  .interest-title {
+    font-size: 15px !important;
+  }
+
+  .course-desc,
+  .interest-desc,
+  .career-list,
+  .contact-card p {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+
+  .course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px !important;
+  }
+
+  .course-tag {
+    font-size: 10px !important;
+    padding: 5px 7px !important;
+  }
+
+  /* Career current card should remain full width */
+  .career-current {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Research */
+  .interest-item {
+    padding: 15px !important;
+  }
+
+  .interest-icon {
+    font-size: 22px !important;
+  }
+
+  /* Publications / books */
+  .pub-item {
+    padding: 12px 0 !important;
+  }
+
+  /* Column phone */
+  .phone-frame {
+    width: min(100%, 350px) !important;
+    height: 650px !important;
+  }
+
+  /* Section headings */
+  .section-title {
+    font-size: 27px !important;
+    line-height: 1.2 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .section-eyebrow {
+    font-size: 10px !important;
+  }
+
+  /* Touch targets */
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button,
+  .pub-toggle-btn {
+    min-height: 42px;
+  }
+}
+
+/* Very small phones: keep menus/cards usable */
+@media (max-width: 390px) {
+  .container,
+  .section-inner,
+  main,
+  .main-container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .nav a,
+  .nav button,
+  .nav-links a,
+  .menu a,
+  .menu button {
+    font-size: 11px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  .hero-actions,
+  .hero-buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .course-card,
+  .interest-item {
+    padding: 13px !important;
+  }
+
+  .section-title {
+    font-size: 24px !important;
+  }
+}
+
+/* If the page uses a horizontal tab strip, make it a clean 2-column grid on phones */
+@media (max-width: 768px) {
+  .tabs,
+  .tab-menu,
+  .section-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    overflow: visible !important;
+  }
+
+  .tabs > *,
+  .tab-menu > *,
+  .section-tabs > * {
+    width: auto !important;
+    min-width: 0 !important;
+    text-align: center !important;
+  }
+}
+
+/* ── FIX: top tab menu was cut off / required side-scroll on phones.
+   The .nav-scroll wrapper was overflow-x:auto with a nowrap tab list wider
+   than the screen, hiding "AI Insights" and "연락처" off-canvas. Replace it
+   with a full-width wrapping grid so every tab is visible without scrolling. ── */
+@media (max-width: 680px) {
+  .modern-nav {
+    flex-wrap: wrap !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 12px 14px !important;
+    gap: 10px !important;
+  }
+  .nav-scroll {
+    order: 3;
+    flex-basis: 100%;
+    width: 100% !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+  }
+  nav ul.tab-nav {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: stretch !important;
+    gap: 6px !important;
+  }
+  nav ul.tab-nav li {
+    width: 100%;
+    min-width: 0;
+  }
+  nav ul.tab-nav li a {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    padding: 9px 4px !important;
+    font-size: 10.5px !important;
+    letter-spacing: -0.02em !important;
+  }
+}
+@media (max-width: 360px) {
+  nav ul.tab-nav li a {
+    font-size: 9.5px !important;
+    padding: 8px 2px !important;
+  }
+}
+
+  /* ── FREE APPS (무료 앱) ── */
+  .home-apps { display:none; max-width:1180px; margin:0 auto; padding:64px 28px 28px; }
+  .home-apps.on { display:block; animation:panelIn .35s ease; }
+  .apps-head { display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:26px; }
+  .apps-head .section-title { margin-bottom:0!important; }
+  .apps-more { font:700 12px/1 'Noto Sans KR','Inter',sans-serif; color:var(--blue); text-decoration:none; padding:11px 15px; border:1px solid var(--line); border-radius:999px; background:#fff; transition:.2s ease; }
+  .apps-more:hover { border-color:var(--blue); transform:translateY(-1px); }
+  .apps-intro { margin:-14px 0 30px; color:var(--muted); font-size:14px; line-height:1.7; }
+  .app-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+  .app-card { display:flex; flex-direction:column; border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.9); box-shadow:0 10px 35px rgba(20,30,50,.05); overflow:hidden; transition:.28s ease; }
+  .app-card:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
+  .app-thumb { display:block; aspect-ratio:16/10; background:var(--surface-2); overflow:hidden; border-bottom:1px solid var(--line); }
+  .app-thumb img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+  .app-card:hover .app-thumb img { transform:scale(1.03); }
+  .app-body { display:flex; flex-direction:column; gap:10px; padding:22px 24px 24px; flex:1; }
+  .app-badges { display:flex; flex-wrap:wrap; gap:6px; }
+  .app-badge { font:700 10px/1 'Noto Sans KR','Inter',sans-serif; padding:6px 10px; border-radius:999px; color:#3a4a66; background:var(--surface-2); border:1px solid var(--line); }
+  .app-badge.free { color:#7a4d00; background:#ffefc7; border-color:#ffd983; }
+  .app-title { margin:2px 0 0; font-size:21px; line-height:1.3; letter-spacing:-.03em; color:var(--ink); }
+  .app-en { margin-top:-6px; font:500 12px 'Inter',sans-serif; color:var(--muted); }
+  .app-desc { margin:0; font-size:14px; line-height:1.75; color:#3d4a63; }
+  .app-steps-title { margin-top:4px; font:700 11px 'Noto Sans KR','Inter',sans-serif; letter-spacing:.06em; color:var(--blue); }
+  .app-steps { margin:0; padding-left:20px; font-size:13px; line-height:1.8; color:#3d4a63; }
+  .app-note { font-size:12px; line-height:1.6; color:#7a4d00; background:#fff7e0; border:1px solid #ffe3a0; border-radius:10px; padding:9px 12px; }
+  .app-actions { margin-top:auto; padding-top:6px; display:flex; flex-wrap:wrap; gap:10px; }
+  .app-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:12px; text-decoration:none; font:700 13px 'Noto Sans KR','Inter',sans-serif; transition:.25s ease; }
+  .app-btn.primary { color:#fff; background:linear-gradient(135deg,#0b1020,#1f2d57); box-shadow:0 10px 26px rgba(11,16,32,.18); }
+  .app-btn.primary:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(11,16,32,.26); }
+  .app-credit { font-size:11px; color:var(--muted); }
+  .course-app-link { display:inline-flex; align-items:center; gap:6px; margin-top:16px; padding:9px 14px; border-radius:999px; background:#eef3ff; border:1px solid #d5e0ff; color:#2f55c9; text-decoration:none; font:700 12px 'Noto Sans KR','Inter',sans-serif; transition:.2s ease; }
+  .course-app-link:hover { background:#e1eaff; transform:translateY(-1px); }
+  @media (max-width: 900px) { .home-apps { padding:48px 20px 20px; } }
+  @media (max-width: 680px) {
+    .app-grid { grid-template-columns:1fr; }
+    .app-body { padding:18px 18px 20px; }
+    .app-title { font-size:19px; }
+    .apps-head { align-items:flex-start; }
+  }
+</style>
+
 </head>
 <body>
-<header>
-<div class="top">
-<svg width="52" height="52" viewBox="0 0 64 64" role="img" aria-label="AI Insight Lab 로고"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a2e45"/><stop offset="1" stop-color="#0d1b2a"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lg)"/><rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#0abfae" stroke-width="2"/><text x="32" y="30" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="22" fill="#fff">AI</text><text x="32" y="48" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="11" letter-spacing="1" fill="#0abfae">INSIGHT</text></svg>
-<h1>나의 추억 앨범 만들기</h1>
-<span class="free">🎁 무료 앱</span>
-<a class="applink" href="https://token-web.github.io/ai_prompt" target="_blank" rel="noopener">AI 프롬프트 앱 ↗</a>
-</div>
-<p class="note">사진은 이 컴퓨터 밖으로 나가지 않습니다. 새로고침하면 작업이 사라지니, 끝나면 꼭 PDF로 저장하세요.</p>
-<p class="by">누구나 쉽게 앨범을 만들 수 있도록 <a href="https://token-web.github.io/aiinsightlab/" target="_blank" rel="noopener">정한열 교수(AI Insight Lab)</a>가 만든 무료 앱입니다.</p>
+
+<!-- MODERN AI NAV -->
+<header class="site-header">
+  <nav class="modern-nav">
+    <a class="brand" href="#" data-tab="home" aria-label="홈">
+      <span class="brand-mark">HY</span>
+      <span class="brand-copy">
+        <strong>정한열</strong>
+        <small>AI EDUCATION · PROFESSOR</small>
+      </span>
+    </a>
+    <div class="nav-scroll">
+      <ul class="tab-nav">
+        <li><a href="#" data-tab="home" class="active">Home</a></li>
+        <li><a href="#" data-tab="about">소개</a></li>
+        <li><a href="#" data-tab="career">경력</a></li>
+        <li><a href="#" data-tab="courses">담당과목</a></li>
+        <li><a href="#" data-tab="publications">연구실적</a></li>
+        <li><a href="#" data-tab="research">관심분야</a></li>
+        <li><a href="#" data-tab="apps">무료 앱</a></li>
+        <li><a href="#" data-tab="column">AI Insights</a></li>
+        <li><a href="#" data-tab="contact">연락처</a></li>
+        <li><a href="https://token-web.github.io/profile/" class="nav-ext">프로필 ↗</a></li>
+      </ul>
+    </div>
+    <div class="nav-status"><i></i> AI · ON</div>
+  </nav>
 </header>
-<div class="wrap">
-<div>
-<section>
-<h2><b>1</b>사진 올리기</h2>
-<label class="pick" for="file">사진 고르기 (여러 장 가능)</label>
-<input id="file" type="file" accept="image/*" multiple>
-<p class="note">올린 순서대로 쪽이 만들어집니다. 사진 1장만으로도 PDF를 만들 수 있어요.</p>
-<div id="list"></div>
+
+<!-- MODERN HERO -->
+<div class="hero hero-visible">
+  <div class="hero-grid"></div>
+  <div class="hero-orb orb-a"></div>
+  <div class="hero-orb orb-b"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-kicker"><span></span> AI EDUCATION · DIGITAL TRANSFORMATION</div>
+      <h1>AI를 이해하고,<br><em>미래를 설계합니다.</em></h1>
+      <p class="hero-lead">정한열 교수 · Hanyeol Jeong, Ph.D.</p>
+      <p class="hero-desc">대림대학교 교육혁신센터에서 생성형 AI, AI 리터러시와 디지털 전환을 연구하고 교육합니다.</p>
+      <div class="hero-actions">
+        <a href="#" data-tab="courses" class="hero-btn primary">강의 살펴보기 <span>↗</span></a>
+        <a href="#" data-tab="column" class="hero-btn ghost">AI Insights <span>→</span></a>
+        <a href="https://token-web.github.io/profile/" class="hero-btn ghost">프로필 <span>↗</span></a>
+      </div>
+      <div class="hero-cert">
+        <a href="https://blog.naver.com/patriot_daelim/224300779757" target="_blank" rel="noopener" class="hero-btn cert">🏅 <b>대림대 정한열교수 인텔 AI4FW 인증서 다운로드</b> <span>↗</span></a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">Generative AI</span><span class="tag">Prompt Engineering</span>
+        <span class="tag">AI Literacy</span><span class="tag">Digital Transformation</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="ai-ring ring-1"></div><div class="ai-ring ring-2"></div>
+      <div class="photo-card">
+        <div class="photo-top"><span>AI EDUCATOR</span><b>●</b></div>
+        <img class="hero-photo" src="data:image/png;base64,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">
+        <div class="photo-bottom"><strong>Hanyeol Jeong</strong><span>Ph.D. · MIS</span></div>
+      </div>
+      <div class="floating-chip chip-1"><b>AI</b><span>Education</span></div>
+      <div class="floating-chip chip-2"><b>AI Insight</b><span>LAB</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL TO EXPLORE <span>↓</span></div>
+</div>
+
+<!-- HOME: FREE APPS BAND (Home 탭에서만 표시) -->
+<div class="home-apps on" id="home-apps">
+  <div class="apps-head">
+    <div>
+      <div class="section-eyebrow">Free Apps · 무료 앱</div>
+      <div class="section-title">누구나 무료로 쓰는 AI 도구</div>
+    </div>
+    <a href="#" data-tab="apps" class="apps-more">무료 앱 자세히 보기 →</a>
+  </div>
+  <div class="app-grid">
+    <article class="app-card">
+      <a class="app-thumb" href="https://token-web.github.io/ai_prompt/" target="_blank" rel="noopener" aria-label="AI 프롬프트 모음 앱 열기">
+        <img src="assets/apps/prompt-app.webp" width="800" height="500" loading="lazy" alt="AI 프롬프트 모음 앱 화면: 인물·사진 보정·상품 광고 등 카테고리 목록">
+      </a>
+      <div class="app-body">
+        <div class="app-badges"><span class="app-badge free">무료 앱</span><span class="app-badge">한글 · English</span></div>
+        <h3 class="app-title">AI 프롬프트 모음</h3>
+        <p class="app-desc">바로 복사해 쓰는 한글·영문 프롬프트 모음. 일부는 비포/애프터로 결과를 미리 볼 수 있어요.</p>
+        <div class="app-actions"><a class="app-btn primary" href="https://token-web.github.io/ai_prompt/" target="_blank" rel="noopener">앱 열기 <span>↗</span></a></div>
+      </div>
+    </article>
+    <article class="app-card">
+      <a class="app-thumb" href="https://token-web.github.io/album/" target="_blank" rel="noopener" aria-label="나의 추억 앨범 만들기 앱 열기">
+        <img src="assets/apps/album-app.webp" width="800" height="500" loading="lazy" alt="나의 추억 앨범 만들기 앱 화면: 사진 올리기, 표지와 마무리, 미리보기와 저장">
+      </a>
+      <div class="app-body">
+        <div class="app-badges"><span class="app-badge free">무료 앱</span><span class="app-badge">PDF · PNG 저장</span></div>
+        <h3 class="app-title">나의 추억 앨범 만들기</h3>
+        <p class="app-desc">사진을 올리면 PDF·PNG 앨범이 완성돼요. 사진은 내 컴퓨터 밖으로 나가지 않습니다.</p>
+        <div class="app-actions"><a class="app-btn primary" href="https://token-web.github.io/album/" target="_blank" rel="noopener">앱 열기 <span>↗</span></a></div>
+      </div>
+    </article>
+  </div>
+</div>
+
+<!-- ABOUT: BENTO SUMMARY (from Direction 1) -->
+<section id="about" class="tab-panel">
+  <div class="section-eyebrow">Profile · 인물정보</div>
+  <div class="section-title">교수 소개 / About</div>
+
+  <div class="bento">
+    <div class="bento-main">
+      <div class="bento-role">대림대학교 교수 · Professor</div>
+      <div class="bento-headline">교육혁신센터 · AI 교육 · 생성형 AI · 프롬프트 엔지니어링</div>
+      <div class="bento-sub">
+        경기대학교 경영학박사(MIS전공) · 前 IT기업 임원 출신 실무형 교수<br>
+        Ph.D. in Business Administration (MIS), Kyonggi University · Former IT Executive → Practitioner Professor
+      </div>
+    </div>
+    <div class="bento-side">
+      <a class="bento-card" href="https://blog.naver.com/patriot_daelim/224300779757" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div class="bento-num">🏅</div>
+        <div class="bento-num-label">Intel AI4FW Facilitator &amp; Trainer<br><span style="color:var(--teal); font-weight:700; font-size:12.5px;">인증서 다운받기 →</span></div>
+      </a>
+      <div class="bento-links">
+        <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&x_csa=%7B%22fromUi%22%3A%22kb%22%7D&pkid=1&os=41442497&qvt=0&query=%EC%A0%95%ED%95%9C%EC%97%B4" target="_blank" rel="noopener">네이버 인물정보 보기 →</a>
+        <a href="https://www.scholar.go.kr/search/scholarDetail.do?scholarNum=2091100900038736&scholarType=P" target="_blank" rel="noopener">K-Scholar 프로필 보기 →</a>
+      </div>
+    </div>
+  </div>
 </section>
-<section>
-<h2><b>2</b>표지와 마무리</h2>
-<div class="fld"><span>앨범 제목</span><input type="text" id="ct" maxlength="30" value="우리 집 이야기"></div>
-<div class="fld"><span>부제</span><input type="text" id="cs" maxlength="40" value="사진으로 엮은 나의 추억"></div>
-<div class="fld"><span>이름과 날짜 (예: 홍길동 · 2026.10.20)</span><input type="text" id="cn" maxlength="40"></div>
-<div class="fld"><span>표지에 쓸 사진</span><select id="cp"></select></div>
-<div class="fld"><span>마무리 문구</span><input type="text" id="ce" maxlength="40" value="우리 집 이야기, 이제 시작"></div>
-<div class="fld"><span>화면 비율 (저장되는 모양)</span><select id="fm"></select></div>
-<p class="note">세로형(9:16, 4:5)에서는 글이 항상 사진 아래에 놓입니다.</p>
-<div class="fld"><span>색 분위기 (전자책 읽기 색을 포함한 10가지)</span><div class="sw" id="swatches" role="radiogroup" aria-label="색 분위기"></div><select id="th" hidden aria-hidden="true"></select></div>
-<div class="fld"><span>글꼴</span><select id="fo"></select></div>
-<div class="tocbox"><label class="chk"><input type="checkbox" id="toc"> 목차 쪽 넣기 (표지 바로 뒤)</label>
-<p class="note">사진 제목을 모아 목차 쪽을 만듭니다. 제목이 없으면 “N번 사진”으로 나오고, PDF에는 책갈피(왼쪽 목차)와 목차 줄 클릭 이동이 함께 들어갑니다.</p>
-<div class="fld" id="tocopt" hidden><span>목차 제목</span><input type="text" id="toct" maxlength="10" value="목차"></div></div>
-<button type="button" class="sub" id="ai_go">✨ AI에게 문구 도움 받기 ↓</button>
+
+<!-- CAREER -->
+<section id="career" class="tab-panel">
+  <div class="section-eyebrow">Career · 주요 경력 및 활동</div>
+  <div class="section-title">경력 / Career</div>
+
+  <div class="career-current">
+    <div class="cc-label">현직 · Current Position</div>
+    <div class="cc-role">대림대학교 교육혁신센터 교수</div>
+    <div class="cc-sub">담당 교과 · AI와 코딩 · AI와 사회변화 · AI와 글쓰기 · 트렌드인사이트</div>
+  </div>
+
+  <div class="career-block">
+    <div class="career-block-title">주요 전직 경력 · Previous Positions</div>
+    <ul class="career-list">
+      <li><strong>㈜시스게이트 대표임원</strong> (기술연구소장 → 전략기획팀장 → 경영기획실장 → CAQ)</li>
+      <li><strong>한중전략경영연구소</strong> 감사</li>
+      <li><strong>한국 OA학회(현 컴퓨터정보학회)</strong> 컴퓨터 기술분과 편집이사</li>
+      <li><strong>국가기술은행(NTB)</strong> 전문위원</li>
+      <li><strong>경기대학교 경영학부</strong> 겸임교수</li>
+    </ul>
+
+    <div class="career-more-wrap">
+      <button class="pub-toggle-btn" id="careerToggleBtn" onclick="toggleCareer()">전체 경력 더 보기 ▾</button>
+    </div>
+
+    <div id="career-more">
+      <ul class="career-list" style="margin-top:14px;">
+        <li>IBK 지식재산(IP) 기술평가 자문위원</li>
+        <li>경원전문대 사무자동화과 산업체 겸임교수</li>
+        <li>서울보건대 유통과학과 산업체 겸임교수</li>
+        <li>오산대·국제대·동남보건대·신구대·장안대·섬유패션대 강사</li>
+        <li>홍대·중대·숭실대 하계 OA 특강 강사</li>
+        <li>대한상의·삼성협력사 대상 6시그마 교육 강사</li>
+        <li>키출판사 출판 자문위원</li>
+        <li>한국비지니스컨설팅그룹 OA 강사</li>
+        <li>한국정보문화센터 공무원 정보이용 능력 테스트 출제위원</li>
+        <li>워드프로세서·컴퓨터활용능력 출제위원</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="career-block">
+    <div class="career-block-title">표창 · Awards</div>
+    <div class="career-grid">
+      <div class="career-item">
+        <div class="career-item-label">2026</div>
+        <div class="career-item-value">경기도 성실 납세자</div>
+      </div>
+      <div class="career-item">
+        <div class="career-item-label">2014</div>
+        <div class="career-item-value">국세청장 표창 · IBK기업은행장 표창</div>
+      </div>
+      <div class="career-item">
+        <div class="career-item-label">2010 / 2023</div>
+        <div class="career-item-value">대림대 총장 표창 · 안양시 인재육성재단 인증패</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="career-block">
+    <div class="career-block-title">자격 · Certifications</div>
+    <div class="career-grid">
+      <div class="career-item">
+        <div class="career-item-label">국가 자격</div>
+        <div class="career-item-value">직업상담사 2급 · 워드프로세서 2급 · SW 특급 기술자</div>
+      </div>
+      <div class="career-item">
+        <div class="career-item-label">국내외 민간</div>
+        <div class="career-item-value">Intel AI4FW Facilitator · 한국준법진흥원 실무형 AI전문가 · 전문대학 평생직업교육협회 로컬크리에이터 전문강사</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="career-block">
+    <div class="career-block-title">주요 수료 과정 · Programs Completed</div>
+    <ul class="career-list">
+      <li>전자통신산업 AI 융합전략 최고경영자 과정 수료</li>
+      <li>경기중장년 행복캠퍼스 생애설계 전문 컨설턴트 양성과정 수료</li>
+    </ul>
+  </div>
 </section>
-</div>
-<div class="pv">
-<section>
-<h2><b>3</b>미리보기와 저장</h2>
-<canvas id="cv" width="1280" height="720"></canvas>
-<div class="nav"><button class="sub" id="prev">◀ 이전 쪽</button><span id="pg"></span><button class="sub" id="next">다음 쪽 ▶</button></div>
-<div class="saves"><button id="save">PDF로 저장하기</button><button class="sub" id="savePng">이 쪽만 PNG로 저장</button><button class="sub" id="savePngAll">전체 쪽 PNG (ZIP)</button></div>
-<div id="msg" role="status" aria-live="polite"></div>
+
+<!-- COURSES -->
+<section id="courses" class="tab-panel">
+  <div class="section-eyebrow">Courses · 담당 강의</div>
+  <div class="section-title">강의 소개 / Courses</div>
+
+  <div class="course-grid">
+    <div class="course-card blue">
+      <div class="course-no">Course 01 · 이론</div>
+      <div class="course-title-ko">AI와 사회변화</div>
+      <div class="course-title-en">AI and Social Change (Theory)</div>
+      <div class="course-desc">
+        스마트폰을 활용해 AI를 실무에 적용하는 인력을 양성하는 교과목입니다.
+        생성형 AI가 사회·직업·윤리에 미치는 영향을 비판적으로 탐구하고,
+        RTNF 프롬프트 엔지니어링 프레임워크를 통해 누구나 AI를 효과적으로 활용할 수 있는 역량을 기릅니다.
+      </div>
+      <div class="course-tags">
+        <span class="course-tag">스마트폰 활용</span>
+        <span class="course-tag">생성형 AI</span>
+        <span class="course-tag">RTNF 프레임워크</span>
+        <span class="course-tag">AI 리터러시</span>
+        <span class="course-tag">디지털 윤리</span>
+        <span class="course-tag">AI 실무 활용</span>
+      </div>
+      <a class="course-app-link" href="https://token-web.github.io/ai_prompt/" target="_blank" rel="noopener">실습 앱 · AI 프롬프트 모음 <span>↗</span></a>
+    </div>
+
+    <div class="course-card teal">
+      <div class="course-no">Course 02 · 실습</div>
+      <div class="course-title-ko">AI와 코딩</div>
+      <div class="course-title-en">AI and Coding (Practice)</div>
+      <div class="course-desc">
+        PC 실습 중심의 교과목으로, 생성형 AI를 활용한 콘텐츠 생성(텍스트·이미지·영상·음악 등 UI 중심)과 실무 활용 능력을 기릅니다.
+        블록코딩과 바이브 코딩(Vibe Coding)을 연계하여 논리적 문제해결 능력을 단계적으로 향상시키는 데 중점을 둡니다.
+      </div>
+      <div class="course-tags">
+        <span class="course-tag">PC 실습</span>
+        <span class="course-tag">생성형 AI 콘텐츠</span>
+        <span class="course-tag">이미지·영상·음악 생성</span>
+        <span class="course-tag">블록코딩</span>
+        <span class="course-tag">Vibe Coding</span>
+        <span class="course-tag">논리적 문제해결</span>
+      </div>
+    </div>
+
+    <div class="course-card amber">
+      <div class="course-no">Course 03 · 실습</div>
+      <div class="course-title-ko">AI와 글쓰기</div>
+      <div class="course-title-en">AI and Writing (Practice)</div>
+      <div class="course-desc">
+        생성형 AI를 활용해 자료를 탐색·분석하고, 자신의 생각을 논리적인 글과 시각자료로 표현하는 프로젝트 중심 교과목입니다.
+        AI와 협업하여 전공 연계 문제를 해결하고, 탐구·검증·수정의 과정을 거쳐 PPT·인포그래픽·영상·개인 홈페이지 등
+        산업현장에서 활용 가능한 디지털 포트폴리오를 완성합니다.
+      </div>
+      <div class="course-tags">
+        <span class="course-tag">자료 탐색·분석</span>
+        <span class="course-tag">AI 협업 글쓰기</span>
+        <span class="course-tag">이미지 시각화</span>
+        <span class="course-tag">발표자료(PPTX, MP4)</span>
+        <span class="course-tag">전공연계 프로젝트</span>
+        <span class="course-tag">개인홈페이지 및 포트폴리오 제작</span>
+      </div>
+    </div>
+  </div>
 </section>
-</div>
-</div>
-<div class="aiwrap"><section id="aihelp"><details id="aid"><summary>✨ AI에게 글쓰기 도움 받기 <small>선택 사항 · 이 앱에는 AI가 들어 있지 않습니다. 질문을 복사해 AI 사이트에서 답을 받고, 그 답을 붙여넣으면 칸이 채워집니다.</small></summary>
-<div class="warn">AI 창은 별도 사이트입니다. 실명·주소·전화번호는 빼고 쓰세요. 사진은 이 앱 밖으로 나가지 않으며 AI 창에도 올라가지 않습니다.</div>
-<h2><b>가</b>앨범 정보 적기</h2>
-<div class="aigrid">
-<div class="fld"><span>앨범 주제 (예: 어머니 칠순 가족여행)</span><input type="text" id="ai_topic" maxlength="60"></div>
-<div class="fld"><span>보는 사람 (예: 가족, 친구, 손주)</span><input type="text" id="ai_who" maxlength="30"></div>
-<div class="fld"><span>분위기</span><select id="ai_tone"><option>따뜻하고 담백하게</option><option>밝고 유쾌하게</option><option>차분하고 감성적으로</option><option>감동적으로</option><option>정중하고 격식 있게</option></select></div>
-</div>
-<h2><b>나</b>질문 복사하고 AI 열기</h2>
-<div class="fld"><span>열 AI 사이트 (질문이 복사됩니다. 열린 창에서 붙여넣기 Ctrl+V 하세요)</span><div class="row" id="ai_sites" role="radiogroup" aria-label="열 AI 사이트"><label><input type="radio" name="aisite" value="chatgpt" checked> ChatGPT</label><label><input type="radio" name="aisite" value="claude"> Claude</label><label><input type="radio" name="aisite" value="gemini"> Gemini</label></div></div>
-<div id="ai_list"></div>
-<h2><b>다</b>AI가 써 준 답 붙여넣기</h2>
-<p class="note">①·②·③번 질문의 답을 붙여넣고 [앨범에 채우기]를 누르면 제목·부제·마무리 문구와 사진별 제목·설명이 채워집니다.</p>
-<textarea id="ai_paste" rows="6" placeholder="여기에 AI가 써 준 답을 붙여넣으세요 (Ctrl+V)"></textarea>
-<div class="row"><button type="button" id="ai_fill">앨범에 채우기</button><button type="button" class="sub" id="ai_undo" disabled>방금 채운 것 되돌리기</button></div>
-<div id="aimsg" role="status" aria-live="polite"></div>
-</details></section></div>
+
+<!-- PUBLICATIONS -> 연구실적 -->
+<section id="publications" class="tab-panel">
+  <div class="section-eyebrow">Research · 학술활동</div>
+  <div class="section-title">연구실적 / Research Achievements</div>
+
+  <div class="pub-links">
+    <a class="pub-link-btn" href="https://search.kyobobook.co.kr/search?keyword=%EC%A0%95%ED%95%9C%EC%97%B4&chrc=%EC%A0%95%ED%95%9C%EC%97%B4" target="_blank" rel="noopener">
+      <span class="pub-link-dot" style="background:#008ECC;"></span> 교보문고에서 저서 보기 ↗
+    </a>
+    <a class="pub-link-btn" href="https://www.aladin.co.kr/author/wauthor_overview.aspx?AuthorSearch=@40300&srsltid=AfmBOopT1g6qzi2fDoqw3ooMIB4dYdqnMMICxgz4rLtdayCjhQeHT8LY" target="_blank" rel="noopener">
+      <span class="pub-link-dot" style="background:#FF6E1E;"></span> 알라딘에서 저서 보기 ↗
+    </a>
+  </div>
+
+  <div class="pub-subtitle">대표 저서 · Selected Books (총 80여 권 이상)</div>
+  <ul class="pub-list">
+    <li class="pub-item"><strong>제4차 산업혁명 이렇게 달성한다</strong> · 한올출판사 <span class="pub-meta">· 2017 · 공동저서</span></li>
+    <li class="pub-item"><strong>제4차 산업혁명 충격과 도전</strong> · 배문사 <span class="pub-meta">· 2017 · 공동저서</span></li>
+    <li class="pub-item"><strong>PASW에 의한 통계분석 입문</strong> · 한올출판사 <span class="pub-meta">· 2010 · 공동저서</span></li>
+    <li class="pub-item"><strong>엑셀 2007을 활용한 경영통계</strong> · 한올출판사 <span class="pub-meta">· 2008 · 단독저서</span></li>
+  </ul>
+
+  <div class="pub-subtitle">대표 논문 · Selected Papers</div>
+  <ul class="pub-list">
+    <li class="pub-item"><strong>정보시스템 아웃소싱 서비스만족도에 관한 연구</strong>(정보기술 품질을 중심으로) <span class="pub-meta">· 산업경제연구소 22집 2호 · 2008.12 · 단독</span></li>
+    <li class="pub-item"><strong>정보품질이 ERP시스템활용에 미치는 영향에 관한 연구</strong> <span class="pub-meta">· 컴퓨터정보학회 12권 6호 · 2007.12 · 공동</span></li>
+    <li class="pub-item"><strong>온라인 고령친화용품점 품질요인 및 고객만족에 관한 연구</strong> <span class="pub-meta">· 컴퓨터정보학회 12권 5호 · 2007.11 · 단독</span></li>
+  </ul>
+
+  <div class="pub-more-wrap">
+    <button class="pub-toggle-btn" id="pubToggleBtn" onclick="togglePublications()">더 보기 (주요 논문 · 주요 저서) ▾</button>
+  </div>
+
+  <div id="pub-more">
+
+    <div class="pub-group-title">학술논문 – 단독 연구 · Journal Articles (Single Author)</div>
+    <ul class="pub-list">
+      <li class="pub-item"><strong>정보시스템 아웃소싱 서비스만족도에 관한 연구</strong>(정보기술 품질을 중심으로) <span class="pub-meta">· 산업경제연구소 22집 2호 · 2008.12</span></li>
+      <li class="pub-item"><strong>온라인 고령친화용품점 품질요인 및 고객만족에 관한 연구</strong> <span class="pub-meta">· 컴퓨터정보학회 12권 5호 · 2007.11</span></li>
+      <li class="pub-item"><strong>근로자의 인식된 조직적 지원, 몰입, 이직의도에 관한 연구</strong> <span class="pub-meta">· 산업경제연구소 14권 · 2001.12</span></li>
+      <li class="pub-item"><strong>인터넷 쇼핑몰의 활성화 방안에 관한 연구</strong> <span class="pub-meta">· 산업경제연구소 12권 · 2000.11</span></li>
+      <li class="pub-item"><strong>효율적인 네트웍보안시스템구축에 관한 연구</strong> <span class="pub-meta">· 컴퓨터정보학회 3권 4호 · 1998.12</span></li>
+    </ul>
+
+    <div class="pub-group-title">학술논문 – 공동 연구 · Journal Articles (Co-authored)</div>
+    <ul class="pub-list">
+      <li class="pub-item"><strong>정보품질이 ERP시스템활용에 미치는 영향에 관한 연구</strong> <span class="pub-meta">· 컴퓨터정보학회 12권 6호 · 2007.12</span></li>
+      <li class="pub-item"><strong>Research about internet business model by Personal shop community</strong> <span class="pub-meta">· 한국품질경영학회 아시아 8개국 품질경영 컨퍼런스 · 2001.11</span></li>
+      <li class="pub-item"><strong>B2C 모델 확장에 관한 연구</strong> <span class="pub-meta">· 한국품질경영학회 · 2001.11</span></li>
+    </ul>
+
+    <div class="pub-group-title">단독저서 · Books (Single Author)</div>
+    <ul class="pub-list">
+      <li class="pub-item"><strong>엑셀 2007을 활용한 경영통계</strong> <span class="pub-meta">· 한올출판사 · 2008.02</span></li>
+      <li class="pub-item"><strong>SPSS에 의한 통계분석 입문</strong> <span class="pub-meta">· 한올출판사 · 2007.11</span></li>
+      <li class="pub-item"><strong>쉽게 배우는 PC통신과 인터넷</strong> <span class="pub-meta">· 정보문화사 · 1999.10</span></li>
+      <li class="pub-item"><strong>개정판 쉽게 배우는 인터넷</strong> <span class="pub-meta">· 정보문화사 · 1999.10</span></li>
+      <li class="pub-item"><strong>알기쉬운 윈도우즈 98</strong> <span class="pub-meta">· 정보문화사 · 1998.07</span></li>
+      <li class="pub-item"><strong>쉽게 배우는 인터넷 익스플로러 4.01</strong> <span class="pub-meta">· 정보문화사 · 1998.07</span></li>
+      <li class="pub-item"><strong>넷스케이프 길라잡이</strong> <span class="pub-meta">· 정보문화사 · 1998.06</span></li>
+      <li class="pub-item"><strong>쉽게 배우는 넷 스케이프 3.0/4.01</strong> <span class="pub-meta">· 정보문화사 · 1997.09</span></li>
+      <li class="pub-item"><strong>알기쉬운 한글 윈도우즈 NT 4.0</strong> <span class="pub-meta">· 정보문화사 · 1997.01</span></li>
+      <li class="pub-item"><strong>PC통신에서 인터넷까지</strong> <span class="pub-meta">· 정보문화사 · 1996.09</span></li>
+      <li class="pub-item"><strong>저는 PC를 하나도 모르는데요</strong> <span class="pub-meta">· 키출판사 · 1996.03</span></li>
+      <li class="pub-item"><strong>올라오세요 한글 3.0</strong> <span class="pub-meta">· 한글과컴퓨터 · 1995.07</span></li>
+      <li class="pub-item"><strong>대화로 풀어가는 컴퓨터입문</strong> <span class="pub-meta">· 정보문화사 · 1995.04</span></li>
+      <li class="pub-item"><strong>예제로 배우는 데이터베이스</strong> <span class="pub-meta">· 한국컴퓨터매거진 · 1995.01</span></li>
+      <li class="pub-item"><strong>PC 왕기초부터 일상업무 활용까지 혼자서 끝내기</strong> <span class="pub-meta">· 키출판사 · 1994.11</span></li>
+      <li class="pub-item"><strong>한글 1.53</strong> <span class="pub-meta">· 한국컴퓨터매거진 · 1994.03</span></li>
+    </ul>
+
+    <div class="pub-group-title">공동저서 · Books (Co-authored)</div>
+    <ul class="pub-list">
+      <li class="pub-item"><strong>제4차 산업혁명 이렇게 달성한다</strong> <span class="pub-meta">· 한올출판사 · 2017.08</span></li>
+      <li class="pub-item"><strong>제4차 산업혁명 충격과 도전</strong> <span class="pub-meta">· 배문사 · 2017.06</span></li>
+      <li class="pub-item"><strong>SPSS에 의한 통계분석 입문</strong> <span class="pub-meta">· 한올출판사 · 2007.11</span></li>
+      <li class="pub-item"><strong>개정판 한글 SPSS 기초에서 응용까지</strong> <span class="pub-meta">· 형설출판사 · 2006.02</span></li>
+      <li class="pub-item"><strong>e-business이론과 실제</strong> <span class="pub-meta">· 형설출판사 · 2002.08</span></li>
+      <li class="pub-item"><strong>STATISTICA에 의한 알기쉬운 통계분석</strong> <span class="pub-meta">· 형설출판사 · 2002.04</span></li>
+      <li class="pub-item"><strong>한글엑셀 2000</strong> <span class="pub-meta">· 무역경영사 · 2001.02</span></li>
+      <li class="pub-item"><strong>한글 SPSS 10.0 기초에서 응용까지</strong> <span class="pub-meta">· 형설출판사 · 2001.02</span></li>
+      <li class="pub-item"><strong>Excel을 이용한 경영자료분석</strong> <span class="pub-meta">· 청암미디어 · 2000.06</span></li>
+      <li class="pub-item"><strong>Microsoft Excel 2000 기초에서 응용까지</strong> <span class="pub-meta">· 형설출판사 · 2000.06</span></li>
+      <li class="pub-item"><strong>데이터 처리 기법을 위한 엑셀 2000</strong> <span class="pub-meta">· 청목출판사 · 2000.03</span></li>
+      <li class="pub-item"><strong>더욱 간편해진 한글 Windows 98</strong> <span class="pub-meta">· 높이깊이 · 1999.02</span></li>
+      <li class="pub-item"><strong>완전정복 한글 액세스 97</strong> <span class="pub-meta">· 태성출판사 · 1998.07</span></li>
+      <li class="pub-item"><strong>더욱 간편해진 한글 엑셀 97</strong> <span class="pub-meta">· 정익사 · 1998.04</span></li>
+      <li class="pub-item"><strong>더욱 간편해진 한글엑셀 97</strong> <span class="pub-meta">· 높이깊이 · 1998.01</span></li>
+      <li class="pub-item"><strong>알기쉬운 파워포인트</strong> <span class="pub-meta">· 연학사 · 1998.01</span></li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="tab-panel">
+  <div class="section-eyebrow">Research Interests · 연구 및 관심분야</div>
+  <div class="section-title">관심분야 / Research Interests</div>
+
+  <div class="interest-list">
+    <div class="interest-item">
+      <div class="interest-icon">🤖</div>
+      <div class="interest-title">생성형 AI 교육</div>
+      <div class="interest-desc">Generative AI<br>비전공자 대상 AI 리터러시 교육 설계</div>
+    </div>
+    <div class="interest-item">
+      <div class="interest-icon">✍️</div>
+      <div class="interest-title">프롬프트 엔지니어링</div>
+      <div class="interest-desc">Prompt Engineering<br>RTNF 프레임워크 개발 및 적용</div>
+    </div>
+    <div class="interest-item">
+      <div class="interest-icon">💻</div>
+      <div class="interest-title">AI 코딩 교육</div>
+      <div class="interest-desc">AI &amp; Coding Education<br>알고리즘적 사고 기반 블록코딩</div>
+    </div>
+    <div class="interest-item">
+      <div class="interest-icon">🔄</div>
+      <div class="interest-title">디지털 전환</div>
+      <div class="interest-desc">Digital Transformation<br>직업교육에서의 AI 활용 혁신</div>
+    </div>
+    <div class="interest-item">
+      <div class="interest-icon">⚖️</div>
+      <div class="interest-title">AI 윤리</div>
+      <div class="interest-desc">AI Ethics<br>디지털 윤리·데이터 편향 교육</div>
+    </div>
+    <div class="interest-item">
+      <div class="interest-icon">📱</div>
+      <div class="interest-title">모바일 AI 리터러시</div>
+      <div class="interest-desc">Mobile AI Literacy<br>스마트폰 기반 실습 교육 설계</div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE APPS -->
+<section id="apps" class="tab-panel">
+  <div class="section-eyebrow">Free Apps · 무료 앱</div>
+  <div class="section-title">무료 앱 / Free Apps</div>
+  <p class="apps-intro">수업과 연구 과정에서 만든 도구를 누구나 무료로 쓸 수 있도록 공개합니다. 앱은 새 창에서 열립니다.</p>
+
+  <div class="app-grid">
+    <article class="app-card">
+      <a class="app-thumb" href="https://token-web.github.io/ai_prompt/" target="_blank" rel="noopener" aria-label="AI 프롬프트 모음 앱 열기">
+        <img src="assets/apps/prompt-app.webp" width="800" height="500" loading="lazy" alt="AI 프롬프트 모음 앱 화면: 인물·사진 보정·상품 광고 등 카테고리 목록">
+      </a>
+      <div class="app-body">
+        <div class="app-badges"><span class="app-badge free">무료 앱</span><span class="app-badge">한글 · English</span><span class="app-badge">복사 · 저장</span></div>
+        <h3 class="app-title">AI 프롬프트 모음</h3>
+        <div class="app-en">AI Prompt Collection</div>
+        <p class="app-desc">인물 프로필, 사진 보정, 상품 광고, 아트·일러스트, 업무 글쓰기까지 바로 복사해 쓸 수 있는 프롬프트 모음입니다. 한글과 영문 프롬프트를 고를 수 있고, 일부 프롬프트는 비포/애프터 슬라이더로 결과를 미리 볼 수 있습니다.</p>
+        <div class="app-steps-title">이렇게 쓰세요</div>
+        <ol class="app-steps">
+            <li>카테고리를 고르거나 검색합니다.</li>
+            <li>프롬프트를 열어 한글 또는 English를 고릅니다.</li>
+            <li>복사 버튼을 눌러 AI 도구에 붙여넣습니다.</li>
+        </ol>
+        <div class="app-actions"><a class="app-btn primary" href="https://token-web.github.io/ai_prompt/" target="_blank" rel="noopener">앱 열기 <span>↗</span></a></div>
+        <div class="app-credit">제작 · 정한열 (AI Insight Lab)</div>
+      </div>
+    </article>
+
+    <article class="app-card">
+      <a class="app-thumb" href="https://token-web.github.io/album/" target="_blank" rel="noopener" aria-label="나의 추억 앨범 만들기 앱 열기">
+        <img src="assets/apps/album-app.webp" width="800" height="500" loading="lazy" alt="나의 추억 앨범 만들기 앱 화면: 사진 올리기, 표지와 마무리, 미리보기와 저장">
+      </a>
+      <div class="app-body">
+        <div class="app-badges"><span class="app-badge free">무료 앱</span><span class="app-badge">PDF · PNG 저장</span><span class="app-badge">사진 비공개</span></div>
+        <h3 class="app-title">나의 추억 앨범 만들기</h3>
+        <div class="app-en">My Memory Album Maker</div>
+        <p class="app-desc">사진을 올리고 제목과 이름을 정하면 PDF·PNG 앨범이 완성되는 앱입니다. 사진은 내 컴퓨터 밖으로 나가지 않으며, 사진 1장만으로도 앨범을 만들 수 있습니다.</p>
+        <div class="app-steps-title">이렇게 쓰세요</div>
+        <ol class="app-steps">
+            <li>사진을 올립니다. (여러 장 가능)</li>
+            <li>표지 제목·이름·날짜를 정합니다.</li>
+            <li>미리보기를 보고 PDF 또는 PNG로 저장합니다.</li>
+        </ol>
+        <div class="app-note">새로고침하면 작업이 사라지니, 끝나면 꼭 PDF로 저장하세요.</div>
+        <div class="app-actions"><a class="app-btn primary" href="https://token-web.github.io/album/" target="_blank" rel="noopener">앱 열기 <span>↗</span></a></div>
+        <div class="app-credit">제작 · 정한열 (AI Insight Lab)</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- COLUMN (NAVER BLOG PHONE FRAME) -->
+<section id="column" class="tab-panel">
+  <div class="section-eyebrow">Column · 칼럼</div>
+  <div class="section-title">칼럼 / Naver Blog</div>
+
+  <div class="column-intro">
+    네이버 블로그에 게재한 칼럼과 소식을 모바일 화면 그대로 확인할 수 있습니다.<br>
+    <span style="color:var(--gray-500); font-size:12.5px;">※ 네이버 정책상 화면이 표시되지 않을 경우, 아래 버튼으로 새 창에서 열어주세요.</span>
+  </div>
+
+  <div class="phone-frame-wrap">
+    <div class="phone-frame">
+      <iframe src="https://m.blog.naver.com/patriot_daelim" title="정한열 교수 네이버 블로그" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="phone-fallback">
+      <a href="https://m.blog.naver.com/patriot_daelim" target="_blank" rel="noopener">네이버 블로그 새 창에서 보기 ↗</a>
+      <p>blog.naver.com/patriot_daelim</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="tab-panel">
+  <div class="section-eyebrow">Contact · 연락처</div>
+  <div class="section-title">연락처 및 채널 / Contact &amp; Links</div>
+
+  <div class="contact-grid">
+    <a class="contact-card" href="https://token-web.github.io/profile/">
+      <div class="contact-icon" style="background:#0ABFAE;">🪪</div>
+      <div>
+        <div class="contact-label">프로필 · Speaker Profile</div>
+        <div class="contact-value" style="font-size:13px;">특강 포스터 · 기관 제출용 · 강의자료 표지</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://dept.daelim.ac.kr/cei/cms/FrProfessorCon/ProfessorView.do?MENU_ID=280&SITE_NO=35&CONTENTS_NO=&PROF_GBN_CD=P1002&PROF_SEQ=1279" target="_blank" rel="noopener">
+      <div class="contact-icon blog" style="background:#1E6FD9;">🏫</div>
+      <div>
+        <div class="contact-label">연구실 · Office</div>
+        <div class="contact-value" style="font-size:13px;">대림대학교 교육혁신센터</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://m.blog.naver.com/patriot_daelim" target="_blank" rel="noopener">
+      <div class="contact-icon naver">N</div>
+      <div>
+        <div class="contact-label">네이버 블로그 · NAVER BLOG</div>
+        <div class="contact-value" style="font-size:12px; word-break:break-all;">blog.naver.com/patriot_daelim</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://youtube.com/@aiinsightlabkr?si=OEZIxVfiJPIrYDaL" target="_blank" rel="noopener">
+      <div class="contact-icon youtube">▶</div>
+      <div>
+        <div class="contact-label">YouTube</div>
+        <div class="contact-value" style="font-size:13px;">AI Insight Lab</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/hanyeol-jeong" target="_blank" rel="noopener">
+      <div class="contact-icon linkedin">💼</div>
+      <div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">링크드인</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://www.scholar.go.kr/search/scholarDetail.do?scholarNum=2091100900038736&scholarType=P" target="_blank" rel="noopener">
+      <div class="contact-icon scholar">📚</div>
+      <div>
+        <div class="contact-label">K-Scholar</div>
+        <div class="contact-value" style="font-size:13px;">학술연구자정보</div>
+      </div>
+    </a>
+  </div>
+
+  <div style="margin-top: 12px; padding: 16px 24px; background: var(--gray-100); border-radius: 10px; font-size: 12px; color: var(--gray-500); line-height: 1.6;">
+    K-Scholar(국회도서관 학술연구자 정보 공유사업)는 국회도서관·대학교·연구기관의 연구자정보를 공유하여 학술정보융합 기반을 조성하는 국가협력 프로젝트입니다.
+  </div>
+</section>
+
 <footer>
-<div class="fin">
-<svg width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="AI Insight Lab 로고"><rect width="64" height="64" rx="14" fill="#1a2e45"/><rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#0abfae" stroke-width="2"/><text x="32" y="30" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="22" fill="#fff">AI</text><text x="32" y="48" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="11" letter-spacing="1" fill="#0abfae">INSIGHT</text></svg>
-<div>
-<strong>나의 추억 앨범 만들기 · 무료 제공 앱</strong><br>
-제작: 대림대 정한열 교수 · AI Insight Lab<br>
-<a href="https://token-web.github.io/aiinsightlab/" target="_blank" rel="noopener">프로필 사이트</a> ·
-<a href="https://blog.naver.com/patriot_daelim" target="_blank" rel="noopener">네이버 블로그</a> ·
-<a href="https://youtube.com/@aiinsightlabkr" target="_blank" rel="noopener">YouTube</a> ·
-<a href="https://www.linkedin.com/in/hanyeol-jeong" target="_blank" rel="noopener">LinkedIn</a><br>
-<span class="lic">FREE · 누구나 무료로 사용</span>
-<small>© 2026 Hanyeol Jeong. 올리신 사진은 서버로 전송되지 않고 내 기기 안에서만 처리됩니다.</small>
-</div>
-</div>
+  <p>정한열 교수 · Hanyeol Jeong, Professor</p>
+  <p style="margin-top:6px;">대림대학교 교육혁신센터 · Daelim University</p>
+  <p style="margin-top:10px;">
+    <a href="https://token-web.github.io/profile/">프로필</a> &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/hanyeol-jeong" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+    <a href="https://blog.naver.com/patriot_daelim" target="_blank">네이버 블로그</a> &nbsp;·&nbsp;
+    <a href="https://youtube.com/@aiinsightlabkr?si=OEZIxVfiJPIrYDaL" target="_blank">YouTube</a> &nbsp;·&nbsp;
+    <a href="https://www.scholar.go.kr/search/scholarDetail.do?scholarNum=2091100900038736&scholarType=P" target="_blank">K-Scholar</a>
+  </p>
 </footer>
+
 <script>
-const $=s=>document.querySelector(s);
-const FORMATS=[{n:'가로형 16:9 (발표·TV·유튜브)',w:1280,h:720,s:1.5,t:'16x9'},{n:'세로형 9:16 (스토리·릴스·휴대폰)',w:720,h:1280,s:1.5,t:'9x16'},{n:'인스타 피드 4:5 (1080×1350)',w:1080,h:1350,s:1,t:'4x5'}];
-let W=1280,H=720,S=1.5;
-const THEMES=[
-{n:'포근한 아이보리',bg:'#F7F3EC',ink:'#2B2623',ac:'#8A5A44',ov:'rgba(43,38,35,.58)',ca:'#F3E3C0'},
-{n:'순백',bg:'#FFFFFF',ink:'#1F1F1F',ac:'#067A70',ov:'rgba(20,24,24,.56)',ca:'#BFEDE6'},
-{n:'세피아',bg:'#F4ECD8',ink:'#5B4636',ac:'#9A4F2B',ov:'rgba(60,40,28,.6)',ca:'#F0D9B0'},
-{n:'연회색',bg:'#E8E8EA',ink:'#2A2A2E',ac:'#44546A',ov:'rgba(30,32,38,.58)',ca:'#D5DCE6'},
-{n:'맑은 하늘',bg:'#EEF3F8',ink:'#1F2A37',ac:'#3A6EA5',ov:'rgba(20,34,52,.58)',ca:'#CFE3F7'},
-{n:'세이지 그린',bg:'#EAF3EE',ink:'#22332B',ac:'#2F6F51',ov:'rgba(24,46,36,.58)',ca:'#CDEBDC'},
-{n:'파스텔 핑크',bg:'#FCEFEF',ink:'#3A2E2E',ac:'#B03A58',ov:'rgba(58,34,38,.58)',ca:'#FAD6DE'},
-{n:'짙은 초록',bg:'#2F4A3F',ink:'#F4F1EA',ac:'#E3C58F',ov:'rgba(25,45,36,.6)',ca:'#F3E3C0'},
-{n:'네이비 골드',bg:'#14213D',ink:'#F5F1E6',ac:'#E0B04A',ov:'rgba(10,18,36,.62)',ca:'#F3D58A'},
-{n:'야간(차콜)',bg:'#16181D',ink:'#E8E6E1',ac:'#F2C57C',ov:'rgba(10,11,14,.62)',ca:'#F7D9A0'}];
-const FONTS=[{n:'고딕',f:'"Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif'},{n:'명조',f:'"Myeongjo KR","Batang",serif'},{n:'둥근 고딕',f:'"Gowun Dodum","Malgun Gothic","Apple SD Gothic Neo",sans-serif'},{n:'손글씨 (개구)',f:'Gaegu,"Noto Sans KR","Malgun Gothic",sans-serif'},{n:'손글씨 (감자꽃)',f:'"Gamja Flower","Malgun Gothic","Apple SD Gothic Neo",sans-serif'},{n:'펜글씨',f:'"Pen KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif'},{n:'붓글씨',f:'"Brush KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif'},{n:'굵은 제목체',f:'"Do Hyeon","Noto Sans KR","Malgun Gothic",sans-serif'}];
-let photos=[],cur=0,coverIdx=-1,pend=0;
-THEMES.forEach((t,i)=>$('#th').add(new Option(t.n,i)));
-FONTS.forEach((t,i)=>$('#fo').add(new Option(t.n,i)));
-FORMATS.forEach((t,i)=>$('#fm').add(new Option(t.n,i)));
-const fmtTag=()=>FORMATS[$('#fm').value].t;
-function applyFormat(){const f=FORMATS[$('#fm').value];W=f.w;H=f.h;S=f.s;const c=$('#cv');c.width=W;c.height=H;c.style.width=`min(100%,${Math.round(78*W/H)}vh)`}
-let tocOn=false;
-const total=()=>photos.length+2+tocPages();
-const photoPage=i=>tocPages()+1+i;
-function pageInfo(i){const k=tocPages(),n=photos.length;if(i===0)return{t:'cover'};if(i<=k)return{t:'toc',j:i-1};if(i===n+k+1)return{t:'end'};return{t:'photo',idx:i-k-1}}
-const th=()=>THEMES[$('#th').value],fo=()=>FONTS[$('#fo').value].f;
-function msg(t,c){const m=$('#msg');m.textContent=t;m.className=c||''}
-function fitBox(im,x,y,w,h,cover){const r=cover?Math.max(w/im.width,h/im.height):Math.min(w/im.width,h/im.height),dw=im.width*r,dh=im.height*r;return[x+(w-dw)/2,y+(h-dh)/2,dw,dh]}
-function wrap(ctx,t,mw){const out=[];
- for(const para of String(t).split('\n')){let l='';
-  for(const word of para.split(' ')){
-   const tryL=l?l+' '+word:word;
-   if(ctx.measureText(tryL).width<=mw){l=tryL;continue}
-   if(l){out.push(l);l=''}
-   if(ctx.measureText(word).width<=mw){l=word;continue}
-   for(const ch of word){if(l&&ctx.measureText(l+ch).width>mw){out.push(l);l=ch}else l+=ch}}
-  out.push(l)}
- return out}
-function textBlock(ctx,T,x,y,w,h,title,body,vmid){
- const F=fo();let s=1,L;
- for(;s>=0.4;s-=0.05){const ts=Math.round(48*s),bs=Math.round(32*s);L={ts,bs};
-  ctx.font=`700 ${ts}px ${F}`;L.tl=title?wrap(ctx,title,w):[];
-  ctx.font=`400 ${bs}px ${F}`;L.bl=body?wrap(ctx,body,w):[];
-  L.h=L.tl.length*ts*1.3+(L.tl.length&&L.bl.length?ts*.4:0)+L.bl.length*bs*1.55;
-  if(L.h<=h)break}
- let yy=vmid?y+Math.max(0,(h-L.h)/2):y;ctx.textBaseline='top';
- ctx.fillStyle=T.ac;ctx.font=`700 ${L.ts}px ${F}`;L.tl.forEach(t=>{ctx.fillText(t,x,yy);yy+=L.ts*1.3});
- if(L.tl.length&&L.bl.length)yy+=L.ts*.4;
- ctx.fillStyle=T.ink;ctx.font=`400 ${L.bs}px ${F}`;L.bl.forEach(t=>{ctx.fillText(t,x,yy);yy+=L.bs*1.55})}
-function centerText(ctx,txt,cx,y,maxW,size,weight,color,maxLines){
- const F=fo();let s=size,ls;
- for(;s>=24;s-=4){ctx.font=`${weight} ${s}px ${F}`;ls=wrap(ctx,txt,maxW);if(ls.length<=maxLines)break}
- ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='top';
- ls.forEach((t,i)=>ctx.fillText(t,cx,y+i*s*1.3));ctx.textAlign='left';return ls.length*s*1.3}
-function drawPage(ctx,i,sc=1){
- const T=th(),n=photos.length,info=pageInfo(i);ctx.clearRect(0,0,W,H);ctx.fillStyle=T.bg;ctx.fillRect(0,0,W,H);
- if(i===0){ // 표지
-  const p=photos[coverIdx],has=!!p;
-  if(has){ctx.drawImage(p.c,...fitBox(p.c,0,0,W,H,true));ctx.fillStyle=T.ov;ctx.fillRect(0,0,W,H)}
-  const ink=has?'#FFFFFF':T.ink,ac=has?T.ca:T.ac;
-  const f=Math.min(1,W/1100),mw=W-220,y0=Math.round(H*.29);
-  const h1=centerText(ctx,$('#ct').value||'제목을 입력하세요',W/2,y0,mw,Math.round(92*f),'700',ink,2);
-  centerText(ctx,$('#cs').value,W/2,y0+h1+30,mw,Math.max(26,Math.round(40*f)),'400',ac,2);
-  centerText(ctx,$('#cn').value,W/2,H-Math.round(H*.153),mw,Math.max(26,Math.round(32*f)),'400',ink,1);return}
- if(info.t==='toc'){drawToc(ctx,T,info.j);return}
- if(info.t==='end'){ // 마무리
-  const f=Math.min(1,W/1100),mw=W-220,y0=Math.round(H*.375);
-  const h1=centerText(ctx,$('#ce').value||'고맙습니다',W/2,y0,mw,Math.round(72*f),'700',T.ac,2);
-  centerText(ctx,'AI로 다시 만나는 나의 추억',W/2,y0+h1+30,mw,Math.max(26,Math.round(28*f)),'400',T.ink,1);return}
- const p=photos[info.idx],im=p.c,title=p.title.trim(),body=p.text.trim(),has=title||body;
- const land=W>H;let pos=p.pos;if(!land)pos='below';else if(pos==='auto')pos=im.width/im.height>=1.6?'below':'right';
- let pb,tb;
- if(!has)pb=[60,50,W-120,H-100];
- else if(!land){const ph=Math.round(H*.56);pb=[50,50,W-100,ph];tb=[70,ph+100,W-140,H-ph-150]}
- else if(pos==='right'){pb=[60,60,680,600];tb=[790,60,430,600]}
- else{pb=[60,40,1160,415];tb=[100,480,1080,205]}
- const [dx,dy,dw,dh]=fitBox(im,...pb);
- ctx.save();ctx.shadowColor='rgba(0,0,0,.25)';ctx.shadowBlur=18*sc;ctx.shadowOffsetY=4*sc;ctx.fillStyle='#fff';ctx.fillRect(dx-12,dy-12,dw+24,dh+24);ctx.restore();
- ctx.drawImage(im,dx,dy,dw,dh);
- if(has)textBlock(ctx,T,...tb,title,body,pos==='right');
- ctx.fillStyle=T.ink;ctx.globalAlpha=.5;ctx.font=`400 22px ${fo()}`;ctx.textAlign='right';ctx.textBaseline='alphabetic';ctx.fillText(`${i+1}쪽`,W-40,H-22);ctx.globalAlpha=1;ctx.textAlign='left'}
-async function fontsReady(){const f=fo();const tx=Array.from(document.querySelectorAll('input[type=text],textarea')).map(e=>e.value).join('')+'제목을 입력하세요고맙습니다번쪽0123456789';try{await Promise.race([Promise.all(['400','700'].map(w=>document.fonts.load(`${w} 40px ${f}`,tx))),new Promise(r=>setTimeout(r,10000))])}catch(e){}}
-let rt=0;
-function render(){clearTimeout(rt);rt=setTimeout(async()=>{await fontsReady();cur=Math.min(cur,total()-1);drawPage($('#cv').getContext('2d'),cur,1);$('#pg').textContent=`${cur+1} / ${total()}쪽`;$('#prev').disabled=cur===0;$('#next').disabled=cur>=total()-1;refreshAi()},30)}
-function refreshCover(){const s=$('#cp');s.innerHTML='';s.add(new Option('사진 없이 색 배경',-1));photos.forEach((_,i)=>s.add(new Option(`${i+1}번 사진`,i)));
- if(coverIdx>=photos.length)coverIdx=photos.length-1;s.value=coverIdx}
-function thumb(c){const t=document.createElement('canvas');t.width=160;t.height=120;const x=t.getContext('2d');x.fillStyle='#eee';x.fillRect(0,0,160,120);x.drawImage(c,...fitBox(c,0,0,160,120));return t}
-function buildList(){const L=$('#list');L.innerHTML='';
- photos.forEach((p,i)=>{const d=document.createElement('div');d.className='card';
-  d.innerHTML=`<div class="no">${i+1}번 사진</div><div class="row"></div><input class="t" type="text" maxlength="30" placeholder="제목 (예: 아버지의 어린 시절)"><textarea class="b" rows="3" maxlength="240" placeholder="사진 설명 (3~4문장, 100자 안팎이 보기 좋아요)"></textarea><div class="row"><select class="s"><option value="auto">글 위치: 자동</option><option value="right">글 위치: 오른쪽</option><option value="below">글 위치: 아래</option></select><button class="sub u">▲ 위로</button><button class="sub dn">▼ 아래로</button><button class="sub x">삭제</button></div>`;
-  d.querySelector('.row').append(thumb(p.c));
-  const t=d.querySelector('.t'),b=d.querySelector('.b'),s=d.querySelector('.s');t.value=p.title;b.value=p.text;s.value=p.pos;
-  const go=()=>{cur=photoPage(i);render()};
-  t.oninput=()=>{p.title=t.value;go()};b.oninput=()=>{p.text=b.value;go()};s.onchange=()=>{p.pos=s.value;go()};
-  t.onfocus=b.onfocus=go;
-  d.querySelector('.u').onclick=()=>mv(i,-1);d.querySelector('.dn').onclick=()=>mv(i,1);
-  d.querySelector('.x').onclick=()=>{photos.splice(i,1);cur=Math.min(cur,total()-1);if(!photos.length)coverIdx=-1;refreshCover();buildList();render()};
-  L.append(d)})}
-function mv(i,k){const j=i+k;if(j<0||j>=photos.length)return;[photos[i],photos[j]]=[photos[j],photos[i]];if(coverIdx===i)coverIdx=j;else if(coverIdx===j)coverIdx=i;cur=photoPage(j);refreshCover();buildList();render()}
-function loadFile(f){return new Promise((ok,no)=>{const u=URL.createObjectURL(f),im=new Image();
- im.onload=()=>{const s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);ok(c)};
- im.onerror=()=>{URL.revokeObjectURL(u);no(f.name)};im.src=u})}
-$('#file').onchange=async e=>{const fs=[...e.target.files];e.target.value='';if(!fs.length)return;
- msg('사진을 불러오는 중입니다…');const bad=[];
- for(const f of fs){try{photos.push({c:await loadFile(f),title:'',text:'',pos:'auto'})}catch(x){bad.push(x)}}
- if(coverIdx<0&&photos.length)coverIdx=0;
- refreshCover();buildList();cur=photos.length?photoPage(photos.length-1):0;render();
- if(bad.length)msg(`열 수 없는 사진이 있습니다: ${bad.join(', ')} — JPG 또는 PNG로 저장한 사진을 올려 주세요. (아이폰 HEIC 등)`,'err');
- else msg(`사진 ${fs.length}장을 불러왔습니다.`,'ok')};
-['ct','cs','cn','ce','th','fo'].forEach(id=>$('#'+id).addEventListener('input',()=>{cur=id==='ce'?total()-1:id==='th'||id==='fo'?cur:0;render()}));
-$('#fm').onchange=()=>{applyFormat();render()};
-$('#cp').onchange=()=>{coverIdx=+$('#cp').value;cur=0;render()};
-$('#prev').onclick=()=>{cur--;render()};$('#next').onclick=()=>{cur++;render()};
-const pdfHex=t=>{let h='FEFF';for(const ch of String(t)){const c=ch.codePointAt(0);if(c>0xFFFF){const v=c-0x10000;h+=(0xD800+(v>>10)).toString(16).padStart(4,'0')+(0xDC00+(v&0x3FF)).toString(16).padStart(4,'0')}else h+=c.toString(16).padStart(4,'0')}return'<'+h.toUpperCase()+'>'};
-async function makePDF(){
- await fontsReady();const PW=Math.round(W*S),PH=Math.round(H*S),PtW=Math.round(W*.75),PtH=Math.round(H*.75);const c=document.createElement('canvas');c.width=PW;c.height=PH;const ctx=c.getContext('2d'),pages=[];ctx.setTransform(S,0,0,S,0,0);
- for(let i=0;i<total();i++){drawPage(ctx,i,S);const b=atob(c.toDataURL('image/jpeg',.92).split(',')[1]),u=new Uint8Array(b.length);for(let k=0;k<b.length;k++)u[k]=b.charCodeAt(k);pages.push(u)}
- const enc=new TextEncoder(),parts=[],offs=[];let len=0;
- const add=x=>{const u=typeof x==='string'?enc.encode(x):x;parts.push(u);len+=u.length};
- const obj=(n,body)=>{offs[n]=len;add(`${n} 0 obj\n${body}\nendobj\n`)};
- const N=pages.length,K=tocPages(),pobj=i=>3+3*i;let nx=3*N+3;const annots={},links=[];
- if(K>0)for(let j=0;j<K;j++){annots[j+1]=[];tocRects(j).forEach(r=>{const num=nx++;links.push({num,r});annots[j+1].push(num)})}
- const outl=[];if(K>0){outl.push({t:'표지',pg:0});outl.push({t:tocLabel(),pg:1});photos.forEach((p,i)=>outl.push({t:p.title.trim()||(i+1)+'번 사진',pg:photoPage(i)}));outl.push({t:'마무리',pg:N-1})}
- const oroot=outl.length?nx++:0,onum=outl.map(()=>nx++),M=nx;
- add('%PDF-1.4\n');
- obj(1,`<</Type/Catalog/Pages 2 0 R${oroot?` /Outlines ${oroot} 0 R/PageMode/UseOutlines`:''}>>`);
- obj(2,`<</Type/Pages/Count ${N}/Kids[${pages.map((_,k)=>`${pobj(k)} 0 R`).join(' ')}]>>`);
- pages.forEach((u,k)=>{const p=pobj(k),cs=`q ${PtW} 0 0 ${PtH} 0 0 cm /Im Do Q`;
-  obj(p,`<</Type/Page/Parent 2 0 R/MediaBox[0 0 ${PtW} ${PtH}]/Contents ${p+1} 0 R/Resources<</XObject<</Im ${p+2} 0 R>>>>${annots[k]?`/Annots[${annots[k].map(n=>n+' 0 R').join(' ')}]`:''}>>`);
-  obj(p+1,`<</Length ${cs.length}>>\nstream\n${cs}\nendstream`);
-  offs[p+2]=len;add(`${p+2} 0 obj\n<</Type/XObject/Subtype/Image/Width ${PW}/Height ${PH}/ColorSpace/DeviceRGB/BitsPerComponent 8/Filter/DCTDecode/Length ${u.length}>>\nstream\n`);add(u);add('\nendstream\nendobj\n')});
- const kx=PtW/W,ky=PtH/H,f2=v=>Math.round(v*100)/100;
- links.forEach(({num,r})=>obj(num,`<</Type/Annot/Subtype/Link/Rect[${f2(r.x*kx)} ${f2(PtH-(r.y+r.h)*ky)} ${f2((r.x+r.w)*kx)} ${f2(PtH-r.y*ky)}]/Border[0 0 0]/Dest[${pobj(r.pg)} 0 R/Fit]>>`));
- if(oroot){obj(oroot,`<</Type/Outlines/First ${onum[0]} 0 R/Last ${onum[onum.length-1]} 0 R/Count ${outl.length}>>`);
-  outl.forEach((o,q)=>obj(onum[q],`<</Title ${pdfHex(o.t)}/Parent ${oroot} 0 R${q>0?`/Prev ${onum[q-1]} 0 R`:''}${q<outl.length-1?`/Next ${onum[q+1]} 0 R`:''}/Dest[${pobj(o.pg)} 0 R/Fit]>>`))}
- const xr=len;let x=`xref\n0 ${M}\n0000000000 65535 f \n`;
- for(let n=1;n<M;n++)x+=String(offs[n]).padStart(10,'0')+' 00000 n \n';
- add(x+`trailer\n<</Size ${M}/Root 1 0 R>>\nstartxref\n${xr}\n%%EOF`);
- return new Blob(parts,{type:'application/pdf'})}
-$('#save').onclick=async()=>{
- if(!photos.length){msg('먼저 1번에서 사진을 1장 이상 올려 주세요.','err');return}
- setBusy(true);msg('PDF를 만드는 중입니다…');
- try{const blob=await makePDF(),a=document.createElement('a'),nm=($('#ct').value||'앨범').replace(/[\\\/:*?"<>|]/g,'');
-  a.href=URL.createObjectURL(blob);a.download=nm+'_'+fmtTag()+'.pdf';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
-  msg(`저장했습니다: ${nm}_${fmtTag()}.pdf (${total()}쪽). 다운로드 폴더에서 열어 확인하세요.`,'ok')}
- catch(e){msg('PDF를 만들지 못했습니다. 사진 수를 줄여 다시 시도해 주세요.','err')}
- setBusy(false)};
+  function togglePublications() {
+    var more = document.getElementById('pub-more');
+    var btn = document.getElementById('pubToggleBtn');
+    var isOpen = more.classList.toggle('open');
+    btn.textContent = isOpen ? '접기 ▲' : '더 보기 (주요 논문 · 주요 저서) ▾';
+  }
 
-const setBusy=b=>['#save','#savePng','#savePngAll'].forEach(k=>$(k).disabled=b);
-const CRCT=(()=>{const t=[];for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
-const crc32=u=>{let c=0xFFFFFFFF;for(let i=0;i<u.length;i++)c=CRCT[(c^u[i])&255]^(c>>>8);return(c^0xFFFFFFFF)>>>0};
-function makeZip(files){
- const enc=new TextEncoder(),parts=[],cd=[];let off=0;
- files.forEach(f=>{const nm=enc.encode(f.name),crc=crc32(f.data),sz=f.data.length;
-  const lh=new DataView(new ArrayBuffer(30));lh.setUint32(0,0x04034b50,true);lh.setUint16(4,20,true);lh.setUint16(6,0x0800,true);lh.setUint16(12,0x21,true);lh.setUint32(14,crc,true);lh.setUint32(18,sz,true);lh.setUint32(22,sz,true);lh.setUint16(26,nm.length,true);
-  parts.push(new Uint8Array(lh.buffer),nm,f.data);
-  const ch=new DataView(new ArrayBuffer(46));ch.setUint32(0,0x02014b50,true);ch.setUint16(4,20,true);ch.setUint16(6,20,true);ch.setUint16(8,0x0800,true);ch.setUint16(14,0x21,true);ch.setUint32(16,crc,true);ch.setUint32(20,sz,true);ch.setUint32(24,sz,true);ch.setUint16(28,nm.length,true);ch.setUint32(42,off,true);
-  cd.push(new Uint8Array(ch.buffer),nm);off+=30+nm.length+sz});
- const cl=cd.reduce((a,b)=>a+b.length,0),e=new DataView(new ArrayBuffer(22));
- e.setUint32(0,0x06054b50,true);e.setUint16(8,files.length,true);e.setUint16(10,files.length,true);e.setUint32(12,cl,true);e.setUint32(16,off,true);
- return new Blob([...parts,...cd,new Uint8Array(e.buffer)],{type:'application/zip'})}
-const canvasBytes=c=>new Promise((ok,no)=>c.toBlob(async b=>b?ok(new Uint8Array(await b.arrayBuffer())):no(new Error('png')),'image/png'));
-const baseName=()=>($('#ct').value||'앨범').replace(/[\\\/:*?"<>|]/g,'').trim()||'앨범';
-const pageLabel=i=>{const f=pageInfo(i);return f.t==='cover'?'표지':f.t==='toc'?'목차'+(tocPages()>1?(f.j+1):''):f.t==='end'?'마무리':`${f.idx+1}번사진`};
-function saveBlob(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000)}
-async function pageCanvas(i){const c=document.createElement('canvas');c.width=Math.round(W*S);c.height=Math.round(H*S);const x=c.getContext('2d');x.setTransform(S,0,0,S,0,0);drawPage(x,i,S);return c}
-$('#savePng').onclick=async()=>{
- if(!photos.length){msg('먼저 1번에서 사진을 1장 이상 올려 주세요.','err');return}
- setBusy(true);msg('PNG를 만드는 중입니다…');
- try{await fontsReady();const b=await canvasBytes(await pageCanvas(cur)),nm=`${baseName()}_${fmtTag()}_${String(cur+1).padStart(2,'0')}_${pageLabel(cur)}.png`;
-  saveBlob(new Blob([b],{type:'image/png'}),nm);msg(`저장했습니다: ${nm}`,'ok')}
- catch(e){msg('PNG를 만들지 못했습니다. 다시 시도해 주세요.','err')}
- setBusy(false)};
-$('#savePngAll').onclick=async()=>{
- if(!photos.length){msg('먼저 1번에서 사진을 1장 이상 올려 주세요.','err');return}
- setBusy(true);msg('전체 쪽을 PNG로 만드는 중입니다…');
- try{await fontsReady();const files=[],bn=baseName();
-  for(let i=0;i<total();i++){files.push({name:`${bn}_${fmtTag()}_${String(i+1).padStart(2,'0')}_${pageLabel(i)}.png`,data:await canvasBytes(await pageCanvas(i))});msg(`PNG 만드는 중… ${i+1} / ${total()}`)}
-  saveBlob(makeZip(files),bn+'_'+fmtTag()+'_PNG.zip');msg(`저장했습니다: ${bn}_${fmtTag()}_PNG.zip (PNG ${total()}장이 압축되어 있습니다. 압축을 풀어서 사용하세요.)`,'ok')}
- catch(e){msg('PNG를 만들지 못했습니다. 사진 수를 줄여 다시 시도해 주세요.','err')}
- setBusy(false)};
+  function toggleCareer() {
+    var more = document.getElementById('career-more');
+    var btn = document.getElementById('careerToggleBtn');
+    var isOpen = more.classList.toggle('open');
+    btn.textContent = isOpen ? '접기 ▲' : '전체 경력 더 보기 ▾';
+  }
 
-/* ===== 색 분위기 견본 ===== */
-(function(){const box=$('#swatches');
- THEMES.forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.className='swb';b.dataset.i=i;b.setAttribute('role','radio');b.setAttribute('aria-label','색 분위기 '+t.n);
-  b.innerHTML='<span class="swp" style="background:'+t.bg+';color:'+t.ink+'"><i style="color:'+t.ac+'">가</i>나다<em style="background:'+t.ac+'"></em></span><span class="swl">'+t.n+'</span>';
-  b.onclick=()=>{$('#th').value=i;$('#th').dispatchEvent(new Event('input',{bubbles:true}))};box.append(b)});
- const mark=()=>document.querySelectorAll('.swb').forEach(b=>{const on=b.dataset.i===String($('#th').value);b.setAttribute('aria-checked',on);b.classList.toggle('on',on)});
- $('#th').addEventListener('input',mark);mark()})();
+  // tab switching
+  const tabLinks = document.querySelectorAll('nav ul.tab-nav a[data-tab]');
+  const actionLinks = document.querySelectorAll('[data-tab]:not(nav ul.tab-nav a)');
+  const panels = document.querySelectorAll('.tab-panel');
+  const hero = document.querySelector('.hero');
+  const homeApps = document.getElementById('home-apps');
 
-/* ===== 목차 ===== */
-function tocGeom(){const land=W>H,top=Math.round(H*(land?.29:.21)),bottom=H-Math.round(H*(land?.11:.08)),rowH=land?60:Math.round(H*.056),rows=Math.max(1,Math.floor((bottom-top)/rowH));return{land,top,rowH,rows,cap:rows*(land?2:1)}}
-function tocPages(){if(!tocOn||!photos.length)return 0;return Math.max(1,Math.ceil(photos.length/tocGeom().cap))}
-function tocLabel(){return $('#toct').value.trim()||'목차'}
-function tocRects(j){const g=tocGeom(),all=photos.map((p,i)=>({i,t:p.title.trim()||(i+1)+'번 사진'})),part=all.slice(j*g.cap,(j+1)*g.cap),two=g.land&&part.length>g.rows,mx=g.land?(two?90:Math.round(W*.2)):Math.round(W*.1),gap=60,cw=two?(W-2*mx-gap)/2:W-2*mx,used=two?g.rows:part.length,off=Math.round((g.rows-used)*g.rowH*.3);
- return part.map((e,k)=>{const c=two?Math.floor(k/g.rows):0,r=two?k%g.rows:k;return{x:mx+c*(cw+gap),y:g.top+off+r*g.rowH,w:cw,h:g.rowH,pg:photoPage(e.i),t:e.t}})}
-function drawToc(ctx,T,j){const K=tocPages(),f=Math.min(1,W/1100),F=fo(),ty=Math.round(H*(W>H?.09:.07));
- const h=centerText(ctx,tocLabel()+(K>1?' ('+(j+1)+'/'+K+')':''),W/2,ty,W-200,Math.round(64*f),'700',T.ac,1);
- ctx.fillStyle=T.ac;ctx.fillRect(W/2-50,ty+h+6,100,4);
- const ts=W>H?32:Math.round(Math.min(40,34*W/720));
- tocRects(j).forEach(r=>{const mid=r.y+r.h/2;
-  ctx.font='700 '+ts+'px '+F;const pn=String(r.pg+1),pw=ctx.measureText(pn).width;
-  ctx.font='400 '+ts+'px '+F;let t=r.t;const maxT=r.w-pw-80;
-  if(ctx.measureText(t).width>maxT){while(t.length>1&&ctx.measureText(t+'…').width>maxT)t=t.slice(0,-1);t+='…'}
-  const tw=ctx.measureText(t).width;
-  ctx.textBaseline='middle';ctx.fillStyle=T.ink;ctx.textAlign='left';ctx.fillText(t,r.x,mid);
-  ctx.save();ctx.strokeStyle=T.ink;ctx.globalAlpha=.35;ctx.lineWidth=3;ctx.lineCap='round';ctx.setLineDash([1,10]);ctx.beginPath();ctx.moveTo(r.x+tw+18,mid+ts*.3);ctx.lineTo(r.x+r.w-pw-18,mid+ts*.3);ctx.stroke();ctx.restore();
-  ctx.font='700 '+ts+'px '+F;ctx.fillStyle=T.ac;ctx.textAlign='right';ctx.fillText(pn,r.x+r.w,mid);ctx.textAlign='left'});
- ctx.textBaseline='alphabetic';ctx.fillStyle=T.ink;ctx.globalAlpha=.5;ctx.font='400 22px '+F;ctx.textAlign='right';ctx.fillText((j+2)+'쪽',W-40,H-22);ctx.globalAlpha=1;ctx.textAlign='left'}
-$('#toc').addEventListener('change',()=>{tocOn=$('#toc').checked;$('#tocopt').hidden=!tocOn;cur=tocOn&&photos.length?1:0;render();if(tocOn&&!photos.length)msg('사진을 올리면 목차 쪽이 만들어집니다.')});
-$('#toct').addEventListener('input',()=>{if(tocOn&&photos.length){cur=1;render()}});
+  function activateTab(target){
+    tabLinks.forEach(l => l.classList.toggle('active', l.getAttribute('data-tab') === target));
+    panels.forEach(p => p.classList.toggle('active', p.id === target));
+    hero.classList.toggle('hero-visible', target === 'home');
+    if (homeApps) homeApps.classList.toggle('on', target === 'home');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-/* ===== AI 글쓰기 도우미 (AI 연결 없이: 질문 복사 → 새 창에서 답 받기 → 붙여넣어 채우기) ===== */
-const AIS={chatgpt:{n:'ChatGPT',u:t=>'https://chatgpt.com/?q='+encodeURIComponent(t),h:'https://chatgpt.com/'},claude:{n:'Claude',u:t=>'https://claude.ai/new?q='+encodeURIComponent(t),h:'https://claude.ai/new'},gemini:{n:'Gemini',u:()=>'https://gemini.google.com/app',h:'https://gemini.google.com/app'}};
-let aiSite='chatgpt',aiLast=null;
-const aiG=id=>$('#'+id).value.trim();
-function aiCtx(){return{topic:aiG('ai_topic')||'(위 칸에 주제를 적어 주세요. 예: 어머니 칠순 가족여행)',who:aiG('ai_who')||'가족',tone:aiG('ai_tone')}}
-function aiMemo(){return photos.length?photos.map((p,i)=>(i+1)+'번: '+([p.title.trim(),p.text.trim()].filter(Boolean).join(' / ')||'(메모 없음)')).join('\n'):'1번: (사진을 올리면 번호별 메모가 여기에 들어갑니다)'}
-const AIT=[
-{id:'cover',t:'① 표지 문구 만들기',d:'제목·부제·마무리 문구를 한 번에 받습니다.',fill:true,b:()=>{const c=aiCtx();return `당신은 따뜻한 문장을 잘 쓰는 사진 앨범 편집자입니다.
-아래 정보를 바탕으로 앨범의 표지 문구를 만들어 주세요.
-
-- 앨범 주제: ${c.topic}
-- 보는 사람: ${c.who}
-- 분위기: ${c.tone}
-
-규칙
-- 제목은 15자 이내, 부제는 25자 이내, 마무리 문구는 30자 이내로 쓰세요.
-- 과장된 표현과 영어는 쓰지 마세요.
-- 인사말이나 설명 없이, 아래 세 줄만 쓰세요.
-
-제목: 
-부제: 
-마무리 문구: `}},
-{id:'photos',t:'② 사진마다 제목·설명 쓰기',d:'내가 사진마다 적어 둔 제목·설명을 메모로 삼아 글을 다듬어 줍니다. (사진은 AI에 올라가지 않습니다)',fill:true,b:()=>{const c=aiCtx();return `당신은 사진 앨범 편집자입니다. 저는 사진을 보여 드릴 수 없어서, 사진마다 메모를 적어 드립니다.
-메모를 바탕으로 사진마다 제목과 설명을 써 주세요.
-
-- 앨범 주제: ${c.topic}
-- 보는 사람: ${c.who}
-- 분위기: ${c.tone}
-- 사진 수: ${photos.length||'(사진을 올리면 채워집니다)'}장
-
-사진 메모
-${aiMemo()}
-
-규칙
-- 제목은 15자 이내, 설명은 2~3문장 100자 안팎으로 쓰세요.
-- 메모에 없는 사실(이름, 날짜, 장소)은 지어내지 마세요.
-- 인사말이나 설명 없이, 아래 형식의 줄만 쓰세요. '|' 글자는 구분용으로만 쓰세요.
-
-1번 | 제목 | 설명
-2번 | 제목 | 설명`}},
-{id:'titles',t:'③ 사진 제목만 지어 보기',d:'목차에 들어갈 짧은 제목이 필요할 때 좋습니다.',fill:true,b:()=>{const c=aiCtx();return `당신은 사진 앨범 편집자입니다. 사진은 볼 수 없으니 제가 적은 메모만 바탕으로, 사진마다 짧은 제목을 지어 주세요.
-
-- 앨범 주제: ${c.topic}
-- 분위기: ${c.tone}
-
-사진 메모
-${aiMemo()}
-
-규칙
-- 제목은 12자 이내로 쓰고, 메모에 없는 사실은 지어내지 마세요.
-- 인사말이나 설명 없이, 아래 형식의 줄만 쓰세요.
-
-1번 | 제목
-2번 | 제목`}},
-{id:'closing',t:'④ 마무리 문구 후보 받기',d:'마음에 드는 문구를 골라 마무리 문구 칸에 직접 적으세요.',fill:false,b:()=>{const c=aiCtx();return `사진 앨범의 마지막 쪽에 넣을 마무리 문구를 5개 제안해 주세요.
-
-- 앨범 주제: ${c.topic}
-- 보는 사람: ${c.who}
-- 분위기: ${c.tone}
-
-규칙: 한 줄에 하나씩, 30자 이내, 번호를 붙여 주세요. 과장된 표현은 피해 주세요.`}},
-{id:'polish',t:'⑤ 내가 쓴 글 다듬기',d:'아래 [ ] 안에 내 글을 붙여 넣은 뒤 사용하세요.',fill:false,b:()=>{const c=aiCtx();return `아래 글을 '${c.tone}' 말투로 다듬어 주세요. 원래 뜻과 사실은 바꾸지 말고, 3가지 버전을 보여 주세요.
-
-[여기에 내가 쓴 글을 붙여 넣으세요]`}}];
-function buildAiCards(){const box=$('#ai_list');box.innerHTML='';
- AIT.forEach(a=>{const d=document.createElement('div');d.className='card aic';
-  d.innerHTML='<div class="aih"><b>'+a.t+'</b>'+(a.fill?'<span class="chip">붙여넣기로 채우기</span>':'<span class="chip g">복사해서 사용</span>')+'</div><p class="note">'+a.d+'</p><textarea readonly rows="8" data-k="'+a.id+'" aria-label="'+a.t+' 질문"></textarea><div class="row"><button type="button" class="sub cp">복사</button><button type="button" class="op"></button></div>';
-  d.querySelector('.cp').onclick=()=>aiCopy(a,false);d.querySelector('.op').onclick=()=>aiCopy(a,true);box.append(d)});refreshAi()}
-function refreshAi(){document.querySelectorAll('#ai_list textarea').forEach(t=>{const a=AIT.find(x=>x.id===t.dataset.k);if(a){const v=a.b();if(t.value!==v)t.value=v}});document.querySelectorAll('#ai_list .op').forEach(b=>b.textContent='복사하고 '+AIS[aiSite].n+' 열기 ↗')}
-function aiMsg(t,c){const m=$('#aimsg');m.textContent=t;m.className=c||''}
-async function copyText(t){try{await navigator.clipboard.writeText(t);return true}catch(e){const ta=document.createElement('textarea');ta.value=t;ta.style.cssText='position:fixed;left:-999px;top:0;opacity:0';document.body.append(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(_){}ta.remove();return ok}}
-function aiCopy(a,open){const text=a.b(),site=AIS[aiSite],cp=copyText(text);let w=null;
- if(open){let u=site.u(text);if(u.length>1800)u=site.h;w=window.open(u,'_blank','popup=yes,width=620,height=820');if(w){try{w.opener=null}catch(_){}}}
- cp.then(ok=>{const pop=open&&!w?' 팝업이 막혔다면 주소창의 팝업 허용을 누르거나 '+site.n+'를 직접 열어 주세요.':'';
-  aiMsg(ok?'복사했습니다.'+(open?' 열린 '+site.n+' 창의 입력칸에 붙여넣기(Ctrl+V)한 뒤 보내기를 누르세요.':' '+site.n+' 같은 AI 사이트에 붙여넣기(Ctrl+V)하세요.')+pop:'복사하지 못했습니다. 질문 칸을 눌러 직접 선택해 복사해 주세요.'+pop,ok?'ok':'err')})}
-function aiParse(raw){
- const lines=String(raw).replace(/\r/g,'').replace(/[*`]/g,'').replace(/：/g,':').replace(/｜/g,'|').split('\n')
-  .map(l=>l.replace(/^[\s>#]+/,'').replace(/^[-•·]\s*/,'').replace(/^\|\s*/,'').replace(/\s*\|$/,'').trim()).filter(l=>l&&!/^[-:\s|]+$/.test(l));
- const q=t=>t.replace(/^["'“”‘’「『]+|["'“”‘’」』]+$/g,'').trim();const out={cover:{},photos:{}};
- for(const l of lines){let m;
-  if((m=l.match(/^(?:앨범\s*)?제목\s*:\s*(.+)$/)))out.cover.ct=q(m[1]);
-  else if((m=l.match(/^부제(?:목)?\s*:\s*(.+)$/)))out.cover.cs=q(m[1]);
-  else if((m=l.match(/^(?:마무리\s*문구|마무리|맺음말|끝맺음\s*문구)\s*:\s*(.+)$/)))out.cover.ce=q(m[1]);
-  else if((m=l.match(/^(\d{1,3})\s*(?:번째|번)?\s*[|:]\s*(.+)$/))){const pt=m[2].split('|').map(t=>q(t.trim()));out.photos[+m[1]]={title:pt[0]||'',text:pt.slice(1).join(' ').trim()}}}
- return out}
-function aiApply(){const raw=$('#ai_paste').value;if(!raw.trim()){aiMsg('붙여넣은 내용이 없습니다. AI가 써 준 답을 위 칸에 붙여넣어 주세요.','err');return}
- const r=aiParse(raw),cut=[],done=[],lim={ct:30,cs:40,ce:40},nm={ct:'제목',cs:'부제',ce:'마무리 문구'};
- const nums=Object.keys(r.photos).map(Number).sort((a,b)=>a-b),skipped=[],applied=[];
- if(!Object.keys(r.cover).length&&!nums.length){aiMsg('읽을 수 있는 줄이 없습니다. 질문에 적힌 형식(제목: … / 1번 | 제목 | 설명)으로 답을 받았는지 확인해 주세요.','err');return}
- const snap={ct:$('#ct').value,cs:$('#cs').value,ce:$('#ce').value,ph:photos.map(p=>[p.title,p.text])};
- for(const k of ['ct','cs','ce'])if(r.cover[k]){let v=r.cover[k];if(v.length>lim[k]){v=v.slice(0,lim[k]);cut.push(nm[k])}$('#'+k).value=v;done.push(nm[k])}
- for(const n of nums){const p=photos[n-1];if(!p){skipped.push(n);continue}const x=r.photos[n];let t=x.title,b=x.text;
-  if(t.length>30){t=t.slice(0,30);cut.push(n+'번 제목')}if(b.length>240){b=b.slice(0,240);cut.push(n+'번 설명')}if(t)p.title=t;if(b)p.text=b;applied.push(n)}
- if(!done.length&&!applied.length){aiMsg('채울 수 있는 칸이 없습니다. 사진 번호가 올린 사진 수('+photos.length+'장)와 맞는지 확인해 주세요.','err');return}
- aiLast=snap;$('#ai_undo').disabled=false;refreshCover();buildList();cur=done.length?0:photoPage(applied[0]-1);render();
- aiMsg('채웠습니다: '+[done.length?done.join('·'):'',applied.length?'사진 '+applied.length+'장('+applied.join('·')+'번)':''].filter(Boolean).join(' + ')+'. 마음에 들지 않으면 [되돌리기]를 누르세요.'+(cut.length?' ※ 글자 수 제한으로 일부가 잘렸습니다: '+cut.join(', ')+'.':'')+(skipped.length?' ※ 사진이 '+photos.length+'장이라 '+skipped.join('·')+'번은 건너뛰었습니다.':''),'ok')}
-$('#ai_fill').onclick=aiApply;
-$('#ai_undo').onclick=()=>{if(!aiLast)return;const s=aiLast;$('#ct').value=s.ct;$('#cs').value=s.cs;$('#ce').value=s.ce;
- if(photos.length===s.ph.length)s.ph.forEach((v,i)=>{photos[i].title=v[0];photos[i].text=v[1]});
- aiLast=null;$('#ai_undo').disabled=true;buildList();refreshCover();render();aiMsg(photos.length===s.ph.length?'되돌렸습니다.':'표지 문구만 되돌렸습니다. (그 사이 사진 수가 바뀌었습니다)','ok')};
-document.querySelectorAll('input[name=aisite]').forEach(r=>r.onchange=()=>{aiSite=r.value;refreshAi()});
-['ai_topic','ai_who','ai_tone'].forEach(id=>$('#'+id).addEventListener('input',refreshAi));
-$('#ai_go').onclick=()=>{const d=$('#aid');d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'})};
-buildAiCards();
-applyFormat();refreshCover();render();
+  [...tabLinks, ...actionLinks].forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      activateTab(link.getAttribute('data-tab'));
+    });
+  });
 </script>
+
 </body>
 </html>
