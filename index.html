@@ -1639,6 +1639,53 @@ body { overflow-x: hidden; }
   }
 </style>
 
+<style id="mobile-header-compact">
+/* ── 모바일 헤더 축소: 평소 1줄(로고+메뉴 버튼)만 고정, 메뉴는 버튼으로 펼침 (≤680px) ── */
+.nav-toggle{display:none}
+@media (max-width: 680px) {
+  header.site-header .modern-nav{
+    position:relative !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    padding:8px 14px !important;
+    gap:10px !important;
+    min-height:0 !important;
+  }
+  .nav-toggle{
+    display:inline-flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0;
+    min-height:40px;padding:0 14px;border-radius:12px;cursor:pointer;
+    border:1px solid #e2e6ef;background:#fff;color:var(--ink,#0b1020);
+    font:700 12px/1 'Noto Sans KR','Inter',sans-serif;letter-spacing:-.01em;
+    max-width:150px;
+  }
+  .nav-toggle:focus-visible{outline:2px solid var(--blue,#2f55c9);outline-offset:2px}
+  .nav-toggle-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .nav-toggle-bars,.nav-toggle-bars::before,.nav-toggle-bars::after{
+    display:block;width:16px;height:2px;border-radius:2px;background:currentColor;
+    transition:transform .2s ease,opacity .2s ease;
+  }
+  .nav-toggle-bars{position:relative;flex-shrink:0}
+  .nav-toggle-bars::before,.nav-toggle-bars::after{content:"";position:absolute;left:0}
+  .nav-toggle-bars::before{top:-5px}
+  .nav-toggle-bars::after{top:5px}
+  header.menu-open .nav-toggle-bars{background:transparent}
+  header.menu-open .nav-toggle-bars::before{top:0;transform:rotate(45deg)}
+  header.menu-open .nav-toggle-bars::after{top:0;transform:rotate(-45deg)}
+
+  header.site-header .nav-scroll{
+    display:none !important;
+    position:absolute !important;left:0;right:0;top:100%;
+    width:100% !important;flex-basis:auto !important;
+    padding:12px 14px 16px !important;
+    background:#fff;border-bottom:1px solid #e2e6ef;
+    box-shadow:0 18px 30px rgba(20,30,50,.12);
+  }
+  header.site-header.menu-open .nav-scroll{display:block !important;animation:menuIn .22s ease}
+}
+@keyframes menuIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+</style>
 </head>
 <body>
 
@@ -1652,7 +1699,11 @@ body { overflow-x: hidden; }
         <small>AI EDUCATION · PROFESSOR</small>
       </span>
     </a>
-    <div class="nav-scroll">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="메뉴 열기">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span class="nav-toggle-label">메뉴</span>
+    </button>
+    <div class="nav-scroll" id="site-menu">
       <ul class="tab-nav">
         <li><a href="#" data-tab="home" class="active">Home</a></li>
         <li><a href="#" data-tab="about">소개</a></li>
@@ -2226,5 +2277,32 @@ body { overflow-x: hidden; }
   });
 </script>
 
+<script>
+/* 모바일 메뉴 접기/펼치기 */
+(function(){
+  var header=document.querySelector('header.site-header');
+  var btn=document.querySelector('.nav-toggle');
+  var menu=document.getElementById('site-menu');
+  if(!header||!btn||!menu) return;
+  var label=btn.querySelector('.nav-toggle-label');
+  function current(){var a=menu.querySelector('a.active');return a?a.textContent.trim():'메뉴';}
+  function render(){
+    var open=header.classList.contains('menu-open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기');
+    label.textContent=open?'닫기':current();
+  }
+  function set(open){header.classList.toggle('menu-open',open);render();}
+  btn.addEventListener('click',function(e){e.stopPropagation();set(!header.classList.contains('menu-open'));});
+  menu.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+  var brand=header.querySelector('.brand');
+  if(brand) brand.addEventListener('click',function(){set(false);});
+  document.addEventListener('click',function(e){if(!header.contains(e.target)) set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape') set(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>680) set(false);});
+  new MutationObserver(render).observe(menu,{subtree:true,attributes:true,attributeFilter:['class']});
+  render();
+})();
+</script>
 </body>
 </html>
