@@ -1694,7 +1694,8 @@ body { overflow-x: hidden; }
   background:linear-gradient(135deg,#f1fffd,#f6f8fc) !important;
 }
 .contact-inquiry .inq-main{display:flex;align-items:center;gap:14px;flex:1 1 220px;min-width:0;text-decoration:none;color:inherit}
-.contact-inquiry .inq-main:focus-visible{outline:2px solid #0ABFAE;outline-offset:4px;border-radius:10px}
+.contact-grid .contact-inquiry:hover{transform:none !important}
+.contact-inquiry .inq-addr{user-select:all;-webkit-user-select:all}
 .contact-inquiry .inq-addr{font-size:16px !important;word-break:break-all}
 .inq-copy{
   flex-shrink:0;min-height:40px;padding:0 16px;border-radius:12px;cursor:pointer;
@@ -2202,13 +2203,13 @@ body { overflow-x: hidden; }
 
   <div class="contact-grid">
     <div class="contact-card contact-inquiry" id="inquiry">
-      <a class="inq-main" href="#inquiry" data-u="token" data-d="daelim.ac.kr" aria-label="문의 메일 보내기">
+      <div class="inq-main" data-u="token" data-d="daelim.ac.kr">
         <div class="contact-icon" style="background:#0ABFAE;" aria-hidden="true">✉️</div>
         <div>
           <div class="contact-label">문의 · Contact</div>
           <div class="contact-value inq-addr">token (at) daelim.ac.kr</div>
         </div>
-      </a>
+      </div>
       <button type="button" class="inq-copy">주소 복사</button>
       <span class="inq-live" role="status" aria-live="polite"></span>
     </div>
@@ -2339,13 +2340,12 @@ body { overflow-x: hidden; }
 })();
 </script>
 <script>
-/* 문의 카드: 주소를 화면에서 조합(스팸 수집 방지), mailto 연결, 복사 버튼 */
+/* 문의 카드: 주소를 화면에서 조합(스팸 수집 방지) + 복사 버튼 */
 (function(){
   var card=document.getElementById('inquiry'); if(!card) return;
   var a=card.querySelector('.inq-main'), btn=card.querySelector('.inq-copy');
   var addrEl=card.querySelector('.inq-addr'), live=card.querySelector('.inq-live');
   var addr=a.getAttribute('data-u')+'@'+a.getAttribute('data-d');
-  a.href='mailto:'+addr+'?subject='+encodeURIComponent('[문의]');
   addrEl.textContent=addr;
   function done(ok){
     btn.textContent=ok?'복사됨 ✓':'주소를 직접 선택해 복사해 주세요';
