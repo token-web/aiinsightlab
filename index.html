@@ -1686,6 +1686,29 @@ body { overflow-x: hidden; }
 }
 @keyframes menuIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 </style>
+<style id="inquiry-card">
+/* ── 문의 카드 (연락처 탭) ── */
+.contact-grid .contact-inquiry{
+  grid-column:1 / -1;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  border:1px solid rgba(10,191,174,.5) !important;
+  background:linear-gradient(135deg,#f1fffd,#f6f8fc) !important;
+}
+.contact-inquiry .inq-main{display:flex;align-items:center;gap:14px;flex:1 1 220px;min-width:0;text-decoration:none;color:inherit}
+.contact-inquiry .inq-main:focus-visible{outline:2px solid #0ABFAE;outline-offset:4px;border-radius:10px}
+.contact-inquiry .inq-addr{font-size:16px !important;word-break:break-all}
+.inq-copy{
+  flex-shrink:0;min-height:40px;padding:0 16px;border-radius:12px;cursor:pointer;
+  border:1px solid #cfd8e6;background:#fff;color:var(--ink,#0b1020);
+  font:700 12px/1 'Noto Sans KR','Inter',sans-serif;transition:border-color .2s,transform .2s;
+}
+.inq-copy:hover{border-color:#0ABFAE;transform:translateY(-1px)}
+.inq-copy:focus-visible{outline:2px solid #0ABFAE;outline-offset:2px}
+.inq-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@media (max-width: 480px){
+  .contact-inquiry .inq-addr{font-size:14px !important}
+  .inq-copy{width:100%}
+}
+</style>
 </head>
 <body>
 
@@ -2178,6 +2201,17 @@ body { overflow-x: hidden; }
   <div class="section-title">연락처 및 채널 / Contact &amp; Links</div>
 
   <div class="contact-grid">
+    <div class="contact-card contact-inquiry" id="inquiry">
+      <a class="inq-main" href="#inquiry" data-u="token" data-d="daelim.ac.kr" aria-label="문의 메일 보내기">
+        <div class="contact-icon" style="background:#0ABFAE;" aria-hidden="true">✉️</div>
+        <div>
+          <div class="contact-label">문의 · Contact</div>
+          <div class="contact-value inq-addr">token (at) daelim.ac.kr</div>
+        </div>
+      </a>
+      <button type="button" class="inq-copy">주소 복사</button>
+      <span class="inq-live" role="status" aria-live="polite"></span>
+    </div>
     <a class="contact-card" href="https://token-web.github.io/profile/">
       <div class="contact-icon" style="background:#0ABFAE;">🪪</div>
       <div>
@@ -2302,6 +2336,34 @@ body { overflow-x: hidden; }
   window.addEventListener('resize',function(){if(window.innerWidth>680) set(false);});
   new MutationObserver(render).observe(menu,{subtree:true,attributes:true,attributeFilter:['class']});
   render();
+})();
+</script>
+<script>
+/* 문의 카드: 주소를 화면에서 조합(스팸 수집 방지), mailto 연결, 복사 버튼 */
+(function(){
+  var card=document.getElementById('inquiry'); if(!card) return;
+  var a=card.querySelector('.inq-main'), btn=card.querySelector('.inq-copy');
+  var addrEl=card.querySelector('.inq-addr'), live=card.querySelector('.inq-live');
+  var addr=a.getAttribute('data-u')+'@'+a.getAttribute('data-d');
+  a.href='mailto:'+addr+'?subject='+encodeURIComponent('[문의]');
+  addrEl.textContent=addr;
+  function done(ok){
+    btn.textContent=ok?'복사됨 ✓':'주소를 직접 선택해 복사해 주세요';
+    live.textContent=ok?'이메일 주소가 복사되었습니다':'복사하지 못했습니다';
+    setTimeout(function(){btn.textContent='주소 복사';live.textContent='';},2200);
+  }
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=addr;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(ta);ta.select();
+    var ok=false;try{ok=document.execCommand('copy');}catch(e){}
+    document.body.removeChild(ta);done(ok);
+  }
+  btn.addEventListener('click',function(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(addr).then(function(){done(true);},fallback);
+    }else{fallback();}
+  });
 })();
 </script>
 </body>
