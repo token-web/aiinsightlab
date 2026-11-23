@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="a">
+<html lang="ko" data-theme="c">
 <head>
 <meta name="naver-site-verification" content="70bff5590d184d8ad0c575b32004128d59491bfa" />
 <meta name="google-site-verification" content="4c6vog5UHRMC4YSmN-B3IHnLxH9sN-Bn5MdiW5Zf8hs" />
@@ -7,8 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="대림대학교 교육혁신센터 정한열 교수의 AI Insight Lab. AI와 사회변화·코딩·글쓰기·트렌드인사이트 강의, 무료 AI 프롬프트 모음과 사진 앨범 제작 도구를 소개합니다.">
 <meta name="keywords" content="정한열, 정한열 교수, 대림대학교, 대림대, AI와 코딩, AI와 사회변화, AI와 글쓰기, 트렌드인사이트, AI 교육, 프롬프트 엔지니어링, Hanyeol Jeong, Daelim University">
-<meta name="robots" content="noindex,nofollow">
-<title>[시안 미리보기] 정한열 교수 | 대림대학교 — Hanyeol Jeong, Ph.D., Professor</title>
+<title>정한열 교수 | 대림대학교 — Hanyeol Jeong, Ph.D., Professor</title>
 <link rel="canonical" href="https://token-web.github.io/aiinsightlab/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="정한열(AI Insight Lab)">
@@ -1853,7 +1852,6 @@ nav ul.tab-nav li a:hover{color:#2f55c9 !important}
 .course-card.violet::before{background:#7C5CFF}
 @media (min-width:681px){.course-grid{grid-template-columns:repeat(2,1fr) !important}}
 </style>
-<script>try{var q=new URLSearchParams(location.search).get("theme");if(q&&/^[abc]$/.test(q))document.documentElement.setAttribute("data-theme",q)}catch(e){}</script>
 <style id="design-editorial">
 /* ═══════════ 에디토리얼 미니멀 디자인 레이어 (기능·구조는 그대로, 보이는 모습만 변경) ═══════════ */
 @font-face{font-family:'Noto Serif KR Subset';src:url('fonts/noto-serif-kr-600-subset.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
@@ -2181,11 +2179,6 @@ html .cx-scroller>*{box-shadow:var(--shadow-sm) !important}
 .cx.is-static .cx-ui{display:none}
 @media (max-width:1000px){.cx[data-cx="courses"]{--cx-w:86%}.cx[data-cx="interests"]{--cx-w:calc((100% - 18px) / 2)}.cx[data-cx="gate"]{--cx-w:calc((100% - 18px) / 2.2)}}
 @media (max-width:680px){.cx[data-cx="interests"]{--cx-w:82%}.cx[data-cx="apps"]{--cx-w:90%}.cx[data-cx="gate"]{--cx-w:82%}html .course-card{--pad:22px}.gate{margin-top:48px}}
-/* ── 시안 선택기(미리보기 전용) ── */
-.theme-switch{position:fixed;left:14px;bottom:14px;z-index:120;display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;background:rgba(15,21,53,.94);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.28);font:600 12px/1 'Noto Sans KR',sans-serif}
-.theme-switch span{padding:0 8px 0 10px;opacity:.75}
-.theme-switch button{border:0;border-radius:999px;padding:9px 13px;background:transparent;color:#fff;cursor:pointer;font:inherit}
-.theme-switch button[aria-pressed="true"]{background:#fff;color:#0F1535}
 @media (prefers-reduced-motion:reduce){.cx-scroller{scroll-behavior:auto}.gate-card,.gate-card::after,.cx-dot{transition:none}}
 
 html footer,html footer p,html footer span{color:#B9B6C8 !important}
@@ -2998,16 +2991,6 @@ html .cx-btn{min-width:46px;min-height:46px}
   build('#courses .course-grid','courses','담당 강의 카드');
   build('#research .interest-list','interests','관심분야 카드');
   build('#apps .app-grid','apps','무료 앱 카드');
-})();
-/* 시안 선택기(미리보기 전용 — 최종본에서는 제거) */
-(function(){
-  var T=[['a','A 라이트'],['b','B 다크'],['c','C 컬러']], root=document.documentElement;
-  var box=document.createElement('div'); box.className='theme-switch'; box.setAttribute('role','group'); box.setAttribute('aria-label','디자인 시안 선택(미리보기)');
-  var lab=document.createElement('span'); lab.textContent='시안'; box.appendChild(lab);
-  function paint(){var cur=root.getAttribute('data-theme');[].forEach.call(box.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.dataset.t===cur?'true':'false');});}
-  T.forEach(function(x){var b=document.createElement('button');b.type='button';b.dataset.t=x[0];b.textContent=x[1];
-    b.addEventListener('click',function(){root.setAttribute('data-theme',x[0]);try{var u=new URL(location.href);u.searchParams.set('theme',x[0]);history.replaceState(history.state,'',u.pathname+u.search+u.hash);}catch(e){}paint();});box.appendChild(b);});
-  document.body.appendChild(box); paint();
 })();
 </script>
 </body>
